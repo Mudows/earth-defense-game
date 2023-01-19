@@ -2,6 +2,16 @@
 	"name": "Game",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "playerScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 392334727135020
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Background",
@@ -398,12 +408,38 @@
 							"id": "destroy",
 							"objectClass": "Obstacles",
 							"sid": 402556683169398
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 741183054262767,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 647412188750473,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
 						}
 					],
 					"sid": 724191789801442
 				}
 			],
 			"sid": 204743345509922
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Score",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 912208406181170
 		}
 	],
 	"sid": 135992070768991

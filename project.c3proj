@@ -16,6 +16,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -85,6 +93,13 @@
 				],
 				"subfolders": [],
 				"name": "Obstacles"
+			},
+			{
+				"items": [
+					"Text"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},
