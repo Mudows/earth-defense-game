@@ -1527,6 +1527,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 914921051465198,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "toggle-active"
+									}
+								},
+								{
 									"id": "subtract-from-eventvar",
 									"objectClass": "System",
 									"sid": 755256760386803,
