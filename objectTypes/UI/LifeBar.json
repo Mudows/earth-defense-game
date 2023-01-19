@@ -1,5 +1,5 @@
 {
-	"name": "Sprite",
+	"name": "LifeBar",
 	"plugin-id": "Sprite",
 	"sid": 794682221502150,
 	"isGlobal": false,
@@ -209,7 +209,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

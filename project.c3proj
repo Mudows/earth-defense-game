@@ -48,6 +48,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
@@ -97,7 +105,7 @@
 			{
 				"items": [
 					"Score",
-					"Sprite"
+					"LifeBar"
 				],
 				"subfolders": [],
 				"name": "UI"

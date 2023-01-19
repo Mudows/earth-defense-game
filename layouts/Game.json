@@ -162,6 +162,9 @@
 							"properties": {
 								"bound-by": "edge"
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -395,7 +398,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "LifeBar",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
