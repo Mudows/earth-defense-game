@@ -1,0 +1,83 @@
+{
+	"name": "Player",
+	"plugin-id": "Sprite",
+	"sid": 523671572122029,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "hitPoints",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 752652592257780
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 363064683542517
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 150719974581971
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 99,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5207065,
+						"collisionPoly": {
+							"points": [
+								0.30303030303030304,
+								0.4,
+								0.5,
+								0,
+								0.6868686868686869,
+								0.4,
+								0.98989898989899,
+								0.5,
+								0.8484848484848485,
+								0.8,
+								0.5,
+								0.9866666666666667,
+								0.1414141414141414,
+								0.8,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Gun1",
+								"x": 0.5,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 269309567376561,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

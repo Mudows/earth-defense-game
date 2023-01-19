@@ -1,0 +1,57 @@
+{
+	"name": "Asteroid_Big",
+	"plugin-id": "Sprite",
+	"sid": 181008699474947,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 89,
+						"height": 82,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3755811,
+						"collisionPoly": {
+							"points": [
+								0.14606741573033707,
+								0.15853658536585366,
+								0.5,
+								0.036585365853658534,
+								0.8314606741573034,
+								0.17073170731707318,
+								0.9887640449438202,
+								0.5,
+								0.8314606741573034,
+								0.8170731707317073,
+								0.5,
+								0.9512195121951219,
+								0.1348314606741573,
+								0.8414634146341463,
+								0.011235955056179775,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 634948993037898,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

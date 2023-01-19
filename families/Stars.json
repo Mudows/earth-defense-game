@@ -1,0 +1,12 @@
+{
+	"name": "Stars",
+	"plugin-id": "Sprite",
+	"sid": 659599917292199,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Star_Far",
+		"Star_Near"
+	]
+}

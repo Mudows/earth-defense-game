@@ -1,0 +1,21 @@
+{
+	"name": "Obstacles",
+	"plugin-id": "Sprite",
+	"sid": 840878676976358,
+	"instanceVariables": [
+		{
+			"name": "hitPoints",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 348273345403272
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Asteroid_Medium",
+		"Asteroid_Big",
+		"Asteroid_Small"
+	]
+}

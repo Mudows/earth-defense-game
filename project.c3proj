@@ -5,27 +5,122 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		}
+	],
 	"uniqueId": "5bopcp2bxkb",
 	"objectTypes": {
-		"items": [],
-		"subfolders": []
+		"items": [
+			"Keyboard"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Player",
+					"Laser"
+				],
+				"subfolders": [],
+				"name": "Player"
+			},
+			{
+				"items": [
+					"Star_Far",
+					"Star_Near"
+				],
+				"subfolders": [],
+				"name": "Background"
+			},
+			{
+				"items": [
+					"Asteroid_Small",
+					"Asteroid_Medium",
+					"Asteroid_Big"
+				],
+				"subfolders": [],
+				"name": "Obstacles"
+			},
+			{
+				"items": [
+					"Text"
+				],
+				"subfolders": [],
+				"name": "UI"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Stars",
+			"Obstacles"
+		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Game"
 		],
 		"subfolders": []
 	},
@@ -138,8 +233,8 @@
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,

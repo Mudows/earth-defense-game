@@ -1,0 +1,446 @@
+{
+	"name": "Game",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "playerScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 392334727135020
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Background",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 982337562096301
+						}
+					],
+					"actions": [],
+					"sid": 316324536065421,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 993264025373794,
+									"parameters": {
+										"count": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 243553816481199,
+									"parameters": {
+										"object-to-create": "Star_Far",
+										"layer": "0",
+										"x": "int(random(0, 480))",
+										"y": "int(random(0, 640))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Star_Far",
+									"sid": 943039590449101,
+									"parameters": {
+										"opacity": "int(random(30,100))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Star_Far",
+									"sid": 581694930919198,
+									"parameters": {
+										"scale": "random(0.5, 1)"
+									}
+								}
+							],
+							"sid": 623096581983713
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 878877640737337,
+									"parameters": {
+										"count": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 280389991244441,
+									"parameters": {
+										"object-to-create": "Star_Near",
+										"layer": "1",
+										"x": "int(random(0, 480))",
+										"y": "int(random(0, 640))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Star_Near",
+									"sid": 535364255660785,
+									"parameters": {
+										"opacity": "int(random(30,100))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Star_Near",
+									"sid": 767131529693273,
+									"parameters": {
+										"scale": "random(0.1, 1)"
+									}
+								}
+							],
+							"sid": 838472114887679
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 481017466940171
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Star_Far",
+							"sid": 941870842270366,
+							"parameters": {
+								"y": "Star_Far.Y + 0.25"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Star_Near",
+							"sid": 175422347225573,
+							"parameters": {
+								"y": "Star_Near.Y + 0.5"
+							}
+						}
+					],
+					"sid": 463340120935622
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Stars",
+							"sid": 864251953496586
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Stars",
+							"sid": 541909092966376,
+							"parameters": {
+								"x": "int(random(0,480))",
+								"y": "0"
+							}
+						}
+					],
+					"sid": 715077105045632
+				}
+			],
+			"sid": 910119055516801
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 289383638402808
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 482037414687536,
+							"parameters": {
+								"x": "480 / 2",
+								"y": "640 - Player.Height"
+							}
+						}
+					],
+					"sid": 784481012673185
+				},
+				{
+					"eventType": "comment",
+					"text": "Shooting logic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 496063231177914,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [],
+					"sid": 464941996626710,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 773724942438811,
+									"parameters": {
+										"interval-seconds": "0.2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 376545375035539,
+									"parameters": {
+										"object": "Laser",
+										"layer": "2",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Laser",
+									"sid": 530396161230135,
+									"parameters": {
+										"angle": "-90"
+									}
+								}
+							],
+							"sid": 601200545394929
+						}
+					]
+				}
+			],
+			"sid": 907822996256512
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Asteroids",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 598383823921445,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 155122182492787,
+							"parameters": {
+								"object-to-create": "Obstacles",
+								"layer": "2",
+								"x": "int(random(10,440))",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "Obstacles",
+							"sid": 533075102269751,
+							"parameters": {
+								"degrees": "int(random(0,270))"
+							}
+						}
+					],
+					"sid": 717106056848494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 726584677211222
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Obstacles",
+							"sid": 280449397362739,
+							"parameters": {
+								"y": "Obstacles.Y + 0.8"
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "Obstacles",
+							"sid": 739246107716625,
+							"parameters": {
+								"degrees": "1"
+							}
+						}
+					],
+					"sid": 553928036909566
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Obstacles",
+							"sid": 241987602729207,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "700"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Obstacles",
+							"sid": 784801029576324
+						}
+					],
+					"sid": 593105054272126
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Obstacles",
+							"sid": 602222707880802,
+							"parameters": {
+								"object": "Laser"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Laser",
+							"sid": 463956305769134
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Obstacles",
+							"sid": 507283609970821,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 845004084676965
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Obstacles",
+							"sid": 470562470472963,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Obstacles",
+							"sid": 402556683169398
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 741183054262767,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 647412188750473,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 724191789801442
+				}
+			],
+			"sid": 204743345509922
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Score",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 912208406181170
+		}
+	],
+	"sid": 135992070768991
+}
