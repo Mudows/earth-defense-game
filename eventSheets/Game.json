@@ -1472,11 +1472,11 @@
 								{
 									"id": "flash",
 									"objectClass": "Player",
-									"sid": 932347068680667,
+									"sid": 893024801060397,
 									"behaviorType": "Flash",
 									"parameters": {
-										"on-time": "0.1",
-										"off-time": "0.1",
+										"on-time": "0.05",
+										"off-time": "0.05",
 										"duration": "3"
 									}
 								},
