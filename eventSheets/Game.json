@@ -377,6 +377,18 @@
 											"parameters": {
 												"angle": "-90"
 											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 219008905007324,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
 										}
 									],
 									"sid": 179135520246454
@@ -470,6 +482,18 @@
 											"sid": 375382586762031,
 											"parameters": {
 												"angle": "-90"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 585060614670957,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
 											}
 										}
 									],
@@ -595,6 +619,18 @@
 											"sid": 620886002068278,
 											"parameters": {
 												"scale": "1.2"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 512535539539553,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
 											}
 										}
 									],
@@ -739,6 +775,18 @@
 											"parameters": {
 												"scale": "1.5"
 											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 376477705144192,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
 										}
 									],
 									"sid": 783636260211090
@@ -785,6 +833,18 @@
 							"id": "destroy",
 							"objectClass": "Upgrade",
 							"sid": 779758680684419
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 647027093662343,
+							"parameters": {
+								"audio-file": "sfx_twoTone",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 857698445799937,
