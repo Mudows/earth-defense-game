@@ -22,6 +22,16 @@
 			"sid": 257478169888036
 		},
 		{
+			"eventType": "variable",
+			"name": "LaserUpgradeLvl",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 618598246691323
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game Start",
@@ -304,36 +314,470 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "every-x-seconds",
+									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 773724942438811,
+									"sid": 603409195328893,
 									"parameters": {
-										"interval-seconds": "0.2"
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 876351499165354,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 123377347360408,
+											"parameters": {
+												"interval-seconds": "0.4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 741968947801982,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 558601371329128,
+											"parameters": {
+												"angle": "-90"
+											}
+										}
+									],
+									"sid": 179135520246454
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 321766991676382,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 707982218338614,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 798171617590515,
+											"parameters": {
+												"interval-seconds": "0.3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 490414079797365,
+											"disabled": true,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 224528091641428,
+											"disabled": true,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 733394002048520,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 273110120805148,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 488405335607828,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 375382586762031,
+											"parameters": {
+												"angle": "-90"
+											}
+										}
+									],
+									"sid": 195337772078639
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 457758355685460,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 792355356046749,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 506188886702971,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 298436166742747,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 712815890353067,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(0, 0, 255)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 237040249094170,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 252309927517890,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 961398252976526,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 143826079776365,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 912831633756273,
+											"parameters": {
+												"angle": "-90"
+											}
+										}
+									],
+									"sid": 957094839214345
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 394050453687540,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 683069711555524,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 216269967703677,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 369547486992010,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 612191297055112,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(150, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 776448469295791,
+											"parameters": {
+												"angle": "int(random(264,274))"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 518490252608959,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 926855657062514,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 315813638579975,
+											"parameters": {
+												"angle": "int(random(262,276))"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 738025990126988,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 460121637690904,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 418399322958831,
+											"parameters": {
+												"angle": "int(random(262,276))"
+											}
+										}
+									],
+									"sid": 783636260211090
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 486151227742015
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Upgrade",
+							"sid": 994212103525598,
+							"parameters": {
+								"y": "Upgrade.Y + 0.9"
+							}
+						}
+					],
+					"sid": 504851544436815
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 785873273154333,
+							"parameters": {
+								"object": "Upgrade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Upgrade",
+							"sid": 779758680684419
+						}
+					],
+					"sid": 857698445799937,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 430734619113248,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 5,
+										"value": "3"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "spawn-another-object",
-									"objectClass": "Player",
-									"sid": 376545375035539,
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 445862395287276,
 									"parameters": {
-										"object": "Laser",
-										"layer": "2",
-										"image-point": "1",
-										"create-hierarchy": false
+										"variable": "playerScore",
+										"value": "100"
 									}
 								},
 								{
-									"id": "set-angle",
-									"objectClass": "Laser",
-									"sid": 530396161230135,
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 988428419173526,
 									"parameters": {
-										"angle": "-90"
+										"text": "\"Score: \" & playerScore"
 									}
 								}
 							],
-							"sid": 601200545394929
+							"sid": 784126199589682
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 935584908945560
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 587225376562126,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 758059607998926
 						}
 					]
 				}

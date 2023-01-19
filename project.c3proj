@@ -80,7 +80,8 @@
 			{
 				"items": [
 					"Player",
-					"Laser"
+					"Laser",
+					"Upgrade"
 				],
 				"subfolders": [],
 				"name": "Player"
