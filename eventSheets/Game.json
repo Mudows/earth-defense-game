@@ -852,119 +852,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 486151227742015
-						}
-					],
-					"actions": [
-						{
-							"id": "set-y",
-							"objectClass": "Upgrade",
-							"sid": 994212103525598,
-							"parameters": {
-								"y": "Upgrade.Y + 0.9"
-							}
-						}
-					],
-					"sid": 504851544436815
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player",
-							"sid": 785873273154333,
-							"parameters": {
-								"object": "Upgrade"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Upgrade",
-							"sid": 779758680684419
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 647027093662343,
-							"parameters": {
-								"audio-file": "sfx_twoTone",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						}
-					],
-					"sid": 857698445799937,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 430734619113248,
-									"parameters": {
-										"variable": "LaserUpgradeLvl",
-										"comparison": 5,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 445862395287276,
-									"parameters": {
-										"variable": "playerScore",
-										"value": "100"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "Score",
-									"sid": 988428419173526,
-									"parameters": {
-										"text": "\"Score: \" & playerScore"
-									}
-								}
-							],
-							"sid": 784126199589682
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 935584908945560
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 587225376562126,
-									"parameters": {
-										"variable": "LaserUpgradeLvl",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 758059607998926
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
 							"sid": 405091532625236,
@@ -1527,6 +1414,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 972710670413915,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "toggle-active"
+									}
+								},
+								{
 									"id": "subtract-from-eventvar",
 									"objectClass": "System",
 									"sid": 468952674611774,
@@ -1585,8 +1481,17 @@
 									}
 								},
 								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 351093862331329,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "toggle-active"
+									}
+								},
+								{
 									"id": "set-collisions-enabled",
-									"objectClass": "Player",
+									"objectClass": "Obstacles",
 									"sid": 956526346172207,
 									"parameters": {
 										"collisions": "disabled"
@@ -1602,7 +1507,7 @@
 								},
 								{
 									"id": "set-collisions-enabled",
-									"objectClass": "Player",
+									"objectClass": "Obstacles",
 									"sid": 925618231950654,
 									"parameters": {
 										"collisions": "enabled"
@@ -1797,6 +1702,129 @@
 				}
 			],
 			"sid": 164187979815248
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Upgrades",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 901361126486418
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Upgrade",
+							"sid": 366636553593491,
+							"parameters": {
+								"y": "Upgrade.Y + 0.9"
+							}
+						}
+					],
+					"sid": 999426869132863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 825387675562971,
+							"parameters": {
+								"object": "Upgrade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Upgrade",
+							"sid": 451205419917377
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 796878867729098,
+							"parameters": {
+								"audio-file": "sfx_twoTone",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 360348056407403,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 877231594042378,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 5,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 323338536719166,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 328191515556562,
+									"parameters": {
+										"text": "\"Score: \" & playerScore"
+									}
+								}
+							],
+							"sid": 514966662527328
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 159500328317558
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 239114480414394,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 644711815958482
+						}
+					]
+				}
+			],
+			"sid": 246297711381092
 		}
 	],
 	"sid": 135992070768991
