@@ -526,6 +526,14 @@
 											}
 										},
 										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 802116445763266,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "Player",
 											"sid": 252309927517890,
@@ -545,6 +553,14 @@
 											}
 										},
 										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 128613560625803,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "Player",
 											"sid": 143826079776365,
@@ -561,6 +577,14 @@
 											"sid": 912831633756273,
 											"parameters": {
 												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 620886002068278,
+											"parameters": {
+												"scale": "1.2"
 											}
 										}
 									],
@@ -627,6 +651,14 @@
 											}
 										},
 										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 564314657295737,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "Player",
 											"sid": 518490252608959,
@@ -655,6 +687,14 @@
 											}
 										},
 										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 419305272787599,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "Player",
 											"sid": 738025990126988,
@@ -680,6 +720,14 @@
 											"sid": 418399322958831,
 											"parameters": {
 												"angle": "int(random(262,276))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 573124172549255,
+											"parameters": {
+												"scale": "1.5"
 											}
 										}
 									],
