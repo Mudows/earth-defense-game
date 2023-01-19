@@ -197,6 +197,15 @@
 				}
 			],
 			"sid": 907822996256512
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Asteroids",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 204743345509922
 		}
 	],
 	"sid": 135992070768991

@@ -142,7 +142,9 @@
 						"live-preview": false
 					},
 					"uid": 4,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"hitPoints": 3
+					},
 					"behaviors": {
 						"8Direction": {
 							"properties": {
@@ -189,7 +191,9 @@
 						"live-preview": false
 					},
 					"uid": 5,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"hitPoints": 3
+					},
 					"behaviors": {},
 					"world": {
 						"x": -89,
@@ -218,7 +222,9 @@
 						"live-preview": false
 					},
 					"uid": 6,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"hitPoints": 6
+					},
 					"behaviors": {},
 					"world": {
 						"x": -80,
@@ -247,7 +253,9 @@
 						"live-preview": false
 					},
 					"uid": 7,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"hitPoints": 12
+					},
 					"behaviors": {},
 					"world": {
 						"x": -76,

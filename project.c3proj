@@ -65,7 +65,8 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"Stars"
+			"Stars",
+			"Obstacles"
 		],
 		"subfolders": []
 	},
