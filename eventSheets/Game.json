@@ -42,6 +42,16 @@
 			"sid": 320036434010525
 		},
 		{
+			"eventType": "variable",
+			"name": "difficulyLevel",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 479904439596758
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game Start",
@@ -1044,25 +1054,25 @@
 						{
 							"id": "set-y",
 							"objectClass": "Asteroid_Big",
-							"sid": 496996159398196,
+							"sid": 560039516903994,
 							"parameters": {
-								"y": "Asteroid_Big.Y + 0.5"
+								"y": "Asteroid_Big.Y + (0.5 * difficulyLevel)"
 							}
 						},
 						{
 							"id": "set-y",
 							"objectClass": "Asteroid_Medium",
-							"sid": 128927536529989,
+							"sid": 176102453262071,
 							"parameters": {
-								"y": "Asteroid_Medium.Y + 0.7"
+								"y": "Asteroid_Medium.Y + (0.8 * difficulyLevel)"
 							}
 						},
 						{
 							"id": "set-y",
 							"objectClass": "Asteroid_Small",
-							"sid": 904078739040349,
+							"sid": 161521485976850,
 							"parameters": {
-								"y": "Asteroid_Small.Y + 0.9"
+								"y": "Asteroid_Small.Y + (1 * difficulyLevel)"
 							}
 						},
 						{
@@ -1637,6 +1647,124 @@
 				}
 			],
 			"sid": 204743345509922
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scaling Difficulty",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 546096096958677,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "5000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 765514704355983,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.1"
+							}
+						}
+					],
+					"sid": 911971581491242
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 485695722400417,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "10000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 532113460281117,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.3"
+							}
+						}
+					],
+					"sid": 871406190053187
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 985917899165095,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "15000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 983336465458946,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.5"
+							}
+						}
+					],
+					"sid": 678102357148281
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 700707082399661,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "20000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 758780711652768,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.8"
+							}
+						}
+					],
+					"sid": 853785096311293
+				}
+			],
+			"sid": 164187979815248
 		}
 	],
 	"sid": 135992070768991
