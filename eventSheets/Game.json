@@ -780,6 +780,46 @@
 							"sid": 758059607998926
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 405091532625236,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 159504385570408
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 194021715555253,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 979621631555943,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 522772788996089
 				}
 			],
 			"sid": 907822996256512
