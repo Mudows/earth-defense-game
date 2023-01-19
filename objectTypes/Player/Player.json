@@ -59,6 +59,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Gun1",
+								"x": 0.5,
+								"y": 0
+							}
+						],
 						"duration": 1
 					}
 				],

@@ -194,6 +194,58 @@
 						}
 					],
 					"sid": 784481012673185
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 496063231177914,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [],
+					"sid": 464941996626710,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 773724942438811,
+									"parameters": {
+										"interval-seconds": "0.2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 376545375035539,
+									"parameters": {
+										"object": "Laser",
+										"layer": "2",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Laser",
+									"sid": 530396161230135,
+									"parameters": {
+										"angle": "-90"
+									}
+								}
+							],
+							"sid": 601200545394929
+						}
+					]
 				}
 			],
 			"sid": 907822996256512
