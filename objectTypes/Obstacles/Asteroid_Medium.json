@@ -1,0 +1,57 @@
+{
+	"name": "Asteroid_Medium",
+	"plugin-id": "Sprite",
+	"sid": 105354527585996,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 45,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7508852,
+						"collisionPoly": {
+							"points": [
+								0.13333333333333333,
+								0.15,
+								0.5,
+								0.05,
+								0.8,
+								0.2,
+								0.9555555555555556,
+								0.5,
+								0.7777777777777778,
+								0.75,
+								0.5,
+								0.975,
+								0.15555555555555556,
+								0.8,
+								0.022222222222222223,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 164859253290390,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

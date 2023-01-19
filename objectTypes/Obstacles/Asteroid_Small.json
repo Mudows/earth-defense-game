@@ -1,0 +1,57 @@
+{
+	"name": "Asteroid_Small",
+	"plugin-id": "Sprite",
+	"sid": 808311792302501,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 29,
+						"height": 26,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2861640,
+						"collisionPoly": {
+							"points": [
+								0.13793103448275862,
+								0.15384615384615385,
+								0.5,
+								0.038461538461538464,
+								0.7931034482758621,
+								0.19230769230769232,
+								0.9310344827586207,
+								0.5,
+								0.7586206896551724,
+								0.7307692307692307,
+								0.5,
+								0.9615384615384616,
+								0.1724137931034483,
+								0.7692307692307693,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 434999861767981,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

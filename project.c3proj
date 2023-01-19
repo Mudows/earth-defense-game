@@ -49,6 +49,15 @@
 				],
 				"subfolders": [],
 				"name": "Background"
+			},
+			{
+				"items": [
+					"Asteroid_Small",
+					"Asteroid_Medium",
+					"Asteroid_Big"
+				],
+				"subfolders": [],
+				"name": "Obstacles"
 			}
 		]
 	},
