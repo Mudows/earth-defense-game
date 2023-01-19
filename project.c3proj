@@ -31,6 +31,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -42,6 +50,14 @@
 			"type": "behavior",
 			"id": "bound",
 			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -61,18 +77,28 @@
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "5bopcp2bxkb",
 	"objectTypes": {
 		"items": [
-			"Keyboard"
+			"Keyboard",
+			"Audio"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"Player",
-					"Laser"
+					"Laser",
+					"Upgrade"
 				],
 				"subfolders": [],
 				"name": "Player"
@@ -80,7 +106,8 @@
 			{
 				"items": [
 					"Star_Far",
-					"Star_Near"
+					"Star_Near",
+					"Planet_Earth"
 				],
 				"subfolders": [],
 				"name": "Background"
@@ -96,7 +123,10 @@
 			},
 			{
 				"items": [
-					"Text"
+					"Score",
+					"LifeBar",
+					"BigText",
+					"GameStart"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -130,11 +160,77 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "sfx_laser1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 575053731841672,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_laser2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 270639465094034,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_lose.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 258658359415889,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_shieldDown.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 540763055875750,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_shieldUp.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 677680881844794,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_twoTone.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 111851366106325,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_zap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 993474909133879,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "themeMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 350865250473097,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
@@ -142,7 +238,24 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "kenvector_future.ttf",
+					"type": "application/font-sfnt",
+					"sid": 414267117295328,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "kenvector_future_thin.ttf",
+					"type": "application/font-sfnt",
+					"sid": 824310448609823,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

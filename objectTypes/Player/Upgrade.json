@@ -1,0 +1,63 @@
+{
+	"name": "Upgrade",
+	"plugin-id": "Sprite",
+	"sid": 360837733666254,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 766226595107685
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 34,
+						"height": 33,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 598095,
+						"collisionPoly": {
+							"points": [
+								0.058823529411764705,
+								0.06060606060606061,
+								0.5,
+								0,
+								0.8823529411764706,
+								0.09090909090909091,
+								0.9411764705882353,
+								0.5,
+								0.8823529411764706,
+								0.8787878787878788,
+								0.5,
+								0.9696969696969697,
+								0.058823529411764705,
+								0.9090909090909091,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 157139783198934,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

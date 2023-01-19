@@ -11,7 +11,13 @@
 			"sid": 348273345403272
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 240440544006251
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"Asteroid_Medium",

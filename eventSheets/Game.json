@@ -12,6 +12,171 @@
 			"sid": 392334727135020
 		},
 		{
+			"eventType": "variable",
+			"name": "playerLives",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 257478169888036
+		},
+		{
+			"eventType": "variable",
+			"name": "LaserUpgradeLvl",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 618598246691323
+		},
+		{
+			"eventType": "variable",
+			"name": "upgradeSpawnChance",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 320036434010525
+		},
+		{
+			"eventType": "variable",
+			"name": "difficulyLevel",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 479904439596758
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Start",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 485982726986565
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 617824457250178,
+							"parameters": {
+								"audio-file": "themeMusic",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"theme\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 803265775593876,
+							"parameters": {
+								"tag": "\"theme\"",
+								"position": "8"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Planet_Earth",
+							"sid": 643498769618688,
+							"parameters": {
+								"y": "685"
+							}
+						},
+						{
+							"id": "set-world-gravity",
+							"objectClass": "Obstacles",
+							"sid": 124277336567597,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "0.5"
+							}
+						}
+					],
+					"sid": 937774840520886
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 640344692657241,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 156482982835778,
+							"parameters": {
+								"x": "480 / 2",
+								"y": "640 - Player.Height"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player",
+							"sid": 615848381287101,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 266749357169720,
+							"parameters": {
+								"group-name": "\"Asteroids\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 885357381274580,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BigText",
+							"sid": 724514644746734,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "GameStart",
+							"sid": 490911234236376
+						}
+					],
+					"sid": 168423498020894
+				}
+			],
+			"sid": 723785099134342
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Background",
@@ -91,10 +256,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 280389991244441,
+									"sid": 933772418822933,
 									"parameters": {
 										"object-to-create": "Star_Near",
-										"layer": "1",
+										"layer": "0",
 										"x": "int(random(0, 480))",
 										"y": "int(random(0, 640))",
 										"create-hierarchy": false,
@@ -135,17 +300,25 @@
 						{
 							"id": "set-y",
 							"objectClass": "Star_Far",
-							"sid": 941870842270366,
+							"sid": 268927959259391,
 							"parameters": {
-								"y": "Star_Far.Y + 0.25"
+								"y": "Star_Far.Y + 0.3"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Planet_Earth",
+							"sid": 632248349628729,
+							"parameters": {
+								"y": "Planet_Earth.Y + 0.45"
 							}
 						},
 						{
 							"id": "set-y",
 							"objectClass": "Star_Near",
-							"sid": 175422347225573,
+							"sid": 872215349745070,
 							"parameters": {
-								"y": "Star_Near.Y + 0.5"
+								"y": "Star_Near.Y + 0.7"
 							}
 						}
 					],
@@ -169,6 +342,22 @@
 								"x": "int(random(0,480))",
 								"y": "0"
 							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Stars",
+							"sid": 176458326379847,
+							"parameters": {
+								"opacity": "int(random(30,100))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Stars",
+							"sid": 570236756535870,
+							"parameters": {
+								"scale": "random(0.1, 1)"
+							}
 						}
 					],
 					"sid": 715077105045632
@@ -181,30 +370,8 @@
 			"disabled": false,
 			"title": "Player",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 289383638402808
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "Player",
-							"sid": 482037414687536,
-							"parameters": {
-								"x": "480 / 2",
-								"y": "640 - Player.Height"
-							}
-						}
-					],
-					"sid": 784481012673185
-				},
 				{
 					"eventType": "comment",
 					"text": "Shooting logic"
@@ -228,38 +395,532 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "every-x-seconds",
+									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 773724942438811,
+									"sid": 603409195328893,
 									"parameters": {
-										"interval-seconds": "0.2"
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "0"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 876351499165354,
+							"children": [
 								{
-									"id": "spawn-another-object",
-									"objectClass": "Player",
-									"sid": 376545375035539,
-									"parameters": {
-										"object": "Laser",
-										"layer": "2",
-										"image-point": "1",
-										"create-hierarchy": false
-									}
-								},
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 375482660914969,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 741968947801982,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 558601371329128,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 219008905007324,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 179135520246454
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"id": "set-angle",
-									"objectClass": "Laser",
-									"sid": 530396161230135,
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 321766991676382,
 									"parameters": {
-										"angle": "-90"
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "1"
 									}
 								}
 							],
-							"sid": 601200545394929
+							"actions": [],
+							"sid": 707982218338614,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 688389037360523,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 490414079797365,
+											"disabled": true,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 224528091641428,
+											"disabled": true,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 733394002048520,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 273110120805148,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 488405335607828,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 375382586762031,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 585060614670957,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 195337772078639
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 457758355685460,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 792355356046749,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 506188886702971,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 298436166742747,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 712815890353067,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(0, 0, 255)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 237040249094170,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 802116445763266,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 252309927517890,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 961398252976526,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 128613560625803,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 143826079776365,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 912831633756273,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 620886002068278,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 512535539539553,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 957094839214345
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 394050453687540,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 683069711555524,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 216269967703677,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 369547486992010,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 612191297055112,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(150, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 776448469295791,
+											"parameters": {
+												"angle": "int(random(264,274))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 564314657295737,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 518490252608959,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 926855657062514,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 315813638579975,
+											"parameters": {
+												"angle": "int(random(262,276))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 419305272787599,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 738025990126988,
+											"parameters": {
+												"object": "Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Laser",
+											"sid": 460121637690904,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Laser",
+											"sid": 418399322958831,
+											"parameters": {
+												"angle": "int(random(262,276))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Laser",
+											"sid": 573124172549255,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 376477705144192,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 783636260211090
+								}
+							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 405091532625236,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 159504385570408
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 194021715555253,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 979621631555943,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 522772788996089
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Player",
+							"sid": 853544495078563,
+							"parameters": {
+								"comparison": 3,
+								"y-co-ordinate": "400"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Player",
+							"sid": 870607951008733,
+							"parameters": {
+								"y": "400"
+							}
+						}
+					],
+					"sid": 635688330987942
 				}
 			],
 			"sid": 907822996256512
@@ -269,7 +930,7 @@
 			"disabled": false,
 			"title": "Asteroids",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -304,6 +965,26 @@
 							"parameters": {
 								"degrees": "int(random(0,270))"
 							}
+						},
+						{
+							"id": "apply-force-at-angle",
+							"objectClass": "Obstacles",
+							"sid": 622718271433189,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force": "50",
+								"angle": "int(random(0,181))",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "set-angular-velocity",
+							"objectClass": "Obstacles",
+							"sid": 837255438549031,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-velocity": "10"
+							}
 						}
 					],
 					"sid": 717106056848494
@@ -320,10 +1001,26 @@
 					"actions": [
 						{
 							"id": "set-y",
-							"objectClass": "Obstacles",
-							"sid": 280449397362739,
+							"objectClass": "Asteroid_Big",
+							"sid": 560039516903994,
 							"parameters": {
-								"y": "Obstacles.Y + 0.8"
+								"y": "Asteroid_Big.Y + (0.5 * difficulyLevel)"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Asteroid_Medium",
+							"sid": 176102453262071,
+							"parameters": {
+								"y": "Asteroid_Medium.Y + (0.8 * difficulyLevel)"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Asteroid_Small",
+							"sid": 161521485976850,
+							"parameters": {
+								"y": "Asteroid_Small.Y + (1 * difficulyLevel)"
 							}
 						},
 						{
@@ -335,7 +1032,64 @@
 							}
 						}
 					],
-					"sid": 553928036909566
+					"sid": 553928036909566,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Obstacles",
+							"sid": 633924397549241,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "Obstacles.Width / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-impulse",
+							"objectClass": "Obstacles",
+							"sid": 269990603029053,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse-x": "1",
+								"implulse-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 342079821007989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Obstacles",
+							"sid": 964093470726039,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "480 - Obstacles.Width / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-impulse",
+							"objectClass": "Obstacles",
+							"sid": 215051668276529,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse-x": "-1",
+								"implulse-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 645620292320338
 				},
 				{
 					"eventType": "block",
@@ -394,8 +1148,294 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Obstacles",
-							"sid": 470562470472963,
+							"objectClass": "Asteroid_Big",
+							"sid": 428013989890966,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 680093652138149,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "600"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 275815948092112,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 330749088537731,
+							"parameters": {
+								"variable": "upgradeSpawnChance",
+								"value": "int(random(1,11))"
+							}
+						}
+					],
+					"sid": 330520913873632,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 127549109756926,
+									"parameters": {
+										"variable": "upgradeSpawnChance",
+										"comparison": 5,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Big",
+									"sid": 296715820524062,
+									"parameters": {
+										"object": "Upgrade",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 352287792270212
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 996274885361413,
+									"parameters": {
+										"count": "int(random(1,4))"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Big",
+									"sid": 686921874785796,
+									"parameters": {
+										"object": "Asteroid_Medium",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "Asteroid_Medium",
+									"sid": 598614686016791,
+									"parameters": {
+										"degrees": "int(random(0,270))"
+									}
+								},
+								{
+									"id": "move-at-angle",
+									"objectClass": "Asteroid_Medium",
+									"sid": 344526222166200,
+									"disabled": true,
+									"parameters": {
+										"angle": "int(random(0, 360))",
+										"distance": "int(random(50,110))"
+									}
+								},
+								{
+									"id": "apply-force",
+									"objectClass": "Asteroid_Medium",
+									"sid": 141250426100393,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force-x": "int(random(1,20))",
+										"force-y": "int(random(1,20))",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 482092746574736
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Asteroid_Big",
+									"sid": 796108720479750
+								}
+							],
+							"sid": 363359469344631
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Asteroid_Medium",
+							"sid": 468242260614344,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 580963805191723,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "250"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 712892887276462,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 131698640918143,
+							"parameters": {
+								"variable": "upgradeSpawnChance",
+								"value": "int(random(1,11))"
+							}
+						}
+					],
+					"sid": 759792227973583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 845535335373518,
+									"parameters": {
+										"variable": "upgradeSpawnChance",
+										"comparison": 5,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Medium",
+									"sid": 832499090592134,
+									"parameters": {
+										"object": "Upgrade",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 965151616696563
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 685649362416405,
+									"parameters": {
+										"count": "int(random(1,4))"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Medium",
+									"sid": 118542258765248,
+									"parameters": {
+										"object": "Asteroid_Small",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "Asteroid_Small",
+									"sid": 557359847123847,
+									"parameters": {
+										"degrees": "int(random(0,270))"
+									}
+								},
+								{
+									"id": "move-at-angle",
+									"objectClass": "Asteroid_Small",
+									"sid": 570031644338879,
+									"disabled": true,
+									"parameters": {
+										"angle": "int(random(0, 360))",
+										"distance": "int(random(50,110))"
+									}
+								},
+								{
+									"id": "apply-force",
+									"objectClass": "Asteroid_Small",
+									"sid": 922483499520990,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force-x": "int(random(1,20))",
+										"force-y": "int(random(1,20))",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 360033353189464
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Asteroid_Medium",
+									"sid": 347279503803729
+								}
+							],
+							"sid": 241440048025788
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Asteroid_Small",
+							"sid": 969540709306010,
 							"parameters": {
 								"instance-variable": "hitPoints",
 								"comparison": 3,
@@ -406,13 +1446,13 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "Obstacles",
-							"sid": 402556683169398
+							"objectClass": "Asteroid_Small",
+							"sid": 676490644149369
 						},
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 741183054262767,
+							"sid": 859513263865490,
 							"parameters": {
 								"variable": "playerScore",
 								"value": "100"
@@ -420,14 +1460,262 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
-							"sid": 647412188750473,
+							"objectClass": "Score",
+							"sid": 794201956250852,
 							"parameters": {
 								"text": "\"Score: \" & playerScore"
 							}
 						}
 					],
-					"sid": 724191789801442
+					"sid": 505715645187423
+				},
+				{
+					"eventType": "comment",
+					"text": "When the asteroids collide with the player, they damage and destroy the ship."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Obstacles",
+							"sid": 461715875879891,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Obstacles",
+							"sid": 475587726992910
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 448044222161743
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 997422104852545,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 513869489067595,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 573476046450735,
+									"parameters": {
+										"variable": "playerLives",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 933000343311016,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 468952674611774,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 724607697308973,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Asteroid_Big",
+									"sid": 939287869033920,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Asteroid_Medium",
+									"sid": 283136504483010,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Asteroid_Small",
+									"sid": 433552027799743,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 218284036969465,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 777869027520334,
+									"parameters": {
+										"object-to-create": "Player",
+										"layer": "2",
+										"x": "480 / 2",
+										"y": "640 - Player.Height",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Player",
+									"sid": 530375445636181,
+									"parameters": {
+										"x": "480 / 2",
+										"y": "640 - Player.Height"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Player",
+									"sid": 893024801060397,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.05",
+										"off-time": "0.05",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 502582356228927,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 959902060689936,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Obstacles",
+									"sid": 925618231950654,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 268637037944533
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 122522554119932
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 914921051465198,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "toggle-active"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 755256760386803,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 877289703733706,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "BigText",
+									"sid": 655555327650527,
+									"parameters": {
+										"text": "\"Game Over\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "BigText",
+									"sid": 333912828302510,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 111471941971431,
+									"parameters": {
+										"seconds": "5"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 586148401779041
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 430399543853222
+								}
+							],
+							"sid": 869307280242960
+						}
+					]
 				}
 			],
 			"sid": 204743345509922
@@ -435,11 +1723,243 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Score",
+			"title": "Scaling Difficulty",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
-			"sid": 912208406181170
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 546096096958677,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "5000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 765514704355983,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.1"
+							}
+						}
+					],
+					"sid": 911971581491242
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 485695722400417,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "10000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 532113460281117,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.3"
+							}
+						}
+					],
+					"sid": 871406190053187
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 985917899165095,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "15000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 983336465458946,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.5"
+							}
+						}
+					],
+					"sid": 678102357148281
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 700707082399661,
+							"parameters": {
+								"variable": "playerScore",
+								"comparison": 5,
+								"value": "20000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 758780711652768,
+							"parameters": {
+								"variable": "difficulyLevel",
+								"value": "1.8"
+							}
+						}
+					],
+					"sid": 853785096311293
+				}
+			],
+			"sid": 164187979815248
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Upgrades",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 901361126486418
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Upgrade",
+							"sid": 366636553593491,
+							"parameters": {
+								"y": "Upgrade.Y + 0.9"
+							}
+						}
+					],
+					"sid": 999426869132863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 825387675562971,
+							"parameters": {
+								"object": "Upgrade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Upgrade",
+							"sid": 451205419917377
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 796878867729098,
+							"parameters": {
+								"audio-file": "sfx_twoTone",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 360348056407403,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 877231594042378,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 5,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 323338536719166,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 328191515556562,
+									"parameters": {
+										"text": "\"Score: \" & playerScore"
+									}
+								}
+							],
+							"sid": 514966662527328
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 159500328317558
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 239114480414394,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 644711815958482
+						}
+					]
+				}
+			],
+			"sid": 246297711381092
 		}
 	],
 	"sid": 135992070768991

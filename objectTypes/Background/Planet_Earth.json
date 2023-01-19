@@ -1,0 +1,57 @@
+{
+	"name": "Planet_Earth",
+	"plugin-id": "Sprite",
+	"sid": 323327535991693,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1280,
+						"height": 1280,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5405979,
+						"collisionPoly": {
+							"points": [
+								0.2171875,
+								0.2171875,
+								0.5,
+								0.1,
+								0.78203125,
+								0.2171875,
+								0.9,
+								0.5,
+								0.78125,
+								0.78125,
+								0.5,
+								0.89921875,
+								0.2171875,
+								0.78203125,
+								0.1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 555153790653223,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
