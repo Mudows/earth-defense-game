@@ -59,17 +59,28 @@
 					],
 					"actions": [
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 243747511227022,
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 617824457250178,
 							"parameters": {
-								"group-name": "\"Asteroids\"",
-								"state": "deactivated"
+								"audio-file": "themeMusic",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"theme\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 803265775593876,
+							"parameters": {
+								"tag": "\"theme\"",
+								"position": "8"
 							}
 						}
 					],
-					"sid": 937774840520886,
-					"disabled": true
+					"sid": 937774840520886
 				},
 				{
 					"eventType": "block",

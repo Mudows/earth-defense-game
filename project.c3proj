@@ -221,7 +221,16 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "themeMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 350865250473097,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
