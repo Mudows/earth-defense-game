@@ -195,7 +195,7 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPoints": 3
+						"hitPoints": 2
 					},
 					"behaviors": {},
 					"world": {
@@ -226,7 +226,7 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPoints": 6
+						"hitPoints": 4
 					},
 					"behaviors": {},
 					"world": {
@@ -257,7 +257,7 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPoints": 12
+						"hitPoints": 8
 					},
 					"behaviors": {},
 					"world": {

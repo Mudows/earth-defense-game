@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "LaserUpgradeLvl",
 			"type": "number",
-			"initialValue": "2",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -352,9 +352,9 @@
 										{
 											"id": "every-x-seconds",
 											"objectClass": "System",
-											"sid": 123377347360408,
+											"sid": 375482660914969,
 											"parameters": {
-												"interval-seconds": "0.4"
+												"interval-seconds": "0.2"
 											}
 										}
 									],
@@ -406,9 +406,9 @@
 										{
 											"id": "every-x-seconds",
 											"objectClass": "System",
-											"sid": 798171617590515,
+											"sid": 688389037360523,
 											"parameters": {
-												"interval-seconds": "0.3"
+												"interval-seconds": "0.2"
 											}
 										}
 									],
