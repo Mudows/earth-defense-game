@@ -47,9 +47,9 @@
 				1
 			],
 			"backgroundColor": [
-				0.19215686274509805,
-				0.20784313725490197,
-				0.25098039215686274,
+				0,
+				0,
+				0,
 				1
 			],
 			"isTransparent": false,
@@ -147,8 +147,8 @@
 						"8Direction": {
 							"properties": {
 								"max-speed": 600,
-								"acceleration": 800,
-								"deceleration": 800,
+								"acceleration": 1000,
+								"deceleration": 1300,
 								"directions": "left-right",
 								"set-angle": "no",
 								"allow-sliding": false,
