@@ -333,6 +333,22 @@
 								"x": "int(random(0,480))",
 								"y": "0"
 							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Stars",
+							"sid": 176458326379847,
+							"parameters": {
+								"opacity": "int(random(30,100))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Stars",
+							"sid": 570236756535870,
+							"parameters": {
+								"scale": "random(0.1, 1)"
+							}
 						}
 					],
 					"sid": 715077105045632
