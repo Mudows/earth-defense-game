@@ -353,7 +353,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Text",
+					"type": "Score",
 					"properties": {
 						"text": "Score: 0",
 						"enable-bbcode": true,

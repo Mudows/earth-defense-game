@@ -420,7 +420,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
+							"objectClass": "Score",
 							"sid": 647412188750473,
 							"parameters": {
 								"text": "\"Score: \" & playerScore"
