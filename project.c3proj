@@ -107,7 +107,8 @@
 				"items": [
 					"Star_Far",
 					"Star_Near",
-					"TiledBackground"
+					"TiledBackground",
+					"Planet_Earth"
 				],
 				"subfolders": [],
 				"name": "Background"

@@ -34,39 +34,6 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "TiledBackground",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0
-					},
-					"uid": 16,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 480,
-						"height": 640,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
 				}
 			],
 			"sid": 137389844774389,
@@ -128,6 +95,35 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Planet_Earth",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 17,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 240,
+						"y": 685,
+						"width": 1280,
+						"height": 1280,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				}
@@ -393,7 +389,7 @@
 					"properties": {
 						"text": "Score: 0",
 						"enable-bbcode": true,
-						"font": "KenVector Future",
+						"font": "kenvector_future_thin",
 						"size": 18,
 						"line-height": 0,
 						"bold": false,
@@ -464,7 +460,7 @@
 					"properties": {
 						"text": "Earth Defense",
 						"enable-bbcode": true,
-						"font": "KenVector Future",
+						"font": "kenvector_future",
 						"size": 32,
 						"line-height": 0,
 						"bold": false,
@@ -506,7 +502,7 @@
 					"properties": {
 						"text": "Press \"ENTER\" to Start",
 						"enable-bbcode": true,
-						"font": "KenVector Future",
+						"font": "kenvector_future_thin",
 						"size": 14,
 						"line-height": 0,
 						"bold": false,

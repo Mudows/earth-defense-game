@@ -88,6 +88,14 @@
 								"tag": "\"theme\"",
 								"position": "8"
 							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Planet_Earth",
+							"sid": 643498769618688,
+							"parameters": {
+								"y": "685"
+							}
 						}
 					],
 					"sid": 937774840520886
@@ -239,10 +247,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 280389991244441,
+									"sid": 933772418822933,
 									"parameters": {
 										"object-to-create": "Star_Near",
-										"layer": "1",
+										"layer": "0",
 										"x": "int(random(0, 480))",
 										"y": "int(random(0, 640))",
 										"create-hierarchy": false,
@@ -290,10 +298,18 @@
 						},
 						{
 							"id": "set-y",
-							"objectClass": "Star_Near",
-							"sid": 950403815254234,
+							"objectClass": "Planet_Earth",
+							"sid": 632248349628729,
 							"parameters": {
-								"y": "Star_Near.Y + 0.6"
+								"y": "Planet_Earth.Y + 0.45"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Star_Near",
+							"sid": 872215349745070,
+							"parameters": {
+								"y": "Star_Near.Y + 0.7"
 							}
 						}
 					],
