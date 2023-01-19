@@ -1178,11 +1178,11 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 218348391133959,
+									"sid": 127549109756926,
 									"parameters": {
 										"variable": "upgradeSpawnChance",
 										"comparison": 5,
-										"value": "8"
+										"value": "9"
 									}
 								}
 							],
@@ -1309,11 +1309,11 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 811475251197060,
+									"sid": 845535335373518,
 									"parameters": {
 										"variable": "upgradeSpawnChance",
 										"comparison": 5,
-										"value": "9"
+										"value": "10"
 									}
 								}
 							],
