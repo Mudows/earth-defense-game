@@ -199,8 +199,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": -89,
-						"y": 200,
+						"x": 213,
+						"y": 447,
 						"width": 29,
 						"height": 26,
 						"originX": 0.5,
@@ -415,6 +415,48 @@
 						"width": 183,
 						"height": 26,
 						"originX": 0.09016393442622951,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GameOver",
+					"properties": {
+						"text": "Game Over",
+						"enable-bbcode": true,
+						"font": "Consolas",
+						"size": 42,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "center"
+					},
+					"uid": 12,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 240,
+						"y": 320,
+						"width": 400,
+						"height": 83,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,

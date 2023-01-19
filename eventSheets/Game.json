@@ -440,6 +440,10 @@
 					"sid": 724191789801442
 				},
 				{
+					"eventType": "comment",
+					"text": "When the asteroids collide with the player, they damage and destroy the ship."
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -455,88 +459,173 @@
 						{
 							"id": "destroy",
 							"objectClass": "Obstacles",
-							"sid": 725686216599752
+							"sid": 475587726992910
 						},
 						{
 							"id": "destroy",
 							"objectClass": "Player",
-							"sid": 539848680339235
-						},
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 587504990106444,
-							"parameters": {
-								"variable": "playerLives",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "LifeBar",
-							"sid": 400695240843969,
-							"parameters": {
-								"frame-number": "playerLives"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 491786803824553,
-							"parameters": {
-								"seconds": "2"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 638764222915213,
-							"parameters": {
-								"object-to-create": "Player",
-								"layer": "2",
-								"x": "480 / 2",
-								"y": "640 - Player.Height",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "Player",
-							"sid": 503628647141525,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "3"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Player",
-							"sid": 647353915746919,
-							"parameters": {
-								"collisions": "disabled"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 579773326677112,
-							"parameters": {
-								"seconds": "3"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Player",
-							"sid": 152133393839286,
-							"parameters": {
-								"collisions": "enabled"
-							}
+							"sid": 448044222161743
 						}
 					],
-					"sid": 513869489067595
+					"sid": 513869489067595,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 573476046450735,
+									"parameters": {
+										"variable": "playerLives",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 468952674611774,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 724607697308973,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 218284036969465,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 777869027520334,
+									"parameters": {
+										"object-to-create": "Player",
+										"layer": "2",
+										"x": "480 / 2",
+										"y": "640 - Player.Height",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Player",
+									"sid": 530375445636181,
+									"parameters": {
+										"x": "480 / 2",
+										"y": "640 - Player.Height"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Player",
+									"sid": 932347068680667,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Player",
+									"sid": 956526346172207,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 959902060689936,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Player",
+									"sid": 925618231950654,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 268637037944533
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 122522554119932
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 755256760386803,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 877289703733706,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "GameOver",
+									"sid": 333912828302510,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 111471941971431,
+									"parameters": {
+										"seconds": "5"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 586148401779041
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 430399543853222
+								}
+							],
+							"sid": 869307280242960
+						}
+					]
 				}
 			],
 			"sid": 204743345509922

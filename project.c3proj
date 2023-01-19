@@ -105,7 +105,8 @@
 			{
 				"items": [
 					"Score",
-					"LifeBar"
+					"LifeBar",
+					"GameOver"
 				],
 				"subfolders": [],
 				"name": "UI"
