@@ -100,10 +100,10 @@
 						{
 							"id": "set-world-gravity",
 							"objectClass": "Obstacles",
-							"sid": 825423879414141,
+							"sid": 124277336567597,
 							"behaviorType": "Physics",
 							"parameters": {
-								"gravity": "5"
+								"gravity": "0.5"
 							}
 						}
 					],
@@ -969,10 +969,10 @@
 						{
 							"id": "apply-force-at-angle",
 							"objectClass": "Obstacles",
-							"sid": 523785506903901,
+							"sid": 622718271433189,
 							"behaviorType": "Physics",
 							"parameters": {
-								"force": "100",
+								"force": "50",
 								"angle": "int(random(0,181))",
 								"image-point": "0"
 							}
