@@ -1107,11 +1107,11 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 229142735728124,
+									"sid": 218348391133959,
 									"parameters": {
 										"variable": "upgradeSpawnChance",
 										"comparison": 5,
-										"value": "7"
+										"value": "8"
 									}
 								}
 							],
