@@ -12,6 +12,110 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 982337562096301
+						}
+					],
+					"actions": [],
+					"sid": 316324536065421,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 993264025373794,
+									"parameters": {
+										"count": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 243553816481199,
+									"parameters": {
+										"object-to-create": "Star_Far",
+										"layer": "0",
+										"x": "int(random(0, 480))",
+										"y": "int(random(0, 640))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Star_Far",
+									"sid": 943039590449101,
+									"parameters": {
+										"opacity": "int(random(30,100))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Star_Far",
+									"sid": 581694930919198,
+									"parameters": {
+										"scale": "random(0.5, 1)"
+									}
+								}
+							],
+							"sid": 623096581983713
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 878877640737337,
+									"parameters": {
+										"count": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 280389991244441,
+									"parameters": {
+										"object-to-create": "Star_Near",
+										"layer": "1",
+										"x": "int(random(0, 480))",
+										"y": "int(random(0, 640))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Star_Near",
+									"sid": 535364255660785,
+									"parameters": {
+										"opacity": "int(random(30,100))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Star_Near",
+									"sid": 767131529693273,
+									"parameters": {
+										"scale": "random(0.1, 1)"
+									}
+								}
+							],
+							"sid": 838472114887679
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 481017466940171
@@ -41,125 +145,12 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 817414941127861
-						}
-					],
-					"actions": [],
-					"sid": 625362622626715,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 413042693894985,
-									"parameters": {
-										"count": "100"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 928771643951268,
-									"parameters": {
-										"object-to-create": "Star_Far",
-										"layer": "0",
-										"x": "int(random(0, 480))",
-										"y": "int(random(0, 640))",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-opacity",
-									"objectClass": "Star_Far",
-									"sid": 807247079786407,
-									"parameters": {
-										"opacity": "int(random(30,100))"
-									}
-								},
-								{
-									"id": "set-scale",
-									"objectClass": "Star_Far",
-									"sid": 281587695351505,
-									"parameters": {
-										"scale": "random(0.5, 1)"
-									}
-								}
-							],
-							"sid": 346041590144451
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 844278481997388,
-									"parameters": {
-										"count": "50"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 921153466411824,
-									"parameters": {
-										"object-to-create": "Star_Near",
-										"layer": "0",
-										"x": "int(random(0, 480))",
-										"y": "int(random(0, 640))",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-opacity",
-									"objectClass": "Star_Near",
-									"sid": 124199093374693,
-									"parameters": {
-										"opacity": "int(random(30,100))"
-									}
-								},
-								{
-									"id": "set-scale",
-									"objectClass": "Star_Near",
-									"sid": 364981048227058,
-									"parameters": {
-										"scale": "random(0.1, 1)"
-									}
-								}
-							],
-							"sid": 136687732120530
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "is-outside-layout",
 							"objectClass": "Stars",
 							"sid": 864251953496586
 						}
 					],
 					"actions": [
-						{
-							"id": "set-y",
-							"objectClass": "Stars",
-							"sid": 525932233724044,
-							"disabled": true,
-							"parameters": {
-								"y": "0"
-							}
-						},
 						{
 							"id": "set-position",
 							"objectClass": "Stars",
@@ -174,6 +165,38 @@
 				}
 			],
 			"sid": 910119055516801
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 289383638402808
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 482037414687536,
+							"parameters": {
+								"x": "480 / 2",
+								"y": "640 - Player.Height"
+							}
+						}
+					],
+					"sid": 784481012673185
+				}
+			],
+			"sid": 907822996256512
 		}
 	],
 	"sid": 135992070768991

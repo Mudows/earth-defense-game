@@ -13,15 +13,44 @@
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "5bopcp2bxkb",
 	"objectTypes": {
-		"items": [
-			"Star_Far",
-			"Star_Near"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Player"
+				],
+				"subfolders": [],
+				"name": "Player"
+			},
+			{
+				"items": [
+					"Star_Far",
+					"Star_Near"
+				],
+				"subfolders": [],
+				"name": "Background"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
