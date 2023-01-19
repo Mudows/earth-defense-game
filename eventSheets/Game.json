@@ -1456,6 +1456,15 @@
 							"id": "destroy",
 							"objectClass": "Player",
 							"sid": 448044222161743
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 997422104852545,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 513869489067595,
