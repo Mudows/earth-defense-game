@@ -142,7 +142,64 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "sfx_laser1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 575053731841672,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_laser2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 270639465094034,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_lose.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 258658359415889,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_shieldDown.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 540763055875750,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_shieldUp.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 677680881844794,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_twoTone.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 111851366106325,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_zap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 993474909133879,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
