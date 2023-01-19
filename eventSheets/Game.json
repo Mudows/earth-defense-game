@@ -32,6 +32,16 @@
 			"sid": 618598246691323
 		},
 		{
+			"eventType": "variable",
+			"name": "upgradeSpawnChance",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 320036434010525
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game Start",
@@ -1053,10 +1063,48 @@
 							"parameters": {
 								"text": "\"Score: \" & playerScore"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 330749088537731,
+							"parameters": {
+								"variable": "upgradeSpawnChance",
+								"value": "int(random(1,11))"
+							}
 						}
 					],
 					"sid": 330520913873632,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 229142735728124,
+									"parameters": {
+										"variable": "upgradeSpawnChance",
+										"comparison": 5,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Big",
+									"sid": 296715820524062,
+									"parameters": {
+										"object": "Upgrade",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 352287792270212
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1146,10 +1194,48 @@
 							"parameters": {
 								"text": "\"Score: \" & playerScore"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 131698640918143,
+							"parameters": {
+								"variable": "upgradeSpawnChance",
+								"value": "int(random(1,11))"
+							}
 						}
 					],
 					"sid": 759792227973583,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 811475251197060,
+									"parameters": {
+										"variable": "upgradeSpawnChance",
+										"comparison": 5,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Medium",
+									"sid": 832499090592134,
+									"parameters": {
+										"object": "Upgrade",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 965151616696563
+						},
 						{
 							"eventType": "block",
 							"conditions": [
