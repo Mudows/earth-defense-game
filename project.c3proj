@@ -220,7 +220,24 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "kenvector_future.ttf",
+					"type": "application/font-sfnt",
+					"sid": 414267117295328,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "kenvector_future_thin.ttf",
+					"type": "application/font-sfnt",
+					"sid": 824310448609823,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

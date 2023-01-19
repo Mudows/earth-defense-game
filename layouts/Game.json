@@ -360,7 +360,7 @@
 					"properties": {
 						"text": "Score: 0",
 						"enable-bbcode": true,
-						"font": "Consolas",
+						"font": "KenVector Future",
 						"size": 18,
 						"line-height": 0,
 						"bold": false,
@@ -381,9 +381,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 249,
+						"x": 227,
 						"y": 4,
-						"width": 227,
+						"width": 249,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -431,8 +431,8 @@
 					"properties": {
 						"text": "Earth Defense",
 						"enable-bbcode": true,
-						"font": "Consolas",
-						"size": 42,
+						"font": "KenVector Future",
+						"size": 32,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -473,7 +473,7 @@
 					"properties": {
 						"text": "Press \"ENTER\" to Start",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "KenVector Future",
 						"size": 14,
 						"line-height": 0,
 						"bold": false,
@@ -496,7 +496,7 @@
 					"world": {
 						"x": 240,
 						"y": 371,
-						"width": 263,
+						"width": 327,
 						"height": 30,
 						"originX": 0.5,
 						"originY": 0.5,
