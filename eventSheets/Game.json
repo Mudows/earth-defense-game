@@ -1052,10 +1052,10 @@
 						{
 							"id": "apply-impulse",
 							"objectClass": "Obstacles",
-							"sid": 193379318645447,
+							"sid": 269990603029053,
 							"behaviorType": "Physics",
 							"parameters": {
-								"impulse-x": "2",
+								"impulse-x": "1",
 								"implulse-y": "0",
 								"image-point": "0"
 							}
@@ -1080,10 +1080,10 @@
 						{
 							"id": "apply-impulse",
 							"objectClass": "Obstacles",
-							"sid": 213077781374627,
+							"sid": 215051668276529,
 							"behaviorType": "Physics",
 							"parameters": {
-								"impulse-x": "-2",
+								"impulse-x": "-1",
 								"implulse-y": "0",
 								"image-point": "0"
 							}
@@ -1252,9 +1252,21 @@
 									"id": "move-at-angle",
 									"objectClass": "Asteroid_Medium",
 									"sid": 344526222166200,
+									"disabled": true,
 									"parameters": {
 										"angle": "int(random(0, 360))",
 										"distance": "int(random(50,110))"
+									}
+								},
+								{
+									"id": "apply-force",
+									"objectClass": "Asteroid_Medium",
+									"sid": 141250426100393,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force-x": "int(random(1,20))",
+										"force-y": "int(random(1,20))",
+										"image-point": "0"
 									}
 								}
 							],
@@ -1383,9 +1395,21 @@
 									"id": "move-at-angle",
 									"objectClass": "Asteroid_Small",
 									"sid": 570031644338879,
+									"disabled": true,
 									"parameters": {
 										"angle": "int(random(0, 360))",
 										"distance": "int(random(50,110))"
+									}
+								},
+								{
+									"id": "apply-force",
+									"objectClass": "Asteroid_Small",
+									"sid": 922483499520990,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force-x": "int(random(1,20))",
+										"force-y": "int(random(1,20))",
+										"image-point": "0"
 									}
 								}
 							],
@@ -1502,10 +1526,10 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 972710670413915,
+									"sid": 933000343311016,
 									"parameters": {
 										"group-name": "\"Player\"",
-										"state": "toggle-active"
+										"state": "deactivated"
 									}
 								},
 								{
@@ -1523,6 +1547,14 @@
 									"sid": 724607697308973,
 									"parameters": {
 										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Obstacles",
+									"sid": 939287869033920,
+									"parameters": {
+										"collisions": "disabled"
 									}
 								},
 								{
@@ -1569,18 +1601,10 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 351093862331329,
+									"sid": 502582356228927,
 									"parameters": {
 										"group-name": "\"Player\"",
-										"state": "toggle-active"
-									}
-								},
-								{
-									"id": "set-collisions-enabled",
-									"objectClass": "Obstacles",
-									"sid": 956526346172207,
-									"parameters": {
-										"collisions": "disabled"
+										"state": "activated"
 									}
 								},
 								{

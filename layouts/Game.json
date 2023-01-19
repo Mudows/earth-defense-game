@@ -234,7 +234,7 @@
 								"prevent-rotation": false,
 								"density": 1,
 								"friction": 0.5,
-								"elasticity": 0.6,
+								"elasticity": 0.2,
 								"linear-damping": 0,
 								"angular-damping": 0,
 								"bullet": false,
