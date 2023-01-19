@@ -887,6 +887,31 @@
 						}
 					],
 					"sid": 522772788996089
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Player",
+							"sid": 853544495078563,
+							"parameters": {
+								"comparison": 3,
+								"y-co-ordinate": "400"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Player",
+							"sid": 870607951008733,
+							"parameters": {
+								"y": "400"
+							}
+						}
+					],
+					"sid": 635688330987942
 				}
 			],
 			"sid": 907822996256512
