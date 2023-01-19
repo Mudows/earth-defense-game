@@ -262,17 +262,17 @@
 						{
 							"id": "set-y",
 							"objectClass": "Star_Far",
-							"sid": 941870842270366,
+							"sid": 268927959259391,
 							"parameters": {
-								"y": "Star_Far.Y + 0.25"
+								"y": "Star_Far.Y + 0.3"
 							}
 						},
 						{
 							"id": "set-y",
 							"objectClass": "Star_Near",
-							"sid": 175422347225573,
+							"sid": 950403815254234,
 							"parameters": {
-								"y": "Star_Near.Y + 0.5"
+								"y": "Star_Near.Y + 0.6"
 							}
 						}
 					],
