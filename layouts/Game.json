@@ -226,10 +226,25 @@
 					"instanceVariables": {
 						"hitPoints": 2
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.6,
+								"linear-damping": 0,
+								"angular-damping": 0,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": -78,
-						"y": 458,
+						"x": -308,
+						"y": 752,
 						"width": 29,
 						"height": 26,
 						"originX": 0.5,
@@ -257,10 +272,25 @@
 					"instanceVariables": {
 						"hitPoints": 4
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": -80,
-						"y": 141,
+						"x": -319,
+						"y": 699,
 						"width": 45,
 						"height": 40,
 						"originX": 0.5,
@@ -288,10 +318,25 @@
 					"instanceVariables": {
 						"hitPoints": 8
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": -121,
-						"y": 65,
+						"x": -314,
+						"y": 627,
 						"width": 89,
 						"height": 82,
 						"originX": 0.5,

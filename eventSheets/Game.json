@@ -96,6 +96,15 @@
 							"parameters": {
 								"y": "685"
 							}
+						},
+						{
+							"id": "set-world-gravity",
+							"objectClass": "Obstacles",
+							"sid": 825423879414141,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "5"
+							}
 						}
 					],
 					"sid": 937774840520886
@@ -956,6 +965,26 @@
 							"parameters": {
 								"degrees": "int(random(0,270))"
 							}
+						},
+						{
+							"id": "apply-force-at-angle",
+							"objectClass": "Obstacles",
+							"sid": 523785506903901,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force": "100",
+								"angle": "int(random(0,181))",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "set-angular-velocity",
+							"objectClass": "Obstacles",
+							"sid": 837255438549031,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-velocity": "10"
+							}
 						}
 					],
 					"sid": 717106056848494
@@ -1003,7 +1032,64 @@
 							}
 						}
 					],
-					"sid": 553928036909566
+					"sid": 553928036909566,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Obstacles",
+							"sid": 633924397549241,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "Obstacles.Width / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-impulse",
+							"objectClass": "Obstacles",
+							"sid": 193379318645447,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse-x": "2",
+								"implulse-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 342079821007989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Obstacles",
+							"sid": 964093470726039,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "480 - Obstacles.Width / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-impulse",
+							"objectClass": "Obstacles",
+							"sid": 213077781374627,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse-x": "-2",
+								"implulse-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 645620292320338
 				},
 				{
 					"eventType": "block",
