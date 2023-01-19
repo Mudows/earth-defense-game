@@ -96,7 +96,8 @@
 			},
 			{
 				"items": [
-					"Score"
+					"Score",
+					"Sprite"
 				],
 				"subfolders": [],
 				"name": "UI"
