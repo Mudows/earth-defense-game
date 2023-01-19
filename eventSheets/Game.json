@@ -196,6 +196,10 @@
 					"sid": 784481012673185
 				},
 				{
+					"eventType": "comment",
+					"text": "Shooting logic"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -273,11 +277,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 132220920657923,
+							"sid": 155122182492787,
 							"parameters": {
 								"object-to-create": "Obstacles",
 								"layer": "2",
-								"x": "int(random(10,460))",
+								"x": "int(random(10,440))",
 								"y": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -344,6 +348,59 @@
 						}
 					],
 					"sid": 593105054272126
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Obstacles",
+							"sid": 602222707880802,
+							"parameters": {
+								"object": "Laser"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Laser",
+							"sid": 463956305769134
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Obstacles",
+							"sid": 507283609970821,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 845004084676965
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Obstacles",
+							"sid": 470562470472963,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Obstacles",
+							"sid": 402556683169398
+						}
+					],
+					"sid": 724191789801442
 				}
 			],
 			"sid": 204743345509922
