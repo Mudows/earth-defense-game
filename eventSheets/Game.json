@@ -194,28 +194,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 289383638402808
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "Player",
-							"sid": 482037414687536,
-							"parameters": {
-								"x": "480 / 2",
-								"y": "640 - Player.Height"
-							}
-						}
-					],
-					"sid": 784481012673185
-				},
-				{
 					"eventType": "comment",
 					"text": "Shooting logic"
 				},
@@ -597,8 +575,16 @@
 									}
 								},
 								{
+									"id": "set-text",
+									"objectClass": "BigText",
+									"sid": 655555327650527,
+									"parameters": {
+										"text": "\"Game Over\""
+									}
+								},
+								{
 									"id": "set-visible",
-									"objectClass": "GameOver",
+									"objectClass": "BigText",
 									"sid": 333912828302510,
 									"parameters": {
 										"visibility": "visible"
@@ -633,10 +619,88 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "User interface",
+			"title": "Game Start",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 646443064460702
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 145687486002796,
+							"parameters": {
+								"group-name": "\"Asteroids\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 208522527991251
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 895701303254882,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 100028785047890,
+							"parameters": {
+								"x": "480 / 2",
+								"y": "640 - Player.Height"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player",
+							"sid": 892341426658994,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 374739979486811,
+							"parameters": {
+								"group-name": "\"Asteroids\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BigText",
+							"sid": 510076072746897,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Text",
+							"sid": 704787178538808
+						}
+					],
+					"sid": 742912266953756
+				}
+			],
 			"sid": 912208406181170
 		}
 	],

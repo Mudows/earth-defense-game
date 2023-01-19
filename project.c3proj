@@ -106,7 +106,8 @@
 				"items": [
 					"Score",
 					"LifeBar",
-					"GameOver"
+					"BigText",
+					"Text"
 				],
 				"subfolders": [],
 				"name": "UI"

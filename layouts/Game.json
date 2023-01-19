@@ -135,7 +135,7 @@
 				{
 					"type": "Player",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -168,8 +168,8 @@
 						}
 					},
 					"world": {
-						"x": 234,
-						"y": 553,
+						"x": -78,
+						"y": 367,
 						"width": 99,
 						"height": 75,
 						"originX": 0.5,
@@ -199,8 +199,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 213,
-						"y": 447,
+						"x": -78,
+						"y": 458,
 						"width": 29,
 						"height": 26,
 						"originX": 0.5,
@@ -427,9 +427,9 @@
 					}
 				},
 				{
-					"type": "GameOver",
+					"type": "BigText",
 					"properties": {
-						"text": "Game Over",
+						"text": "Earth Defense",
 						"enable-bbcode": true,
 						"font": "Consolas",
 						"size": 42,
@@ -445,7 +445,7 @@
 						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
-						"initially-visible": false,
+						"initially-visible": true,
 						"origin": "center"
 					},
 					"uid": 12,
@@ -454,8 +454,50 @@
 					"world": {
 						"x": 240,
 						"y": 320,
-						"width": 400,
+						"width": 440,
 						"height": 83,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Press \"ENTER\" to Start",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 14,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 240,
+						"y": 371,
+						"width": 263,
+						"height": 30,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
