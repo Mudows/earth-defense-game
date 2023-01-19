@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "LaserUpgradeLvl",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -97,6 +97,15 @@
 							"sid": 266749357169720,
 							"parameters": {
 								"group-name": "\"Asteroids\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 885357381274580,
+							"parameters": {
+								"group-name": "\"Player\"",
 								"state": "activated"
 							}
 						},
@@ -289,7 +298,7 @@
 			"disabled": false,
 			"title": "Player",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "comment",
@@ -954,8 +963,194 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Obstacles",
-							"sid": 470562470472963,
+							"objectClass": "Asteroid_Big",
+							"sid": 428013989890966,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 680093652138149,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "600"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 275815948092112,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 330520913873632,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 996274885361413,
+									"parameters": {
+										"count": "int(random(1,4))"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Big",
+									"sid": 686921874785796,
+									"parameters": {
+										"object": "Asteroid_Medium",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "Asteroid_Medium",
+									"sid": 598614686016791,
+									"parameters": {
+										"degrees": "int(random(0,270))"
+									}
+								},
+								{
+									"id": "move-at-angle",
+									"objectClass": "Asteroid_Medium",
+									"sid": 344526222166200,
+									"parameters": {
+										"angle": "int(random(0, 360))",
+										"distance": "int(random(50,110))"
+									}
+								}
+							],
+							"sid": 482092746574736
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Asteroid_Big",
+									"sid": 796108720479750
+								}
+							],
+							"sid": 363359469344631
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Asteroid_Medium",
+							"sid": 468242260614344,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 580963805191723,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "250"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 712892887276462,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 759792227973583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 685649362416405,
+									"parameters": {
+										"count": "int(random(1,4))"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Medium",
+									"sid": 118542258765248,
+									"parameters": {
+										"object": "Asteroid_Small",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "Asteroid_Small",
+									"sid": 557359847123847,
+									"parameters": {
+										"degrees": "int(random(0,270))"
+									}
+								},
+								{
+									"id": "move-at-angle",
+									"objectClass": "Asteroid_Small",
+									"sid": 570031644338879,
+									"parameters": {
+										"angle": "int(random(0, 360))",
+										"distance": "int(random(50,110))"
+									}
+								}
+							],
+							"sid": 360033353189464
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Asteroid_Medium",
+									"sid": 347279503803729
+								}
+							],
+							"sid": 241440048025788
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Asteroid_Small",
+							"sid": 969540709306010,
 							"parameters": {
 								"instance-variable": "hitPoints",
 								"comparison": 3,
@@ -966,13 +1161,13 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "Obstacles",
-							"sid": 402556683169398
+							"objectClass": "Asteroid_Small",
+							"sid": 676490644149369
 						},
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 741183054262767,
+							"sid": 859513263865490,
 							"parameters": {
 								"variable": "playerScore",
 								"value": "100"
@@ -981,13 +1176,13 @@
 						{
 							"id": "set-text",
 							"objectClass": "Score",
-							"sid": 647412188750473,
+							"sid": 794201956250852,
 							"parameters": {
 								"text": "\"Score: \" & playerScore"
 							}
 						}
 					],
-					"sid": 724191789801442
+					"sid": 505715645187423
 				},
 				{
 					"eventType": "comment",
