@@ -204,7 +204,96 @@
 			"title": "Asteroids",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 598383823921445,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 132220920657923,
+							"parameters": {
+								"object-to-create": "Obstacles",
+								"layer": "2",
+								"x": "int(random(10,460))",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "Obstacles",
+							"sid": 533075102269751,
+							"parameters": {
+								"degrees": "int(random(0,270))"
+							}
+						}
+					],
+					"sid": 717106056848494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 726584677211222
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Obstacles",
+							"sid": 280449397362739,
+							"parameters": {
+								"y": "Obstacles.Y + 0.8"
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "Obstacles",
+							"sid": 739246107716625,
+							"parameters": {
+								"degrees": "1"
+							}
+						}
+					],
+					"sid": 553928036909566
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Obstacles",
+							"sid": 241987602729207,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "700"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Obstacles",
+							"sid": 784801029576324
+						}
+					],
+					"sid": 593105054272126
+				}
+			],
 			"sid": 204743345509922
 		}
 	],
