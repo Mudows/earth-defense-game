@@ -469,7 +469,7 @@
 					}
 				},
 				{
-					"type": "Text",
+					"type": "GameStart",
 					"properties": {
 						"text": "Press \"ENTER\" to Start",
 						"enable-bbcode": true,

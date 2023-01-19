@@ -107,7 +107,7 @@
 					"Score",
 					"LifeBar",
 					"BigText",
-					"Text"
+					"GameStart"
 				],
 				"subfolders": [],
 				"name": "UI"

@@ -24,6 +24,94 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Game Start",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 485982726986565
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 243747511227022,
+							"parameters": {
+								"group-name": "\"Asteroids\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 937774840520886,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 640344692657241,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 156482982835778,
+							"parameters": {
+								"x": "480 / 2",
+								"y": "640 - Player.Height"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player",
+							"sid": 615848381287101,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 266749357169720,
+							"parameters": {
+								"group-name": "\"Asteroids\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BigText",
+							"sid": 724514644746734,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "GameStart",
+							"sid": 490911234236376
+						}
+					],
+					"sid": 168423498020894
+				}
+			],
+			"sid": 723785099134342
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Background",
 			"description": "",
 			"isActiveOnStart": true,
@@ -257,7 +345,7 @@
 			"disabled": false,
 			"title": "Asteroids",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -615,93 +703,6 @@
 				}
 			],
 			"sid": 204743345509922
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Game Start",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 646443064460702
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 145687486002796,
-							"parameters": {
-								"group-name": "\"Asteroids\"",
-								"state": "deactivated"
-							}
-						}
-					],
-					"sid": 208522527991251
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 895701303254882,
-							"parameters": {
-								"key": 13
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "Player",
-							"sid": 100028785047890,
-							"parameters": {
-								"x": "480 / 2",
-								"y": "640 - Player.Height"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Player",
-							"sid": 892341426658994,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 374739979486811,
-							"parameters": {
-								"group-name": "\"Asteroids\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "BigText",
-							"sid": 510076072746897,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Text",
-							"sid": 704787178538808
-						}
-					],
-					"sid": 742912266953756
-				}
-			],
-			"sid": 912208406181170
 		}
 	],
 	"sid": 135992070768991
