@@ -91,7 +91,8 @@
 	"objectTypes": {
 		"items": [
 			"Keyboard",
-			"Audio"
+			"Audio",
+			"Sprite4"
 		],
 		"subfolders": [
 			{
@@ -126,7 +127,10 @@
 					"Score",
 					"LifeBar",
 					"BigText",
-					"GameStart"
+					"GameStart",
+					"Sprite",
+					"Sprite2",
+					"Sprite3"
 				],
 				"subfolders": [],
 				"name": "UI"

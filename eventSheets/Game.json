@@ -62,6 +62,16 @@
 			"sid": 283694693691916
 		},
 		{
+			"eventType": "variable",
+			"name": "earthHitPoints",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 417316283981196
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game Start",
