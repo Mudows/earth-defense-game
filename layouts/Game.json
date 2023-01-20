@@ -441,11 +441,20 @@
 						"live-preview": false
 					},
 					"uid": 21,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"hitPoints": 5,
+						"points": 1000
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": 237,
-						"y": 159,
+						"x": 171,
+						"y": -67,
 						"width": 84,
 						"height": 93,
 						"originX": 0.5,
@@ -726,7 +735,7 @@
 				{
 					"type": "Points_PopUp",
 					"properties": {
-						"text": "Points",
+						"text": "1000",
 						"enable-bbcode": true,
 						"font": "kenvector_future_thin",
 						"size": 18,
