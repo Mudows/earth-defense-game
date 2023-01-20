@@ -1163,10 +1163,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 680093652138149,
+							"sid": 107063051471376,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "600"
+								"value": "Obstacles.points"
 							}
 						},
 						{
@@ -1251,21 +1251,20 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "Asteroid_Medium",
+									"sid": 884110670314560,
+									"parameters": {
+										"instance-variable": "points",
+										"value": "300"
+									}
+								},
+								{
 									"id": "rotate-clockwise",
 									"objectClass": "Asteroid_Medium",
 									"sid": 598614686016791,
 									"parameters": {
 										"degrees": "int(random(0,270))"
-									}
-								},
-								{
-									"id": "move-at-angle",
-									"objectClass": "Asteroid_Medium",
-									"sid": 344526222166200,
-									"disabled": true,
-									"parameters": {
-										"angle": "int(random(0, 360))",
-										"distance": "int(random(50,110))"
 									}
 								},
 								{
@@ -1314,10 +1313,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 580963805191723,
+							"sid": 807700236561309,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "250"
+								"value": "Obstacles.points"
 							}
 						},
 						{
@@ -1402,21 +1401,20 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "Asteroid_Small",
+									"sid": 543673930664690,
+									"parameters": {
+										"instance-variable": "points",
+										"value": "100"
+									}
+								},
+								{
 									"id": "rotate-clockwise",
 									"objectClass": "Asteroid_Small",
 									"sid": 557359847123847,
 									"parameters": {
 										"degrees": "int(random(0,270))"
-									}
-								},
-								{
-									"id": "move-at-angle",
-									"objectClass": "Asteroid_Small",
-									"sid": 570031644338879,
-									"disabled": true,
-									"parameters": {
-										"angle": "int(random(0, 360))",
-										"distance": "int(random(50,110))"
 									}
 								},
 								{
@@ -1470,10 +1468,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 859513263865490,
+							"sid": 205840203135823,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "100"
+								"value": "Obstacles.points"
 							}
 						},
 						{
@@ -1525,6 +1523,7 @@
 						}
 					],
 					"sid": 513869489067595,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -1658,7 +1657,8 @@
 									}
 								}
 							],
-							"sid": 268637037944533
+							"sid": 268637037944533,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1731,7 +1731,8 @@
 									"sid": 430399543853222
 								}
 							],
-							"sid": 869307280242960
+							"sid": 869307280242960,
+							"disabled": true
 						}
 					]
 				}

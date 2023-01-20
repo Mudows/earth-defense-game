@@ -91,8 +91,7 @@
 	"objectTypes": {
 		"items": [
 			"Keyboard",
-			"Audio",
-			"Sprite4"
+			"Audio"
 		],
 		"subfolders": [
 			{
@@ -127,18 +126,36 @@
 					"Score",
 					"LifeBar",
 					"BigText",
-					"GameStart",
-					"Sprite",
-					"Sprite2",
-					"Sprite3"
+					"GameStart"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"earthHPB_Middle",
+							"earthHPB_right",
+							"earthHPB_left",
+							"earthHPB_bg"
+						],
+						"subfolders": [],
+						"name": "Earth's HP Bar"
+					}
+				],
 				"name": "UI"
 			}
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"earthHPB_bg",
+				"earthHPB_left",
+				"earthHPB_Middle",
+				"earthHPB_right"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
 			"Stars",

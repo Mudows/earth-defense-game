@@ -224,7 +224,8 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPoints": 1
+						"hitPoints": 1,
+						"points": 100
 					},
 					"behaviors": {
 						"Physics": {
@@ -270,7 +271,8 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPoints": 3
+						"hitPoints": 3,
+						"points": 300
 					},
 					"behaviors": {
 						"Physics": {
@@ -316,7 +318,8 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPoints": 6
+						"hitPoints": 6,
+						"points": 600
 					},
 					"behaviors": {
 						"Physics": {
@@ -463,7 +466,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sprite4",
+					"type": "earthHPB_bg",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -475,9 +478,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 116.33288901471651,
-						"y": 110,
-						"width": 128,
+						"x": 116.78523823005341,
+						"y": 58.43218945159414,
+						"width": 184.99600113244858,
 						"height": 26,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -536,7 +539,7 @@
 				{
 					"type": "LifeBar",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 3,
 						"enable-collisions": true,
@@ -647,7 +650,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "earthHPB_Middle",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -659,9 +662,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 116.36304721464886,
-						"y": 109.9976877383006,
-						"width": 119.30066286322054,
+						"x": 116.13747391419936,
+						"y": 58.38924648374374,
+						"width": 174.9408783044547,
 						"height": 26,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -676,7 +679,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "earthHPB_right",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -688,8 +691,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 178.84971638883306,
-						"y": 110,
+						"x": 206.80406503794566,
+						"y": 58.43218945159414,
 						"width": 6,
 						"height": 26,
 						"originX": 0.5,
@@ -705,7 +708,7 @@
 					}
 				},
 				{
-					"type": "Sprite3",
+					"type": "earthHPB_left",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -717,8 +720,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 53.761079598759224,
-						"y": 110,
+						"x": 25.715428247871827,
+						"y": 58.43218945159414,
 						"width": 6,
 						"height": 26,
 						"originX": 0.5,

@@ -9,6 +9,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 348273345403272
+		},
+		{
+			"name": "points",
+			"type": "number",
+			"desc": "How many points are earned if the target is destroyed",
+			"show": true,
+			"sid": 847613639161076
 		}
 	],
 	"behaviorTypes": [

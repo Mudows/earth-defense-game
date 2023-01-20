@@ -1,7 +1,7 @@
 {
-	"name": "Sprite",
+	"name": "earthHPB_bg",
 	"plugin-id": "Sprite",
-	"sid": 964845967546137,
+	"sid": 960440281332041,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,30 +11,30 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 26,
+						"width": 100,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 489803,
+						"imageSpriteId": 7504430,
 						"collisionPoly": {
 							"points": [
-								0,
-								0,
+								0.02,
+								0.02,
 								0.5,
 								0,
-								0.9375,
-								0,
-								0.9375,
+								0.97,
+								0.02,
+								0.99,
 								0.5,
-								0.9375,
-								0.9615384615384616,
+								0.97,
+								0.97,
 								0.5,
-								0.9615384615384616,
-								0,
-								0.9615384615384616,
+								0.99,
+								0.02,
+								0.97,
 								0,
 								0.5
 							]
@@ -43,7 +43,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 898335225067844,
+				"sid": 258927005776498,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
