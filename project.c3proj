@@ -198,7 +198,8 @@
 	"families": {
 		"items": [
 			"Stars",
-			"Obstacles"
+			"Obstacles",
+			"Hazards"
 		],
 		"subfolders": []
 	},

@@ -2083,7 +2083,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "Obstacles",
+							"objectClass": "Hazards",
 							"sid": 461715875879891,
 							"parameters": {
 								"object": "Player_Ship"
@@ -2093,7 +2093,7 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "Obstacles",
+							"objectClass": "Hazards",
 							"sid": 475587726992910
 						},
 						{
@@ -2112,7 +2112,6 @@
 						}
 					],
 					"sid": 513869489067595,
-					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2239,15 +2238,14 @@
 								},
 								{
 									"id": "set-collisions-enabled",
-									"objectClass": "Obstacles",
+									"objectClass": "Hazards",
 									"sid": 925618231950654,
 									"parameters": {
 										"collisions": "enabled"
 									}
 								}
 							],
-							"sid": 268637037944533,
-							"disabled": true
+							"sid": 268637037944533
 						},
 						{
 							"eventType": "block",
@@ -2262,10 +2260,10 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 914921051465198,
+									"sid": 636325776956153,
 									"parameters": {
 										"group-name": "\"Player\"",
-										"state": "toggle-active"
+										"state": "deactivated"
 									}
 								},
 								{
@@ -2320,8 +2318,7 @@
 									"sid": 430399543853222
 								}
 							],
-							"sid": 869307280242960,
-							"disabled": true
+							"sid": 869307280242960
 						}
 					]
 				},
@@ -2516,6 +2513,11 @@
 									"id": "is-on-screen",
 									"objectClass": "Enemy_A",
 									"sid": 306152439574496
+								},
+								{
+									"id": "is-on-screen",
+									"objectClass": "Player_Ship",
+									"sid": 544036379015327
 								}
 							],
 							"actions": [
