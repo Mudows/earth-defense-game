@@ -1936,6 +1936,121 @@
 							"disabled": true
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Obstacles",
+							"sid": 659879652634385,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "640"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Obstacles",
+							"sid": 467689243425089,
+							"parameters": {
+								"instance-variable": "points",
+								"value": "(Obstacles.points / 2) * (-1)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 349092333791551,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "Obstacles.points"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 376171023533196,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Obstacles",
+							"sid": 104765482500897,
+							"parameters": {
+								"object": "Points_PopUp",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Obstacles",
+							"sid": 805518421945046
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Points_PopUp",
+							"sid": 252292284253628,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Points_PopUp",
+							"sid": 579256583196949,
+							"parameters": {
+								"color": "rgbEx(250, 0, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Points_PopUp",
+							"sid": 553499237421489,
+							"parameters": {
+								"text": "Obstacles.points"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Points_PopUp",
+							"sid": 399123643152848,
+							"parameters": {
+								"y": "Points_PopUp.Y - 20"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Points_PopUp",
+							"sid": 927506934661821,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 594403177824238,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Points_PopUp",
+							"sid": 821185372173083
+						}
+					],
+					"sid": 261143069077031
 				}
 			],
 			"sid": 204743345509922
@@ -1946,116 +2061,7 @@
 			"title": "Scaling Difficulty",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 546096096958677,
-							"parameters": {
-								"variable": "playerScore",
-								"comparison": 5,
-								"value": "5000"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 765514704355983,
-							"parameters": {
-								"variable": "difficulyLevel",
-								"value": "1.1"
-							}
-						}
-					],
-					"sid": 911971581491242
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 485695722400417,
-							"parameters": {
-								"variable": "playerScore",
-								"comparison": 5,
-								"value": "10000"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 532113460281117,
-							"parameters": {
-								"variable": "difficulyLevel",
-								"value": "1.3"
-							}
-						}
-					],
-					"sid": 871406190053187
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 985917899165095,
-							"parameters": {
-								"variable": "playerScore",
-								"comparison": 5,
-								"value": "15000"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 983336465458946,
-							"parameters": {
-								"variable": "difficulyLevel",
-								"value": "1.5"
-							}
-						}
-					],
-					"sid": 678102357148281
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 700707082399661,
-							"parameters": {
-								"variable": "playerScore",
-								"comparison": 5,
-								"value": "20000"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 758780711652768,
-							"parameters": {
-								"variable": "difficulyLevel",
-								"value": "1.8"
-							}
-						}
-					],
-					"sid": 853785096311293
-				}
-			],
+			"children": [],
 			"sid": 164187979815248
 		},
 		{
@@ -2226,119 +2232,13 @@
 			"sid": 246297711381092
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-y",
-					"objectClass": "Obstacles",
-					"sid": 491591358819219,
-					"parameters": {
-						"comparison": 5,
-						"y-co-ordinate": "640"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Obstacles",
-					"sid": 950618536916529,
-					"parameters": {
-						"instance-variable": "points",
-						"value": "(Obstacles.points / 2) * (-1)"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 609748366314691,
-					"parameters": {
-						"variable": "playerScore",
-						"value": "Obstacles.points"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Score",
-					"sid": 820521157461285,
-					"parameters": {
-						"text": "\"Score: \" & playerScore"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Obstacles",
-					"sid": 595824810650143,
-					"parameters": {
-						"object": "Points_PopUp",
-						"layer": "3",
-						"image-point": "0",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Obstacles",
-					"sid": 595236077143426
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Points_PopUp",
-					"sid": 803976205352298,
-					"parameters": {
-						"angle": "0"
-					}
-				},
-				{
-					"id": "set-font-color",
-					"objectClass": "Points_PopUp",
-					"sid": 770284910025823,
-					"parameters": {
-						"color": "rgbEx(250, 0, 0)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Points_PopUp",
-					"sid": 301000466955332,
-					"parameters": {
-						"text": "Obstacles.points"
-					}
-				},
-				{
-					"id": "set-y",
-					"objectClass": "Points_PopUp",
-					"sid": 320829533924324,
-					"parameters": {
-						"y": "Points_PopUp.Y - 20"
-					}
-				},
-				{
-					"id": "flash",
-					"objectClass": "Points_PopUp",
-					"sid": 458449310382822,
-					"behaviorType": "Flash",
-					"parameters": {
-						"on-time": "0.05",
-						"off-time": "0.05",
-						"duration": "1.0"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 794979760999067,
-					"parameters": {
-						"seconds": "1"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Points_PopUp",
-					"sid": 976818307461214
-				}
-			],
-			"sid": 743781147935227
+			"eventType": "group",
+			"disabled": false,
+			"title": "Active Enemies",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 160869855735194
 		}
 	],
 	"sid": 135992070768991
