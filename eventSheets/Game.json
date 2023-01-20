@@ -2023,6 +2023,45 @@
 				}
 			],
 			"sid": 246297711381092
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Obstacles",
+					"sid": 491591358819219,
+					"parameters": {
+						"comparison": 5,
+						"y-co-ordinate": "640"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Obstacles",
+					"sid": 750382629378006
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 946042605765382,
+					"parameters": {
+						"variable": "playerScore",
+						"value": "Obstacles.points / 2"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 820521157461285,
+					"parameters": {
+						"text": "\"Score: \" & playerScore"
+					}
+				}
+			],
+			"sid": 743781147935227
 		}
 	],
 	"sid": 135992070768991
