@@ -162,7 +162,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Player",
+					"type": "Player_Ship",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -355,7 +355,7 @@
 					}
 				},
 				{
-					"type": "Laser",
+					"type": "Player_Laser",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -419,6 +419,35 @@
 						"y": 198,
 						"width": 34,
 						"height": 33,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Enemy_A",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -131,
+						"y": -58,
+						"width": 93,
+						"height": 84,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

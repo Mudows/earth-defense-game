@@ -144,16 +144,16 @@
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "Player",
+							"objectClass": "Player_Ship",
 							"sid": 156482982835778,
 							"parameters": {
 								"x": "480 / 2",
-								"y": "640 - Player.Height"
+								"y": "640 - Player_Ship.Height"
 							}
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "Player",
+							"objectClass": "Player_Ship",
 							"sid": 615848381287101,
 							"parameters": {
 								"visibility": "visible"
@@ -471,10 +471,10 @@
 									"actions": [
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 741968947801982,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "1",
 												"create-hierarchy": false
@@ -482,7 +482,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 558601371329128,
 											"parameters": {
 												"angle": "-90"
@@ -537,11 +537,11 @@
 									"actions": [
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 490414079797365,
 											"disabled": true,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "1",
 												"create-hierarchy": false
@@ -549,7 +549,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 224528091641428,
 											"disabled": true,
 											"parameters": {
@@ -558,10 +558,10 @@
 										},
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 733394002048520,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "2",
 												"create-hierarchy": false
@@ -569,7 +569,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 273110120805148,
 											"parameters": {
 												"angle": "-90"
@@ -577,10 +577,10 @@
 										},
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 488405335607828,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "3",
 												"create-hierarchy": false
@@ -588,7 +588,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 375382586762031,
 											"parameters": {
 												"angle": "-90"
@@ -643,10 +643,10 @@
 									"actions": [
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 298436166742747,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "1",
 												"create-hierarchy": false
@@ -654,7 +654,7 @@
 										},
 										{
 											"id": "set-default-color",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 712815890353067,
 											"disabled": true,
 											"parameters": {
@@ -663,7 +663,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 237040249094170,
 											"parameters": {
 												"angle": "-90"
@@ -671,7 +671,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 802116445763266,
 											"parameters": {
 												"scale": "1.2"
@@ -679,10 +679,10 @@
 										},
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 252309927517890,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "2",
 												"create-hierarchy": false
@@ -690,7 +690,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 961398252976526,
 											"parameters": {
 												"angle": "-90"
@@ -698,7 +698,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 128613560625803,
 											"parameters": {
 												"scale": "1.2"
@@ -706,10 +706,10 @@
 										},
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 143826079776365,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "3",
 												"create-hierarchy": false
@@ -717,7 +717,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 912831633756273,
 											"parameters": {
 												"angle": "-90"
@@ -725,7 +725,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 620886002068278,
 											"parameters": {
 												"scale": "1.2"
@@ -780,10 +780,10 @@
 									"actions": [
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 369547486992010,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "1",
 												"create-hierarchy": false
@@ -791,7 +791,7 @@
 										},
 										{
 											"id": "set-default-color",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 612191297055112,
 											"disabled": true,
 											"parameters": {
@@ -800,7 +800,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 776448469295791,
 											"parameters": {
 												"angle": "int(random(264,274))"
@@ -808,7 +808,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 564314657295737,
 											"parameters": {
 												"scale": "1.5"
@@ -816,10 +816,10 @@
 										},
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 518490252608959,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "2",
 												"create-hierarchy": false
@@ -827,7 +827,7 @@
 										},
 										{
 											"id": "set-default-color",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 926855657062514,
 											"disabled": true,
 											"parameters": {
@@ -836,7 +836,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 315813638579975,
 											"parameters": {
 												"angle": "int(random(262,276))"
@@ -844,7 +844,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 419305272787599,
 											"parameters": {
 												"scale": "1.5"
@@ -852,10 +852,10 @@
 										},
 										{
 											"id": "spawn-another-object",
-											"objectClass": "Player",
+											"objectClass": "Player_Ship",
 											"sid": 738025990126988,
 											"parameters": {
-												"object": "Laser",
+												"object": "Player_Laser",
 												"layer": "2",
 												"image-point": "3",
 												"create-hierarchy": false
@@ -863,7 +863,7 @@
 										},
 										{
 											"id": "set-default-color",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 460121637690904,
 											"disabled": true,
 											"parameters": {
@@ -872,7 +872,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 418399322958831,
 											"parameters": {
 												"angle": "int(random(262,276))"
@@ -880,7 +880,7 @@
 										},
 										{
 											"id": "set-scale",
-											"objectClass": "Laser",
+											"objectClass": "Player_Laser",
 											"sid": 573124172549255,
 											"parameters": {
 												"scale": "1.5"
@@ -950,7 +950,7 @@
 					"conditions": [
 						{
 							"id": "compare-y",
-							"objectClass": "Player",
+							"objectClass": "Player_Ship",
 							"sid": 853544495078563,
 							"parameters": {
 								"comparison": 3,
@@ -961,7 +961,7 @@
 					"actions": [
 						{
 							"id": "set-y",
-							"objectClass": "Player",
+							"objectClass": "Player_Ship",
 							"sid": 870607951008733,
 							"parameters": {
 								"y": "400"
@@ -1123,14 +1123,14 @@
 							"objectClass": "Obstacles",
 							"sid": 602222707880802,
 							"parameters": {
-								"object": "Laser"
+								"object": "Player_Laser"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "Laser",
+							"objectClass": "Player_Laser",
 							"sid": 463956305769134
 						},
 						{
@@ -1497,7 +1497,7 @@
 							"objectClass": "Obstacles",
 							"sid": 461715875879891,
 							"parameters": {
-								"object": "Player"
+								"object": "Player_Ship"
 							}
 						}
 					],
@@ -1509,7 +1509,7 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "Player",
+							"objectClass": "Player_Ship",
 							"sid": 448044222161743
 						},
 						{
@@ -1603,26 +1603,26 @@
 									"objectClass": "System",
 									"sid": 777869027520334,
 									"parameters": {
-										"object-to-create": "Player",
+										"object-to-create": "Player_Ship",
 										"layer": "2",
 										"x": "480 / 2",
-										"y": "640 - Player.Height",
+										"y": "640 - Player_Ship.Height",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
 								},
 								{
 									"id": "set-position",
-									"objectClass": "Player",
+									"objectClass": "Player_Ship",
 									"sid": 530375445636181,
 									"parameters": {
 										"x": "480 / 2",
-										"y": "640 - Player.Height"
+										"y": "640 - Player_Ship.Height"
 									}
 								},
 								{
 									"id": "flash",
-									"objectClass": "Player",
+									"objectClass": "Player_Ship",
 									"sid": 893024801060397,
 									"behaviorType": "Flash",
 									"parameters": {
@@ -1934,7 +1934,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "Player",
+							"objectClass": "Player_Ship",
 							"sid": 825387675562971,
 							"parameters": {
 								"object": "Upgrade"

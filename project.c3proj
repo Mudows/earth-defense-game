@@ -96,8 +96,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"Player",
-					"Laser",
+					"Player_Ship",
+					"Player_Laser",
 					"Upgrade"
 				],
 				"subfolders": [],
@@ -141,6 +141,13 @@
 					}
 				],
 				"name": "UI"
+			},
+			{
+				"items": [
+					"Enemy_A"
+				],
+				"subfolders": [],
+				"name": "Enemies"
 			}
 		]
 	},
