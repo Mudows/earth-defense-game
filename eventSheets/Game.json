@@ -976,11 +976,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 155122182492787,
+							"sid": 113965879210233,
 							"parameters": {
 								"object-to-create": "Obstacles",
 								"layer": "2",
-								"x": "int(random(10,440))",
+								"x": "int(random(Obstacles.Width  / 2, 480 - Obstacles.Width / 2))",
 								"y": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -1016,52 +1016,6 @@
 						}
 					],
 					"sid": 717106056848494
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 726584677211222
-						}
-					],
-					"actions": [
-						{
-							"id": "set-y",
-							"objectClass": "Asteroid_Big",
-							"sid": 560039516903994,
-							"parameters": {
-								"y": "Asteroid_Big.Y + (0.5 * difficulyLevel)"
-							}
-						},
-						{
-							"id": "set-y",
-							"objectClass": "Asteroid_Medium",
-							"sid": 176102453262071,
-							"parameters": {
-								"y": "Asteroid_Medium.Y + (0.8 * difficulyLevel)"
-							}
-						},
-						{
-							"id": "set-y",
-							"objectClass": "Asteroid_Small",
-							"sid": 161521485976850,
-							"parameters": {
-								"y": "Asteroid_Small.Y + (1 * difficulyLevel)"
-							}
-						},
-						{
-							"id": "rotate-clockwise",
-							"objectClass": "Obstacles",
-							"sid": 739246107716625,
-							"parameters": {
-								"degrees": "1"
-							}
-						}
-					],
-					"sid": 553928036909566,
-					"disabled": true
 				},
 				{
 					"eventType": "block",

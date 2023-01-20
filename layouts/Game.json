@@ -527,7 +527,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 240,
-						"y": 320,
+						"y": 260,
 						"width": 440,
 						"height": 83,
 						"originX": 0.5,
@@ -569,7 +569,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 240,
-						"y": 371,
+						"y": 311,
 						"width": 327,
 						"height": 30,
 						"originX": 0.5,
