@@ -1,0 +1,15 @@
+{
+	"name": "Points_PopUp",
+	"plugin-id": "Text",
+	"sid": 659710077244176,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 530535638884730
+		}
+	],
+	"effectTypes": []
+}

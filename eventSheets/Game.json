@@ -1163,10 +1163,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 107063051471376,
+							"sid": 803772841428108,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "Obstacles.points"
+								"value": "Asteroid_Big.points"
 							}
 						},
 						{
@@ -1286,9 +1286,76 @@
 							"conditions": [],
 							"actions": [
 								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Big",
+									"sid": 816117942089863,
+									"parameters": {
+										"object": "Points_PopUp",
+										"layer": "3",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
 									"id": "destroy",
 									"objectClass": "Asteroid_Big",
-									"sid": 796108720479750
+									"sid": 334182456640623
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Points_PopUp",
+									"sid": 504403607964244,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "Points_PopUp",
+									"sid": 950610256867307,
+									"parameters": {
+										"color": "rgbEx(0, 250, 0)"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Points_PopUp",
+									"sid": 983692780420089,
+									"parameters": {
+										"text": "Asteroid_Big.points"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "Points_PopUp",
+									"sid": 205244807557992,
+									"parameters": {
+										"y": "Points_PopUp.Y - 20"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Points_PopUp",
+									"sid": 527588253544549,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.05",
+										"off-time": "0.05",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 932463731562239,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Points_PopUp",
+									"sid": 429693561436270
 								}
 							],
 							"sid": 363359469344631
@@ -1313,10 +1380,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 807700236561309,
+							"sid": 631003470184611,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "Obstacles.points"
+								"value": "Asteroid_Medium.points"
 							}
 						},
 						{
@@ -1436,9 +1503,76 @@
 							"conditions": [],
 							"actions": [
 								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid_Medium",
+									"sid": 638237849484732,
+									"parameters": {
+										"object": "Points_PopUp",
+										"layer": "3",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
 									"id": "destroy",
 									"objectClass": "Asteroid_Medium",
-									"sid": 347279503803729
+									"sid": 593151040548864
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Points_PopUp",
+									"sid": 810487100702794,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "Points_PopUp",
+									"sid": 273115010496957,
+									"parameters": {
+										"color": "rgbEx(0, 250, 0)"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Points_PopUp",
+									"sid": 468018847497781,
+									"parameters": {
+										"text": "Asteroid_Medium.points"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "Points_PopUp",
+									"sid": 324345523775575,
+									"parameters": {
+										"y": "Points_PopUp.Y - 20"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Points_PopUp",
+									"sid": 331711473121207,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.05",
+										"off-time": "0.05",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 100560631698156,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Points_PopUp",
+									"sid": 420353423515762
 								}
 							],
 							"sid": 241440048025788
@@ -1461,17 +1595,12 @@
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "Asteroid_Small",
-							"sid": 676490644149369
-						},
-						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 205840203135823,
+							"sid": 504852353958877,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "Obstacles.points"
+								"value": "Asteroid_Small.points"
 							}
 						},
 						{
@@ -1481,6 +1610,78 @@
 							"parameters": {
 								"text": "\"Score: \" & playerScore"
 							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Asteroid_Small",
+							"sid": 793347137421576,
+							"parameters": {
+								"object": "Points_PopUp",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Asteroid_Small",
+							"sid": 800254165390670
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Points_PopUp",
+							"sid": 785325690091322,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Points_PopUp",
+							"sid": 615362601770755,
+							"parameters": {
+								"color": "rgbEx(0, 250, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Points_PopUp",
+							"sid": 943254601262152,
+							"parameters": {
+								"text": "Asteroid_Small.points"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Points_PopUp",
+							"sid": 745760506548821,
+							"parameters": {
+								"y": "Points_PopUp.Y - 20"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Points_PopUp",
+							"sid": 759664015898003,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 481722143846013,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Points_PopUp",
+							"sid": 908491806442669
 						}
 					],
 					"sid": 505715645187423
@@ -2039,17 +2240,21 @@
 			],
 			"actions": [
 				{
-					"id": "destroy",
+					"id": "set-instvar-value",
 					"objectClass": "Obstacles",
-					"sid": 750382629378006
+					"sid": 950618536916529,
+					"parameters": {
+						"instance-variable": "points",
+						"value": "(Obstacles.points / 2) * (-1)"
+					}
 				},
 				{
-					"id": "subtract-from-eventvar",
+					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 946042605765382,
+					"sid": 609748366314691,
 					"parameters": {
 						"variable": "playerScore",
-						"value": "Obstacles.points / 2"
+						"value": "Obstacles.points"
 					}
 				},
 				{
@@ -2059,6 +2264,78 @@
 					"parameters": {
 						"text": "\"Score: \" & playerScore"
 					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Obstacles",
+					"sid": 595824810650143,
+					"parameters": {
+						"object": "Points_PopUp",
+						"layer": "3",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Obstacles",
+					"sid": 595236077143426
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Points_PopUp",
+					"sid": 803976205352298,
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "Points_PopUp",
+					"sid": 770284910025823,
+					"parameters": {
+						"color": "rgbEx(250, 0, 0)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Points_PopUp",
+					"sid": 301000466955332,
+					"parameters": {
+						"text": "Obstacles.points"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Points_PopUp",
+					"sid": 320829533924324,
+					"parameters": {
+						"y": "Points_PopUp.Y - 20"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "Points_PopUp",
+					"sid": 458449310382822,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.05",
+						"off-time": "0.05",
+						"duration": "1.0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 794979760999067,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Points_PopUp",
+					"sid": 976818307461214
 				}
 			],
 			"sid": 743781147935227

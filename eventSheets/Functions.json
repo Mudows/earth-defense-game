@@ -1,0 +1,27 @@
+{
+	"name": "Functions",
+	"events": [
+		{
+			"functionName": "Function1",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "object",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 784256533641474
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 344708548923427
+		}
+	],
+	"sid": 711144953597167
+}

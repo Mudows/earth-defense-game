@@ -126,7 +126,8 @@
 					"Score",
 					"LifeBar",
 					"BigText",
-					"GameStart"
+					"GameStart",
+					"Points_PopUp"
 				],
 				"subfolders": [
 					{
@@ -178,7 +179,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Game"
+			"Game",
+			"Functions"
 		],
 		"subfolders": []
 	},
