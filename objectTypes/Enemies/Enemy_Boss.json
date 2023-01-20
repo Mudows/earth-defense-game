@@ -1,0 +1,75 @@
+{
+	"name": "Enemy_Boss",
+	"plugin-id": "Sprite",
+	"sid": 359905370446741,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 363550214509313
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 168,
+						"height": 206,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7773029,
+						"collisionPoly": {
+							"points": [
+								0.20238095238095238,
+								0.8349514563106796,
+								0,
+								0.5,
+								0.20238095238095238,
+								0.1747572815533981,
+								0.5,
+								0.01941747572815533,
+								0.8690476190476191,
+								0.10679611650485432,
+								0.8809523809523809,
+								0.5,
+								0.8690476190476191,
+								0.9029126213592233,
+								0.5,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9821428571428571,
+								"y": 0.8203883495145631
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.9940476190476191,
+								"y": 0.18446601941747576
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 796085675330551,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
