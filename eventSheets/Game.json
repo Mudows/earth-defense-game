@@ -72,64 +72,24 @@
 			"sid": 417316283981196
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "System",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 758230792394929
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 396750781064600,
-							"parameters": {
-								"text": "\"Score: \" & playerScore"
-							}
-						}
-					],
-					"sid": 541969151966065,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 721785687649213,
-									"parameters": {
-										"variable": "playerScore",
-										"comparison": 3,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 453373116910882,
-									"parameters": {
-										"variable": "playerScore",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 922177448676834
-						}
-					]
-				}
-			],
-			"sid": 773692601100827
+			"eventType": "variable",
+			"name": "timerSeconds",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 867316404118085
+		},
+		{
+			"eventType": "variable",
+			"name": "timerMinutes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 828886164658882
 		},
 		{
 			"eventType": "group",
@@ -247,6 +207,15 @@
 							}
 						},
 						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 480629536799413,
+							"parameters": {
+								"group-name": "\"UI Updates\"",
+								"state": "activated"
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "BigText",
 							"sid": 724514644746734,
@@ -273,6 +242,182 @@
 				}
 			],
 			"sid": 723785099134342
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "UI Updates",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 898464294408881
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 235159301653582,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 354078965711302,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 358680118788740,
+									"parameters": {
+										"variable": "playerScore",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 922122373682315,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 777332505984973,
+									"parameters": {
+										"text": "\"Score: \" & playerScore"
+									}
+								}
+							],
+							"sid": 139940889312707
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 757580521637272,
+									"parameters": {
+										"variable": "timerSeconds",
+										"comparison": 2,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "GameTime",
+									"sid": 996739486441621,
+									"parameters": {
+										"text": "\"Time \" & timerMinutes & \":0\" & timerSeconds"
+									}
+								}
+							],
+							"sid": 723893385006006
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 361818628762098
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "GameTime",
+									"sid": 908999361305290,
+									"parameters": {
+										"text": "\"Time \" & timerMinutes & \":\" & timerSeconds"
+									}
+								}
+							],
+							"sid": 264744687919467
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 589264951167460,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 376888982597696,
+							"parameters": {
+								"variable": "timerSeconds",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 398472166129510
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 846148996279287,
+							"parameters": {
+								"variable": "timerSeconds",
+								"comparison": 0,
+								"value": "60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 456386308770018,
+							"parameters": {
+								"variable": "timerSeconds",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 557557624820636,
+							"parameters": {
+								"variable": "timerMinutes",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 476347367922187
+				}
+			],
+			"sid": 943229999726019
 		},
 		{
 			"eventType": "group",

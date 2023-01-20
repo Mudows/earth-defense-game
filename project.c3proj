@@ -137,7 +137,8 @@
 							"BigText",
 							"GameStart",
 							"Points_PopUp",
-							"Score"
+							"Score",
+							"GameTime"
 						],
 						"subfolders": [],
 						"name": "Text"
