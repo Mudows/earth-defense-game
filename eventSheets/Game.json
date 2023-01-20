@@ -74,6 +74,66 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "System",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 758230792394929
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 396750781064600,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 541969151966065,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 721785687649213,
+									"parameters": {
+										"variable": "playerScore",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 453373116910882,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 922177448676834
+						}
+					]
+				}
+			],
+			"sid": 773692601100827
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Game Start",
 			"description": "",
 			"isActiveOnStart": true,
@@ -1170,14 +1230,6 @@
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 275815948092112,
-							"parameters": {
-								"text": "\"Score: \" & playerScore"
-							}
-						},
-						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 330749088537731,
@@ -1387,14 +1439,6 @@
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 712892887276462,
-							"parameters": {
-								"text": "\"Score: \" & playerScore"
-							}
-						},
-						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 131698640918143,
@@ -1601,14 +1645,6 @@
 							"parameters": {
 								"variable": "playerScore",
 								"value": "Asteroid_Small.points"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 794201956250852,
-							"parameters": {
-								"text": "\"Score: \" & playerScore"
 							}
 						},
 						{
@@ -1970,14 +2006,6 @@
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 376171023533196,
-							"parameters": {
-								"text": "\"Score: \" & playerScore"
-							}
-						},
-						{
 							"id": "spawn-another-object",
 							"objectClass": "Obstacles",
 							"sid": 104765482500897,
@@ -2191,14 +2219,6 @@
 									"parameters": {
 										"variable": "playerScore",
 										"value": "100"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "Score",
-									"sid": 328191515556562,
-									"parameters": {
-										"text": "\"Score: \" & playerScore"
 									}
 								}
 							],
