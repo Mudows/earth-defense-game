@@ -340,7 +340,7 @@
 		"version": "1.0.0.0",
 		"author": "Diego M. Cezar",
 		"authorEmail": "diegocezar.dev@gmail.com",
-		"authorWebsite": "",
+		"authorWebsite": "https://dark-spots-game-studio.itch.io/earth-defense",
 		"appId": "",
 		"pixelRounding": true,
 		"zAxisScale": "normalized",

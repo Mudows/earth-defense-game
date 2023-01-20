@@ -178,6 +178,15 @@
 							"id": "destroy",
 							"objectClass": "GameStart",
 							"sid": 490911234236376
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 565056468982368,
+							"parameters": {
+								"group-name": "\"Game Start\"",
+								"state": "deactivated"
+							}
 						}
 					],
 					"sid": 168423498020894

@@ -224,7 +224,7 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPoints": 2
+						"hitPoints": 1
 					},
 					"behaviors": {
 						"Physics": {
@@ -243,8 +243,8 @@
 						}
 					},
 					"world": {
-						"x": -308,
-						"y": 752,
+						"x": 186,
+						"y": 755,
 						"width": 29,
 						"height": 26,
 						"originX": 0.5,
@@ -270,7 +270,7 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPoints": 4
+						"hitPoints": 3
 					},
 					"behaviors": {
 						"Physics": {
@@ -289,8 +289,8 @@
 						}
 					},
 					"world": {
-						"x": -319,
-						"y": 699,
+						"x": 175,
+						"y": 702,
 						"width": 45,
 						"height": 40,
 						"originX": 0.5,
@@ -316,7 +316,7 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPoints": 8
+						"hitPoints": 6
 					},
 					"behaviors": {
 						"Physics": {
@@ -335,8 +335,8 @@
 						}
 					},
 					"world": {
-						"x": -314,
-						"y": 627,
+						"x": 99,
+						"y": 727,
 						"width": 89,
 						"height": 82,
 						"originX": 0.5,
@@ -545,7 +545,7 @@
 				{
 					"type": "GameStart",
 					"properties": {
-						"text": "Press \"ENTER\" to Start",
+						"text": "Press \"SPACE\" to Start",
 						"enable-bbcode": true,
 						"font": "kenvector_future_thin",
 						"size": 14,
