@@ -52,6 +52,16 @@
 			"sid": 479904439596758
 		},
 		{
+			"eventType": "variable",
+			"name": "upgradeHorizontalSpeed",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 283694693691916
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game Start",
@@ -1194,6 +1204,14 @@
 										"image-point": "0",
 										"create-hierarchy": false
 									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Upgrade",
+									"sid": 552589857648630,
+									"parameters": {
+										"angle": "0"
+									}
 								}
 							],
 							"sid": 352287792270212
@@ -1336,6 +1354,14 @@
 										"layer": "2",
 										"image-point": "0",
 										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Upgrade",
+									"sid": 360530102653816,
+									"parameters": {
+										"angle": "0"
 									}
 								}
 							],
@@ -1831,22 +1857,66 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-x",
+							"objectClass": "Upgrade",
+							"sid": 769396228749193,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "Upgrade.Width / 2"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Upgrade",
+							"sid": 705084330498948,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "470 - (Upgrade.Width / 2) "
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 709213830397472,
+							"parameters": {
+								"variable": "upgradeHorizontalSpeed",
+								"value": "upgradeHorizontalSpeed * -1"
+							}
+						}
+					],
+					"sid": 994518925133100,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 901361126486418
+							"sid": 264879316225825
 						}
 					],
 					"actions": [
 						{
 							"id": "set-y",
 							"objectClass": "Upgrade",
-							"sid": 366636553593491,
+							"sid": 694009621979704,
 							"parameters": {
-								"y": "Upgrade.Y + 0.9"
+								"y": "Upgrade.Y + 3"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "Upgrade",
+							"sid": 393705659155595,
+							"parameters": {
+								"x": "Upgrade.X + ( 1 * upgradeHorizontalSpeed)"
 							}
 						}
 					],
-					"sid": 999426869132863
+					"sid": 783432339327088
 				},
 				{
 					"eventType": "block",
@@ -1869,11 +1939,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 796878867729098,
+							"sid": 894901689047878,
 							"parameters": {
 								"audio-file": "sfx_twoTone",
 								"loop": "not-looping",
-								"volume": "0",
+								"volume": "10",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
