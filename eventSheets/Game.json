@@ -996,12 +996,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 113965879210233,
+							"sid": 487209022202388,
 							"parameters": {
 								"object-to-create": "Obstacles",
 								"layer": "2",
 								"x": "int(random(Obstacles.Width  / 2, 480 - Obstacles.Width / 2))",
-								"y": "0",
+								"y": "-100",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
