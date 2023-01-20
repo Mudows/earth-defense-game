@@ -216,6 +216,15 @@
 							}
 						},
 						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 853836322846615,
+							"parameters": {
+								"group-name": "\"Active Enemies\"",
+								"state": "activated"
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "BigText",
 							"sid": 724514644746734,
@@ -242,6 +251,15 @@
 				}
 			],
 			"sid": 723785099134342
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scaling Difficulty",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 664840700115728
 		},
 		{
 			"eventType": "group",
@@ -1177,6 +1195,165 @@
 				}
 			],
 			"sid": 907822996256512
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Upgrades",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Upgrade",
+							"sid": 302560345371576,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "Upgrade.Width / 2"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Upgrade",
+							"sid": 819230563337195,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "470 - (Upgrade.Width / 2) "
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 816280245751147,
+							"parameters": {
+								"variable": "upgradeHorizontalSpeed",
+								"value": "upgradeHorizontalSpeed * -1"
+							}
+						}
+					],
+					"sid": 782775732757424,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 611108596221701
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Upgrade",
+							"sid": 902331566423476,
+							"parameters": {
+								"y": "Upgrade.Y + 3"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "Upgrade",
+							"sid": 870743226531114,
+							"parameters": {
+								"x": "Upgrade.X + ( 1 * upgradeHorizontalSpeed)"
+							}
+						}
+					],
+					"sid": 380613939609075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Ship",
+							"sid": 864515630041041,
+							"parameters": {
+								"object": "Upgrade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Upgrade",
+							"sid": 762344300987340
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 131487621010292,
+							"parameters": {
+								"audio-file": "sfx_twoTone",
+								"loop": "not-looping",
+								"volume": "10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 629501948613958,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 955589749372773,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 5,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 639792618279398,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 422878364019088
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 900389051360039
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 889048474401586,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 868904944438218
+						}
+					]
+				}
+			],
+			"sid": 721065142334003
 		},
 		{
 			"eventType": "group",
@@ -2231,54 +2408,96 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Scaling Difficulty",
+			"title": "Active Enemies",
 			"description": "",
-			"isActiveOnStart": true,
-			"children": [],
-			"sid": 164187979815248
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Upgrades",
-			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-x",
-							"objectClass": "Upgrade",
-							"sid": 769396228749193,
-							"parameters": {
-								"comparison": 3,
-								"x-co-ordinate": "Upgrade.Width / 2"
-							}
-						},
-						{
-							"id": "compare-x",
-							"objectClass": "Upgrade",
-							"sid": 705084330498948,
-							"parameters": {
-								"comparison": 5,
-								"x-co-ordinate": "470 - (Upgrade.Width / 2) "
-							}
+							"id": "is-on-screen",
+							"objectClass": "Enemy_A",
+							"sid": 348190785549103
 						}
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
+							"id": "wait",
 							"objectClass": "System",
-							"sid": 709213830397472,
+							"sid": 288534980555904,
 							"parameters": {
-								"variable": "upgradeHorizontalSpeed",
-								"value": "upgradeHorizontalSpeed * -1"
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 365876419231910,
+							"parameters": {
+								"object-to-create": "Enemy_A",
+								"layer": "2",
+								"x": "int(random(50, 410))",
+								"y": "-50",
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						}
 					],
-					"sid": 994518925133100,
-					"isOrBlock": true
+					"sid": 286022397906576,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 418963211921040,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Enemy_A",
+							"sid": 718732940197221
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_A",
+							"sid": 177327840856354,
+							"parameters": {
+								"object": "Enemy_Blast",
+								"layer": "2",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Enemy_Blast",
+							"sid": 559682537641692,
+							"parameters": {
+								"angle": "Enemy_A.Angle"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 117267844341939,
+							"parameters": {
+								"audio-file": "sfx_laser2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 866059229922137
 				},
 				{
 					"eventType": "block",
@@ -2286,123 +2505,24 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 264879316225825
+							"sid": 414327607147199
 						}
 					],
 					"actions": [
 						{
-							"id": "set-y",
-							"objectClass": "Upgrade",
-							"sid": 694009621979704,
+							"id": "rotate-toward-position",
+							"objectClass": "Enemy_A",
+							"sid": 678421190869427,
 							"parameters": {
-								"y": "Upgrade.Y + 3"
-							}
-						},
-						{
-							"id": "set-x",
-							"objectClass": "Upgrade",
-							"sid": 393705659155595,
-							"parameters": {
-								"x": "Upgrade.X + ( 1 * upgradeHorizontalSpeed)"
+								"degrees": "1",
+								"x": "Player_Ship.X",
+								"y": "Player_Ship.Y"
 							}
 						}
 					],
-					"sid": 783432339327088
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player_Ship",
-							"sid": 825387675562971,
-							"parameters": {
-								"object": "Upgrade"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Upgrade",
-							"sid": 451205419917377
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 894901689047878,
-							"parameters": {
-								"audio-file": "sfx_twoTone",
-								"loop": "not-looping",
-								"volume": "10",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						}
-					],
-					"sid": 360348056407403,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 877231594042378,
-									"parameters": {
-										"variable": "LaserUpgradeLvl",
-										"comparison": 5,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 323338536719166,
-									"parameters": {
-										"variable": "playerScore",
-										"value": "100"
-									}
-								}
-							],
-							"sid": 514966662527328
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 159500328317558
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 239114480414394,
-									"parameters": {
-										"variable": "LaserUpgradeLvl",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 644711815958482
-						}
-					]
+					"sid": 255726732748237
 				}
 			],
-			"sid": 246297711381092
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Active Enemies",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [],
 			"sid": 160869855735194
 		}
 	],

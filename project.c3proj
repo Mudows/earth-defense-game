@@ -167,7 +167,8 @@
 			},
 			{
 				"items": [
-					"Enemy_A"
+					"Enemy_A",
+					"Enemy_Blast"
 				],
 				"subfolders": [],
 				"name": "Enemies"

@@ -444,10 +444,51 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": -243,
-						"y": -145,
-						"width": 93,
-						"height": 84,
+						"x": 237,
+						"y": 159,
+						"width": 84,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Enemy_Blast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 18,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 1000,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": -237,
+						"y": -233,
+						"width": 48,
+						"height": 46,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -1,0 +1,95 @@
+{
+	"name": "Enemy_Blast",
+	"plugin-id": "Sprite",
+	"sid": 871310505380051,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 140044499363305
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 48,
+						"height": 46,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7266899,
+						"collisionPoly": {
+							"points": [
+								0.9824561403508771,
+								0.1111111111111111,
+								1,
+								0.5,
+								0.9824561403508771,
+								0.7777777777777778,
+								0.5,
+								0.8888888888888888,
+								0.03508771929824561,
+								0.7777777777777778,
+								0.01754385964912286,
+								0.5,
+								0.03508771929824561,
+								0.1111111111111111,
+								0.5,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 48,
+						"height": 46,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4582568,
+						"collisionPoly": {
+							"points": [
+								0.2708333333333333,
+								0.2826086956521739,
+								0.5,
+								0,
+								0.7083333333333334,
+								0.2826086956521739,
+								0.9583333333333334,
+								0.5,
+								0.7291666666666666,
+								0.717391304347826,
+								0.5,
+								0.9782608695652174,
+								0.25,
+								0.717391304347826,
+								0.020833333333333332,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 937964339778330,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}
