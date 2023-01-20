@@ -1011,10 +1011,10 @@
 						{
 							"id": "compare-y",
 							"objectClass": "Player_Ship",
-							"sid": 859209084567367,
+							"sid": 645386096367288,
 							"parameters": {
 								"comparison": 3,
-								"y-co-ordinate": "200"
+								"y-co-ordinate": "UI_BG.Height + (Player_Ship.Height / 2) + 10"
 							}
 						}
 					],
@@ -1022,9 +1022,9 @@
 						{
 							"id": "set-y",
 							"objectClass": "Player_Ship",
-							"sid": 473814096572976,
+							"sid": 361985043862381,
 							"parameters": {
-								"y": "200"
+								"y": "UI_BG.Height + (Player_Ship.Height / 2) + 10"
 							}
 						}
 					],

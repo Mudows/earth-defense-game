@@ -24,6 +24,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -122,23 +130,36 @@
 				"name": "Obstacles"
 			},
 			{
-				"items": [
-					"Score",
-					"LifeBar",
-					"BigText",
-					"GameStart",
-					"Points_PopUp"
-				],
+				"items": [],
 				"subfolders": [
 					{
 						"items": [
-							"earthHPB_Middle",
-							"earthHPB_right",
-							"earthHPB_left",
-							"earthHPB_bg"
+							"BigText",
+							"GameStart",
+							"Points_PopUp",
+							"Score"
 						],
 						"subfolders": [],
-						"name": "Earth's HP Bar"
+						"name": "Text"
+					},
+					{
+						"items": [
+							"LifeBar",
+							"UI_BG"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"earthHPB_Middle",
+									"earthHPB_right",
+									"earthHPB_left",
+									"earthHPB_bg"
+								],
+								"subfolders": [],
+								"name": "Earth's HP Bar"
+							}
+						],
+						"name": "Sprites"
 					}
 				],
 				"name": "UI"
