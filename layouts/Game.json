@@ -112,7 +112,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 240,
-						"y": 685,
+						"y": 895,
 						"width": 1280,
 						"height": 1280,
 						"originX": 0.5,
@@ -162,7 +162,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Player",
+					"type": "Player_Ship",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -224,7 +224,8 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPoints": 2
+						"hitPoints": 1,
+						"points": 100
 					},
 					"behaviors": {
 						"Physics": {
@@ -243,8 +244,8 @@
 						}
 					},
 					"world": {
-						"x": -308,
-						"y": 752,
+						"x": 208,
+						"y": -689,
 						"width": 29,
 						"height": 26,
 						"originX": 0.5,
@@ -270,7 +271,8 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPoints": 4
+						"hitPoints": 3,
+						"points": 300
 					},
 					"behaviors": {
 						"Physics": {
@@ -289,8 +291,8 @@
 						}
 					},
 					"world": {
-						"x": -319,
-						"y": 699,
+						"x": 273,
+						"y": -436,
 						"width": 45,
 						"height": 40,
 						"originX": 0.5,
@@ -316,7 +318,8 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPoints": 8
+						"hitPoints": 6,
+						"points": 600
 					},
 					"behaviors": {
 						"Physics": {
@@ -335,8 +338,8 @@
 						}
 					},
 					"world": {
-						"x": -314,
-						"y": 627,
+						"x": 95,
+						"y": -598,
 						"width": 89,
 						"height": 82,
 						"originX": 0.5,
@@ -352,7 +355,7 @@
 					}
 				},
 				{
-					"type": "Laser",
+					"type": "Player_Laser",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -384,6 +387,118 @@
 						"width": 37,
 						"height": 9,
 						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Upgrade",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 14,
+					"instanceVariables": {},
+					"behaviors": {
+						"DestroyOutsideLayout": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -98,
+						"y": 198,
+						"width": 34,
+						"height": 33,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Enemy_A",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"instanceVariables": {
+						"hitPoints": 5,
+						"points": 1000
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 11,
+						"y": -267,
+						"width": 84,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5707963267948966,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Enemy_Blast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 18,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 500,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": -237,
+						"y": -233,
+						"width": 48,
+						"height": 46,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -429,6 +544,39 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
+				{
+					"type": "UI_BG",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 23,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 480,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
 				{
 					"type": "Score",
 					"properties": {
@@ -527,7 +675,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 240,
-						"y": 320,
+						"y": 260,
 						"width": 440,
 						"height": 83,
 						"originX": 0.5,
@@ -545,7 +693,7 @@
 				{
 					"type": "GameStart",
 					"properties": {
-						"text": "Press \"ENTER\" to Start",
+						"text": "Press \"SPACE\" to Start",
 						"enable-bbcode": true,
 						"font": "kenvector_future_thin",
 						"size": 14,
@@ -569,7 +717,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 240,
-						"y": 371,
+						"y": 311,
 						"width": 327,
 						"height": 30,
 						"originX": 0.5,
@@ -585,26 +733,39 @@
 					}
 				},
 				{
-					"type": "Upgrade",
+					"type": "Points_PopUp",
 					"properties": {
+						"text": "1000",
+						"enable-bbcode": true,
+						"font": "kenvector_future_thin",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "center"
 					},
-					"uid": 14,
+					"uid": 22,
 					"instanceVariables": {},
 					"behaviors": {
-						"DestroyOutsideLayout": {
+						"Flash": {
 							"properties": {}
 						}
 					},
 					"world": {
-						"x": -93,
-						"y": 234,
-						"width": 34,
-						"height": 33,
+						"x": -113,
+						"y": 134,
+						"width": 122,
+						"height": 68,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -614,6 +775,86 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GameTime",
+					"properties": {
+						"text": "Time 0:00",
+						"enable-bbcode": true,
+						"font": "kenvector_future_thin",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 16,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 227,
+						"y": 35,
+						"width": 200,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Enemy_Boss",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 19,
+					"instanceVariables": {
+						"hitPoints": 20,
+						"points": 10000
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 235,
+						"y": -145,
+						"width": 168,
+						"height": 206,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				}

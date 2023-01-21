@@ -1,0 +1,15 @@
+{
+	"name": "Hazards",
+	"plugin-id": "Sprite",
+	"sid": 365725555727063,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Asteroid_Medium",
+		"Asteroid_Big",
+		"Asteroid_Small",
+		"Enemy_A",
+		"Enemy_Blast"
+	]
+}

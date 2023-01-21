@@ -24,6 +24,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -34,6 +42,14 @@
 			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -80,6 +96,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -91,13 +115,14 @@
 	"objectTypes": {
 		"items": [
 			"Keyboard",
-			"Audio"
+			"Audio",
+			"LocalStorage"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"Player",
-					"Laser",
+					"Player_Ship",
+					"Player_Laser",
 					"Upgrade"
 				],
 				"subfolders": [],
@@ -122,23 +147,69 @@
 				"name": "Obstacles"
 			},
 			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"BigText",
+							"GameStart",
+							"Points_PopUp",
+							"Score",
+							"GameTime"
+						],
+						"subfolders": [],
+						"name": "Text"
+					},
+					{
+						"items": [
+							"LifeBar",
+							"UI_BG"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"earthHPB_Middle",
+									"earthHPB_right",
+									"earthHPB_left",
+									"earthHPB_bg"
+								],
+								"subfolders": [],
+								"name": "Earth's HP Bar"
+							}
+						],
+						"name": "Sprites"
+					}
+				],
+				"name": "UI"
+			},
+			{
 				"items": [
-					"Score",
-					"LifeBar",
-					"BigText",
-					"GameStart"
+					"Enemy_A",
+					"Enemy_Blast",
+					"Enemy_Boss"
 				],
 				"subfolders": [],
-				"name": "UI"
+				"name": "Enemies"
 			}
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"earthHPB_bg",
+				"earthHPB_left",
+				"earthHPB_Middle",
+				"earthHPB_right"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
 			"Stars",
-			"Obstacles"
+			"Obstacles",
+			"Hazards"
 		],
 		"subfolders": []
 	},
@@ -150,7 +221,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Game"
+			"Game",
+			"Functions"
 		],
 		"subfolders": []
 	},
@@ -340,7 +412,7 @@
 		"version": "1.0.0.0",
 		"author": "Diego M. Cezar",
 		"authorEmail": "diegocezar.dev@gmail.com",
-		"authorWebsite": "",
+		"authorWebsite": "https://dark-spots-game-studio.itch.io/earth-defense",
 		"appId": "",
 		"pixelRounding": true,
 		"zAxisScale": "normalized",

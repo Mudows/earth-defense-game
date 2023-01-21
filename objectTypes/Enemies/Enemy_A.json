@@ -1,0 +1,85 @@
+{
+	"name": "Enemy_A",
+	"plugin-id": "Sprite",
+	"sid": 224452114394788,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "hitPoints",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 449013285901867
+		},
+		{
+			"name": "points",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 371171212008999
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 510036609199177
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 84,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6869753,
+						"collisionPoly": {
+							"points": [
+								0.11904761904761904,
+								0.8924731182795699,
+								0.21428571428571427,
+								0.5,
+								0.11904761904761904,
+								0.11827956989247312,
+								0.5,
+								0.07526881720430112,
+								0.7976190476190477,
+								0.18279569892473113,
+								0.6785714285714286,
+								0.5,
+								0.8095238095238095,
+								0.8387096774193549,
+								0.5,
+								0.935483870967742
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9047619047619048,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 394208476959079,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
