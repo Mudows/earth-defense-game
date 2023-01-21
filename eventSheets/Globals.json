@@ -1,0 +1,106 @@
+{
+	"name": "Globals",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "playerScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 392334727135020
+		},
+		{
+			"eventType": "variable",
+			"name": "playerLives",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 257478169888036
+		},
+		{
+			"eventType": "variable",
+			"name": "LaserUpgradeLvl",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 618598246691323
+		},
+		{
+			"eventType": "variable",
+			"name": "upgradeSpawnChance",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 320036434010525
+		},
+		{
+			"eventType": "variable",
+			"name": "upgradeHorizontalSpeed",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 283694693691916
+		},
+		{
+			"eventType": "variable",
+			"name": "timerSeconds",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 867316404118085
+		},
+		{
+			"eventType": "variable",
+			"name": "timerMinutes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 828886164658882
+		},
+		{
+			"eventType": "variable",
+			"name": "enemiesDestroyed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 528717882397848
+		},
+		{
+			"eventType": "variable",
+			"name": "bossSpeed",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 242768900014142
+		},
+		{
+			"eventType": "variable",
+			"name": "highScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 184732808035999
+		}
+	],
+	"sid": 135992070768991
+}
