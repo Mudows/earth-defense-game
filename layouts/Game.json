@@ -455,8 +455,8 @@
 					"world": {
 						"x": 11,
 						"y": -267,
-						"width": 93,
-						"height": 84,
+						"width": 84,
+						"height": 93,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -465,7 +465,7 @@
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				},
@@ -844,8 +844,8 @@
 					"world": {
 						"x": 235,
 						"y": -145,
-						"width": 206,
-						"height": 168,
+						"width": 168,
+						"height": 206,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -854,7 +854,7 @@
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 1.5707963267948966,
 						"zElevation": 0
 					}
 				}

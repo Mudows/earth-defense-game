@@ -1702,12 +1702,12 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 317036989224339,
+											"sid": 409265527870606,
 											"parameters": {
 												"object-to-create": "Enemy_A",
 												"layer": "2",
 												"x": "int(random(40, 440))",
-												"y": "-20",
+												"y": "-50",
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
@@ -1728,12 +1728,12 @@
 										{
 											"id": "tween-one-property",
 											"objectClass": "Enemy_A",
-											"sid": 247533921982909,
+											"sid": 268699855225797,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"\"",
 												"property": "offsetY",
-												"end-value": "200",
+												"end-value": "180",
 												"time": "2",
 												"ease": "default",
 												"destroy-on-complete": "no",
@@ -1750,6 +1750,7 @@
 											"id": "tween-one-property",
 											"objectClass": "Enemy_A",
 											"sid": 694337179249408,
+											"disabled": true,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"\"",
@@ -1760,6 +1761,55 @@
 												"destroy-on-complete": "no",
 												"loop": "no",
 												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Enemy_A",
+											"sid": 177203790334429,
+											"parameters": {
+												"object": "Enemy_Blast",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 152046966236541,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Enemy_A",
+											"sid": 607612687240868,
+											"parameters": {
+												"object": "Enemy_Blast",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 817056170774324,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Enemy_A",
+											"sid": 994372856875317,
+											"parameters": {
+												"object": "Enemy_Blast",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
 											}
 										}
 									],
@@ -1786,11 +1836,11 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 532106867380837,
+											"sid": 382325486488432,
 											"parameters": {
 												"object-to-create": "Enemy_A",
 												"layer": "2",
-												"x": "int(random(50, 410))",
+												"x": "int(random(40, 440))",
 												"y": "-50",
 												"create-hierarchy": false,
 												"template-name": "\"\""
