@@ -2,24 +2,67 @@
 	"name": "Functions",
 	"events": [
 		{
-			"functionName": "Function1",
+			"functionName": "bossBlaster",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "object",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 784256533641474
-				}
-			],
+			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_Boss",
+					"sid": 814026632969935,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Enemy_Blast",
+					"sid": 713847856427683,
+					"parameters": {
+						"angle": "Enemy_Boss.Angle"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_Boss",
+					"sid": 908801251276654,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "2",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Enemy_Blast",
+					"sid": 388382715920324,
+					"parameters": {
+						"angle": "Enemy_Boss.Angle"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 197626952460538,
+					"parameters": {
+						"audio-file": "sfx_laser2",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
 			"sid": 344708548923427
 		}
 	],
