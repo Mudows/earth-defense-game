@@ -26,9 +26,9 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Enemy_Blast",
-					"sid": 713847856427683,
+					"sid": 641880824554626,
 					"parameters": {
-						"angle": "Enemy_Boss.Angle"
+						"angle": "Enemy_Boss.Angle + (int(random(-3,3)))"
 					}
 				},
 				{
@@ -45,9 +45,9 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Enemy_Blast",
-					"sid": 388382715920324,
+					"sid": 359262997876922,
 					"parameters": {
-						"angle": "Enemy_Boss.Angle"
+						"angle": "Enemy_Boss.Angle + (int(random(-3,3)))"
 					}
 				},
 				{

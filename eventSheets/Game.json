@@ -112,6 +112,16 @@
 			"sid": 242768900014142
 		},
 		{
+			"eventType": "variable",
+			"name": "highScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 184732808035999
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -419,6 +429,22 @@
 							"id": "destroy",
 							"objectClass": "Obstacles",
 							"sid": 798850080261457
+						},
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 965061293648547,
+							"parameters": {
+								"key": "\"highScore\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 636250935159753,
+							"parameters": {
+								"text": "\"Score: \" & highScore"
+							}
 						}
 					],
 					"sid": 937774840520886
@@ -522,6 +548,39 @@
 						}
 					],
 					"sid": 168423498020894
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 807561127658548,
+							"parameters": {
+								"key": "\"highScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 773360341647678,
+							"parameters": {
+								"variable": "highScore",
+								"value": "int(LocalStorage.ItemValue)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 548128468704014,
+							"parameters": {
+								"text": "\"Score: \" & highScore"
+							}
+						}
+					],
+					"sid": 456332257564374
 				}
 			],
 			"sid": 723785099134342
@@ -1501,6 +1560,36 @@
 						}
 					],
 					"sid": 527949022256491
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Laser",
+							"sid": 203913202578648,
+							"parameters": {
+								"object": "Enemy_Boss"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Player_Laser",
+							"sid": 749951074964065
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemy_Boss",
+							"sid": 632721438029785,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 398975564013221
 				},
 				{
 					"eventType": "block",
@@ -3022,6 +3111,11 @@
 											"parameters": {
 												"interval-seconds": "4"
 											}
+										},
+										{
+											"id": "is-on-screen",
+											"objectClass": "Enemy_Boss",
+											"sid": 420336254755120
 										}
 									],
 									"actions": [
@@ -3058,6 +3152,184 @@
 								}
 							],
 							"sid": 800011303988546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy_Boss",
+									"sid": 465768932374661,
+									"parameters": {
+										"instance-variable": "hitPoints",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 461361804656646,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "Enemy_Boss.points"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Enemy_Boss",
+									"sid": 168644262666540,
+									"parameters": {
+										"object": "Points_PopUp",
+										"layer": "3",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Enemy_Boss",
+									"sid": 722122609678919
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Points_PopUp",
+									"sid": 274601342530562,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "Points_PopUp",
+									"sid": 292556598308287,
+									"parameters": {
+										"color": "rgbEx(0, 250, 0)"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Points_PopUp",
+									"sid": 332034349513616,
+									"parameters": {
+										"text": "Enemy_Boss.points"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "Points_PopUp",
+									"sid": 325030632007223,
+									"parameters": {
+										"y": "Points_PopUp.Y"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Points_PopUp",
+									"sid": 979799891469905,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.05",
+										"off-time": "0.05",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 166311691105801,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Points_PopUp",
+									"sid": 438663484219637
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 598210425136926,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "BigText",
+									"sid": 139504905490432,
+									"parameters": {
+										"text": "\"You Win!\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "BigText",
+									"sid": 953078124389237,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 761639552136193,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 810714751381720,
+											"parameters": {
+												"first-value": "playerScore",
+												"comparison": 4,
+												"second-value": "highScore"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 922886597533567,
+											"parameters": {
+												"key": "\"highScore\"",
+												"value": "playerScore"
+											}
+										}
+									],
+									"sid": 717589014417627
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 807612128439691,
+											"parameters": {
+												"seconds": "5"
+											}
+										},
+										{
+											"id": "reset-global-variables",
+											"objectClass": "System",
+											"sid": 775988650415488
+										},
+										{
+											"id": "restart-layout",
+											"objectClass": "System",
+											"sid": 495401850964874
+										}
+									],
+									"sid": 647564344222002
+								}
+							]
 						}
 					],
 					"sid": 920632746370824

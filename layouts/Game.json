@@ -830,7 +830,10 @@
 						"live-preview": false
 					},
 					"uid": 19,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"hitPoints": 20,
+						"points": 10000
+					},
 					"behaviors": {
 						"Tween": {
 							"properties": {
