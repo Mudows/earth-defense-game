@@ -1143,9 +1143,9 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player_Laser",
-							"sid": 549958354274737,
+							"sid": 224271362882997,
 							"parameters": {
-								"object": "Asteroids"
+								"object": "Destroyable"
 							}
 						}
 					],
@@ -1153,79 +1153,19 @@
 						{
 							"id": "destroy",
 							"objectClass": "Player_Laser",
-							"sid": 925416037315603
+							"sid": 866587201097237
 						},
 						{
 							"id": "subtract-from-instvar",
-							"objectClass": "Asteroids",
-							"sid": 496851140356902,
+							"objectClass": "Destroyable",
+							"sid": 327107182931265,
 							"parameters": {
-								"instance-variable": "hitPointsB",
+								"instance-variable": "hitPointsA",
 								"value": "1"
 							}
 						}
 					],
-					"sid": 463303201732674
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player_Laser",
-							"sid": 268225143429384,
-							"parameters": {
-								"object": "Enemy_A"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Player_Laser",
-							"sid": 432898120344948
-						},
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Enemy_A",
-							"sid": 482524178247302,
-							"parameters": {
-								"instance-variable": "hitPoints",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 527949022256491
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player_Laser",
-							"sid": 203913202578648,
-							"parameters": {
-								"object": "Enemy_Boss"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Player_Laser",
-							"sid": 749951074964065
-						},
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Enemy_Boss",
-							"sid": 632721438029785,
-							"parameters": {
-								"instance-variable": "hitPoints",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 398975564013221
+					"sid": 581218487790253
 				},
 				{
 					"eventType": "comment",
@@ -1833,6 +1773,41 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy_A",
+											"sid": 384891834773885,
+											"parameters": {
+												"instance-variable": "hitPointsA",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 943393457598116,
+											"parameters": {
+												"variable": "enemiesDestroyed",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "onDestroyed",
+											"sid": 101473404091458,
+											"parameters": [
+												"Enemy_A.UID",
+												"Enemy_A.points"
+											]
+										}
+									],
+									"sid": 305978502291665
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "on-destroyed",
 											"objectClass": "Enemy_A",
 											"sid": 616394314155452
@@ -2117,9 +2092,9 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Enemy_Boss",
-											"sid": 585675329307111,
+											"sid": 317429396572556,
 											"parameters": {
-												"instance-variable": "hitPoints",
+												"instance-variable": "hitPointsA",
 												"comparison": 3,
 												"value": "0"
 											}
@@ -2348,9 +2323,9 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Asteroid_Big",
-									"sid": 446442496132913,
+									"sid": 272860835624661,
 									"parameters": {
-										"instance-variable": "hitPointsB",
+										"instance-variable": "hitPointsA",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2360,10 +2335,10 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 835027364740809,
+									"sid": 586523610083917,
 									"parameters": {
 										"variable": "playerScore",
-										"value": "Asteroid_Big.pointsB"
+										"value": "Asteroid_Big.pointsA"
 									}
 								},
 								{
@@ -2442,9 +2417,9 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "Asteroid_Medium",
-											"sid": 208429051614907,
+											"sid": 425496340788638,
 											"parameters": {
-												"instance-variable": "pointsB",
+												"instance-variable": "pointsA",
 												"value": "300"
 											}
 										},
@@ -2509,9 +2484,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "Points_PopUp",
-											"sid": 820414070122566,
+											"sid": 718061998065412,
 											"parameters": {
-												"text": "Asteroid_Big.pointsB"
+												"text": "Asteroid_Big.pointsA"
 											}
 										},
 										{
@@ -2557,9 +2532,9 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Asteroid_Medium",
-									"sid": 715576497742130,
+									"sid": 890691651403824,
 									"parameters": {
-										"instance-variable": "hitPointsB",
+										"instance-variable": "hitPointsA",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2642,9 +2617,9 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "Asteroid_Small",
-											"sid": 350886359295278,
+											"sid": 268645352232551,
 											"parameters": {
-												"instance-variable": "pointsB",
+												"instance-variable": "pointsA",
 												"value": "100"
 											}
 										},
@@ -2677,10 +2652,10 @@
 										{
 											"id": "add-to-eventvar",
 											"objectClass": "System",
-											"sid": 982218071530257,
+											"sid": 773599100128029,
 											"parameters": {
 												"variable": "playerScore",
-												"value": "Asteroid_Medium.pointsB"
+												"value": "Asteroid_Medium.pointsA"
 											}
 										},
 										{
@@ -2718,9 +2693,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "Points_PopUp",
-											"sid": 944327135249264,
+											"sid": 545078953935876,
 											"parameters": {
-												"text": "Asteroid_Medium.pointsB"
+												"text": "Asteroid_Medium.pointsA"
 											}
 										},
 										{
@@ -2766,9 +2741,9 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Asteroid_Small",
-									"sid": 655982747261787,
+									"sid": 365931179410151,
 									"parameters": {
-										"instance-variable": "hitPointsB",
+										"instance-variable": "hitPointsA",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2777,10 +2752,10 @@
 							"actions": [
 								{
 									"callFunction": "onDestroyed",
-									"sid": 479366018773130,
+									"sid": 108210127923461,
 									"parameters": [
 										"Asteroid_Small.UID",
-										"Asteroid_Small.pointsB"
+										"Asteroid_Small.pointsA"
 									]
 								}
 							],
@@ -2948,41 +2923,6 @@
 						}
 					],
 					"sid": 933550441800029
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy_A",
-							"sid": 755328029450130,
-							"parameters": {
-								"instance-variable": "hitPoints",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 401665681264936,
-							"parameters": {
-								"variable": "enemiesDestroyed",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "onDestroyed",
-							"sid": 597947824016286,
-							"parameters": [
-								"Enemy_A.UID",
-								"Enemy_A.points"
-							]
-						}
-					],
-					"sid": 739005949216414
 				}
 			],
 			"sid": 541249804308137

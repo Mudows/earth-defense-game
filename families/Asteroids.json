@@ -2,22 +2,7 @@
 	"name": "Asteroids",
 	"plugin-id": "Sprite",
 	"sid": 840878676976358,
-	"instanceVariables": [
-		{
-			"name": "hitPointsB",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 348273345403272
-		},
-		{
-			"name": "pointsB",
-			"type": "number",
-			"desc": "How many points are earned if the target is destroyed",
-			"show": true,
-			"sid": 847613639161076
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Physics",

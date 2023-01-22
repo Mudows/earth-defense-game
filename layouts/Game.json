@@ -224,8 +224,6 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPointsB": 1,
-						"pointsB": 100,
 						"hitPointsA": 1,
 						"pointsA": 100
 					},
@@ -273,8 +271,6 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPointsB": 3,
-						"pointsB": 300,
 						"hitPointsA": 3,
 						"pointsA": 300
 					},
@@ -322,8 +318,6 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPointsB": 6,
-						"pointsB": 600,
 						"hitPointsA": 6,
 						"pointsA": 600
 					},
