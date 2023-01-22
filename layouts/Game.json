@@ -224,8 +224,10 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPoints": 1,
-						"points": 100
+						"hitPointsB": 1,
+						"pointsB": 100,
+						"hitPointsA": 1,
+						"pointsA": 100
 					},
 					"behaviors": {
 						"Physics": {
@@ -271,8 +273,10 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPoints": 3,
-						"points": 300
+						"hitPointsB": 3,
+						"pointsB": 300,
+						"hitPointsA": 3,
+						"pointsA": 300
 					},
 					"behaviors": {
 						"Physics": {
@@ -318,8 +322,10 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPoints": 6,
-						"points": 600
+						"hitPointsB": 6,
+						"pointsB": 600,
+						"hitPointsA": 6,
+						"pointsA": 600
 					},
 					"behaviors": {
 						"Physics": {
@@ -442,6 +448,8 @@
 					},
 					"uid": 21,
 					"instanceVariables": {
+						"hitPointsA": 5,
+						"pointsA": 1000,
 						"hitPoints": 5,
 						"points": 1000
 					},
@@ -831,6 +839,8 @@
 					},
 					"uid": 19,
 					"instanceVariables": {
+						"hitPointsA": 50,
+						"pointsA": 10000,
 						"hitPoints": 20,
 						"points": 10000
 					},

@@ -1155,7 +1155,7 @@
 							"objectClass": "Asteroids",
 							"sid": 496851140356902,
 							"parameters": {
-								"instance-variable": "hitPoints",
+								"instance-variable": "hitPointsB",
 								"value": "1"
 							}
 						}
@@ -2178,7 +2178,7 @@
 									"objectClass": "Asteroid_Big",
 									"sid": 446442496132913,
 									"parameters": {
-										"instance-variable": "hitPoints",
+										"instance-variable": "hitPointsB",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2191,7 +2191,7 @@
 									"sid": 835027364740809,
 									"parameters": {
 										"variable": "playerScore",
-										"value": "Asteroid_Big.points"
+										"value": "Asteroid_Big.pointsB"
 									}
 								},
 								{
@@ -2272,7 +2272,7 @@
 											"objectClass": "Asteroid_Medium",
 											"sid": 208429051614907,
 											"parameters": {
-												"instance-variable": "points",
+												"instance-variable": "pointsB",
 												"value": "300"
 											}
 										},
@@ -2339,7 +2339,7 @@
 											"objectClass": "Points_PopUp",
 											"sid": 820414070122566,
 											"parameters": {
-												"text": "Asteroid_Big.points"
+												"text": "Asteroid_Big.pointsB"
 											}
 										},
 										{
@@ -2387,7 +2387,7 @@
 									"objectClass": "Asteroid_Medium",
 									"sid": 715576497742130,
 									"parameters": {
-										"instance-variable": "hitPoints",
+										"instance-variable": "hitPointsB",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2472,7 +2472,7 @@
 											"objectClass": "Asteroid_Small",
 											"sid": 350886359295278,
 											"parameters": {
-												"instance-variable": "points",
+												"instance-variable": "pointsB",
 												"value": "100"
 											}
 										},
@@ -2508,7 +2508,7 @@
 											"sid": 982218071530257,
 											"parameters": {
 												"variable": "playerScore",
-												"value": "Asteroid_Medium.points"
+												"value": "Asteroid_Medium.pointsB"
 											}
 										},
 										{
@@ -2548,7 +2548,7 @@
 											"objectClass": "Points_PopUp",
 											"sid": 944327135249264,
 											"parameters": {
-												"text": "Asteroid_Medium.points"
+												"text": "Asteroid_Medium.pointsB"
 											}
 										},
 										{
@@ -2596,7 +2596,7 @@
 									"objectClass": "Asteroid_Small",
 									"sid": 655982747261787,
 									"parameters": {
-										"instance-variable": "hitPoints",
+										"instance-variable": "hitPointsB",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2608,7 +2608,7 @@
 									"sid": 479366018773130,
 									"parameters": [
 										"Asteroid_Small.UID",
-										"Asteroid_Small.points"
+										"Asteroid_Small.pointsB"
 									]
 								}
 							],
@@ -2642,13 +2642,13 @@
 					],
 					"actions": [
 						{
-							"id": "apply-impulse",
+							"id": "apply-force",
 							"objectClass": "Asteroids",
-							"sid": 623046188462883,
+							"sid": 345987727722725,
 							"behaviorType": "Physics",
 							"parameters": {
-								"impulse-x": "1",
-								"implulse-y": "0",
+								"force-x": "50",
+								"force-y": "0",
 								"image-point": "0"
 							}
 						}
@@ -2670,13 +2670,13 @@
 					],
 					"actions": [
 						{
-							"id": "apply-impulse",
+							"id": "apply-force",
 							"objectClass": "Asteroids",
-							"sid": 365479193655334,
+							"sid": 247022566543090,
 							"behaviorType": "Physics",
 							"parameters": {
-								"impulse-x": "-1",
-								"implulse-y": "0",
+								"force-x": "-50",
+								"force-y": "0",
 								"image-point": "0"
 							}
 						}
@@ -2688,8 +2688,8 @@
 					"conditions": [
 						{
 							"id": "compare-y",
-							"objectClass": "Asteroids",
-							"sid": 928121745847520,
+							"objectClass": "Destroyable",
+							"sid": 569813936865781,
 							"parameters": {
 								"comparison": 5,
 								"y-co-ordinate": "640"
@@ -2699,26 +2699,26 @@
 					"actions": [
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Asteroids",
-							"sid": 224431449334921,
+							"objectClass": "Destroyable",
+							"sid": 643239363668413,
 							"parameters": {
-								"instance-variable": "points",
-								"value": "(Asteroids.points / 2) * (-1)"
+								"instance-variable": "pointsA",
+								"value": "(Destroyable.pointsA / 2) * (-1)"
 							}
 						},
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 371296567742982,
+							"sid": 368073051443031,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "Asteroids.points"
+								"value": "Destroyable.pointsA"
 							}
 						},
 						{
 							"id": "spawn-another-object",
-							"objectClass": "Asteroids",
-							"sid": 718582819776025,
+							"objectClass": "Destroyable",
+							"sid": 782691195502131,
 							"parameters": {
 								"object": "Points_PopUp",
 								"layer": "3",
@@ -2728,13 +2728,13 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "Asteroids",
-							"sid": 862961991442366
+							"objectClass": "Destroyable",
+							"sid": 661192405696877
 						},
 						{
 							"id": "set-angle",
 							"objectClass": "Points_PopUp",
-							"sid": 351358018208184,
+							"sid": 827917328128974,
 							"parameters": {
 								"angle": "0"
 							}
@@ -2742,7 +2742,7 @@
 						{
 							"id": "set-font-color",
 							"objectClass": "Points_PopUp",
-							"sid": 835759557751933,
+							"sid": 701968348367798,
 							"parameters": {
 								"color": "rgbEx(250, 0, 0)"
 							}
@@ -2750,23 +2750,23 @@
 						{
 							"id": "set-text",
 							"objectClass": "Points_PopUp",
-							"sid": 531208983279516,
+							"sid": 818985613365456,
 							"parameters": {
-								"text": "Asteroids.points"
+								"text": "Destroyable.pointsA"
 							}
 						},
 						{
 							"id": "set-y",
 							"objectClass": "Points_PopUp",
-							"sid": 506893419849741,
+							"sid": 306676218974759,
 							"parameters": {
-								"y": "Points_PopUp.Y - 20"
+								"y": "Points_PopUp.Y - 25"
 							}
 						},
 						{
 							"id": "flash",
 							"objectClass": "Points_PopUp",
-							"sid": 911578725779212,
+							"sid": 208266832282491,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.05",
@@ -2777,7 +2777,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 499464785029454,
+							"sid": 845430185233392,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -2785,10 +2785,10 @@
 						{
 							"id": "destroy",
 							"objectClass": "Points_PopUp",
-							"sid": 899153049841980
+							"sid": 828336606276425
 						}
 					],
-					"sid": 163000998485705
+					"sid": 933550441800029
 				},
 				{
 					"eventType": "block",
@@ -3069,120 +3069,6 @@
 						}
 					],
 					"sid": 739005949216414
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-y",
-							"objectClass": "Enemy_A",
-							"sid": 496526081260487,
-							"parameters": {
-								"comparison": 5,
-								"y-co-ordinate": "640"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy_A",
-							"sid": 231287462748734,
-							"parameters": {
-								"instance-variable": "points",
-								"value": "(Enemy_A.points / 2) * (-1)"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 947821167486826,
-							"parameters": {
-								"variable": "playerScore",
-								"value": "Enemy_A.points"
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Enemy_A",
-							"sid": 415980721111880,
-							"parameters": {
-								"object": "Points_PopUp",
-								"layer": "3",
-								"image-point": "0",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Enemy_A",
-							"sid": 615408108130712
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "Points_PopUp",
-							"sid": 479382389632775,
-							"disabled": true,
-							"parameters": {
-								"angle": "0"
-							}
-						},
-						{
-							"id": "set-font-color",
-							"objectClass": "Points_PopUp",
-							"sid": 793768433055989,
-							"disabled": true,
-							"parameters": {
-								"color": "rgbEx(250, 0, 0)"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Points_PopUp",
-							"sid": 676288734186327,
-							"disabled": true,
-							"parameters": {
-								"text": "Enemy_A.points"
-							}
-						},
-						{
-							"id": "set-y",
-							"objectClass": "Points_PopUp",
-							"sid": 167241027361412,
-							"disabled": true,
-							"parameters": {
-								"y": "Points_PopUp.Y - 20"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "Points_PopUp",
-							"sid": 131697330789181,
-							"disabled": true,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.05",
-								"off-time": "0.05",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 882016375017502,
-							"disabled": true,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Points_PopUp",
-							"sid": 437070188095192,
-							"disabled": true
-						}
-					],
-					"sid": 766373226181087
 				}
 			],
 			"sid": 541249804308137
