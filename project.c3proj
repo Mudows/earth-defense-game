@@ -104,6 +104,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -144,7 +152,7 @@
 					"Asteroid_Big"
 				],
 				"subfolders": [],
-				"name": "Obstacles"
+				"name": "Asteroids"
 			},
 			{
 				"items": [],
@@ -208,8 +216,9 @@
 	"families": {
 		"items": [
 			"Stars",
-			"Obstacles",
-			"Hazards"
+			"Asteroids",
+			"Hazards",
+			"Destroyable"
 		],
 		"subfolders": []
 	},
@@ -221,8 +230,9 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Game",
-			"Functions"
+			"Globals",
+			"Functions",
+			"Main"
 		],
 		"subfolders": []
 	},

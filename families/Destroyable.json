@@ -1,0 +1,30 @@
+{
+	"name": "Destroyable",
+	"plugin-id": "Sprite",
+	"sid": 632151357303119,
+	"instanceVariables": [
+		{
+			"name": "hitPointsA",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 157841443802592
+		},
+		{
+			"name": "pointsA",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 356823728295484
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Asteroid_Big",
+		"Asteroid_Small",
+		"Asteroid_Medium",
+		"Enemy_A",
+		"Enemy_Boss"
+	]
+}

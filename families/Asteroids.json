@@ -1,0 +1,19 @@
+{
+	"name": "Asteroids",
+	"plugin-id": "Sprite",
+	"sid": 840878676976358,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 240440544006251
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Asteroid_Medium",
+		"Asteroid_Big",
+		"Asteroid_Small"
+	]
+}

@@ -1,0 +1,2932 @@
+{
+	"name": "Main",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Start",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 485982726986565
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 617824457250178,
+							"parameters": {
+								"audio-file": "themeMusic",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"theme\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 803265775593876,
+							"parameters": {
+								"tag": "\"theme\"",
+								"position": "8"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Planet_Earth",
+							"sid": 783386337549937,
+							"parameters": {
+								"y": "895"
+							}
+						},
+						{
+							"id": "set-world-gravity",
+							"objectClass": "Asteroids",
+							"sid": 124277336567597,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Hazards",
+							"sid": 798850080261457
+						},
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 965061293648547,
+							"parameters": {
+								"key": "\"highScore\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 636250935159753,
+							"parameters": {
+								"text": "\"Score: \" & highScore"
+							}
+						}
+					],
+					"sid": 937774840520886
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 910745358503725,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player_Ship",
+							"sid": 156482982835778,
+							"parameters": {
+								"x": "480 / 2",
+								"y": "640 - Player_Ship.Height"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player_Ship",
+							"sid": 615848381287101,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 266749357169720,
+							"parameters": {
+								"group-name": "\"Asteroids\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 885357381274580,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 587840322058268,
+							"parameters": {
+								"group-name": "\"Star Movement\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 480629536799413,
+							"parameters": {
+								"group-name": "\"UI Updates\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 853836322846615,
+							"parameters": {
+								"group-name": "\"Active Enemies\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BigText",
+							"sid": 724514644746734,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "GameStart",
+							"sid": 490911234236376
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 565056468982368,
+							"parameters": {
+								"group-name": "\"Game Start\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 168423498020894
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 807561127658548,
+							"parameters": {
+								"key": "\"highScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 773360341647678,
+							"parameters": {
+								"variable": "highScore",
+								"value": "int(LocalStorage.ItemValue)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 548128468704014,
+							"parameters": {
+								"text": "\"Score: \" & highScore"
+							}
+						}
+					],
+					"sid": 456332257564374
+				}
+			],
+			"sid": 723785099134342
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scaling Difficulty",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 664840700115728
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "UI Updates",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 898464294408881
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 235159301653582,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 354078965711302,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 358680118788740,
+									"parameters": {
+										"variable": "playerScore",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 922122373682315,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 777332505984973,
+									"parameters": {
+										"text": "\"Score: \" & playerScore"
+									}
+								}
+							],
+							"sid": 139940889312707
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 757580521637272,
+									"parameters": {
+										"variable": "timerSeconds",
+										"comparison": 2,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "GameTime",
+									"sid": 996739486441621,
+									"parameters": {
+										"text": "\"Time \" & timerMinutes & \":0\" & timerSeconds"
+									}
+								}
+							],
+							"sid": 723893385006006
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 361818628762098
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "GameTime",
+									"sid": 908999361305290,
+									"parameters": {
+										"text": "\"Time \" & timerMinutes & \":\" & timerSeconds"
+									}
+								}
+							],
+							"sid": 264744687919467
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 589264951167460,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 376888982597696,
+							"parameters": {
+								"variable": "timerSeconds",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 398472166129510
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 846148996279287,
+							"parameters": {
+								"variable": "timerSeconds",
+								"comparison": 0,
+								"value": "60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 456386308770018,
+							"parameters": {
+								"variable": "timerSeconds",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 557557624820636,
+							"parameters": {
+								"variable": "timerMinutes",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 476347367922187
+				}
+			],
+			"sid": 943229999726019
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Background",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Star Movement",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 101714706270447
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "Star_Far",
+									"sid": 852406262813777,
+									"parameters": {
+										"y": "Star_Far.Y + 0.3"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "Star_Near",
+									"sid": 992061777453716,
+									"parameters": {
+										"y": "Star_Near.Y + 0.5"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "Planet_Earth",
+									"sid": 407208279784804,
+									"parameters": {
+										"y": "Planet_Earth.Y + 0.7"
+									}
+								}
+							],
+							"sid": 136920850286490
+						}
+					],
+					"sid": 717424609324280
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 982337562096301
+						}
+					],
+					"actions": [],
+					"sid": 316324536065421,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 993264025373794,
+									"parameters": {
+										"count": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 243553816481199,
+									"parameters": {
+										"object-to-create": "Star_Far",
+										"layer": "0",
+										"x": "int(random(0, 480))",
+										"y": "int(random(0, 640))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Star_Far",
+									"sid": 943039590449101,
+									"parameters": {
+										"opacity": "int(random(30,100))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Star_Far",
+									"sid": 581694930919198,
+									"parameters": {
+										"scale": "random(0.5, 1)"
+									}
+								}
+							],
+							"sid": 623096581983713
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 878877640737337,
+									"parameters": {
+										"count": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 933772418822933,
+									"parameters": {
+										"object-to-create": "Star_Near",
+										"layer": "0",
+										"x": "int(random(0, 480))",
+										"y": "int(random(0, 640))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "Star_Near",
+									"sid": 535364255660785,
+									"parameters": {
+										"opacity": "int(random(30,100))"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Star_Near",
+									"sid": 767131529693273,
+									"parameters": {
+										"scale": "random(0.1, 1)"
+									}
+								}
+							],
+							"sid": 838472114887679
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Stars",
+							"sid": 864251953496586
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Stars",
+							"sid": 541909092966376,
+							"parameters": {
+								"x": "int(random(0,480))",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Stars",
+							"sid": 176458326379847,
+							"parameters": {
+								"opacity": "int(random(30,100))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Stars",
+							"sid": 570236756535870,
+							"parameters": {
+								"scale": "random(0.1, 1)"
+							}
+						}
+					],
+					"sid": 715077105045632
+				}
+			],
+			"sid": 910119055516801
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Shooting logic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 496063231177914,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Player_Ship",
+							"sid": 540482682622903
+						}
+					],
+					"actions": [],
+					"sid": 464941996626710,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 603409195328893,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 876351499165354,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 375482660914969,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 741968947801982,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 558601371329128,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 219008905007324,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 179135520246454
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 321766991676382,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 707982218338614,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 688389037360523,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 490414079797365,
+											"disabled": true,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 224528091641428,
+											"disabled": true,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 733394002048520,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 273110120805148,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 488405335607828,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 375382586762031,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 585060614670957,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 195337772078639
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 457758355685460,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 792355356046749,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 506188886702971,
+											"parameters": {
+												"interval-seconds": "0.2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 298436166742747,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Player_Laser",
+											"sid": 712815890353067,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(0, 0, 255)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 237040249094170,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_Laser",
+											"sid": 802116445763266,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 252309927517890,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 961398252976526,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_Laser",
+											"sid": 128613560625803,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 143826079776365,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 912831633756273,
+											"parameters": {
+												"angle": "-90"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_Laser",
+											"sid": 620886002068278,
+											"parameters": {
+												"scale": "1.2"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 512535539539553,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 957094839214345
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 394050453687540,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 683069711555524,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 216269967703677,
+											"parameters": {
+												"interval-seconds": "0.08"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 369547486992010,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Player_Laser",
+											"sid": 612191297055112,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(150, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 776448469295791,
+											"parameters": {
+												"angle": "int(random(264,274))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_Laser",
+											"sid": 564314657295737,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 518490252608959,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Player_Laser",
+											"sid": 926855657062514,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 315813638579975,
+											"parameters": {
+												"angle": "int(random(262,276))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_Laser",
+											"sid": 419305272787599,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player_Ship",
+											"sid": 738025990126988,
+											"parameters": {
+												"object": "Player_Laser",
+												"layer": "2",
+												"image-point": "3",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Player_Laser",
+											"sid": 460121637690904,
+											"disabled": true,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Player_Laser",
+											"sid": 418399322958831,
+											"parameters": {
+												"angle": "int(random(262,276))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Player_Laser",
+											"sid": 573124172549255,
+											"parameters": {
+												"scale": "1.5"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 376477705144192,
+											"parameters": {
+												"audio-file": "sfx_laser1",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 783636260211090
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 405091532625236,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 159504385570408
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 194021715555253,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 979621631555943,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 522772788996089
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Laser",
+							"sid": 224271362882997,
+							"parameters": {
+								"object": "Destroyable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Player_Laser",
+							"sid": 866587201097237
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Destroyable",
+							"sid": 327107182931265,
+							"parameters": {
+								"instance-variable": "hitPointsA",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 581218487790253
+				},
+				{
+					"eventType": "comment",
+					"text": "This is to prevent the player's ship to go past the top HUD."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Player_Ship",
+							"sid": 645386096367288,
+							"parameters": {
+								"comparison": 3,
+								"y-co-ordinate": "UI_BG.Height + (Player_Ship.Height / 2) + 10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Player_Ship",
+							"sid": 361985043862381,
+							"parameters": {
+								"y": "UI_BG.Height + (Player_Ship.Height / 2) + 10"
+							}
+						}
+					],
+					"sid": 635688330987942
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Player_Ship",
+							"sid": 613509775143269
+						}
+					],
+					"actions": [],
+					"sid": 697086609572081,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 964794661648249,
+									"parameters": {
+										"variable": "playerLives",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 347038332202049,
+									"parameters": {
+										"variable": "isDeathEnabled"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 260926183501526,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 241448884531398,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 932833870337527,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 176312837279518,
+									"parameters": {
+										"object-to-create": "Player_Ship",
+										"layer": "2",
+										"x": "480 / 2",
+										"y": "640 - Player_Ship.Height",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Player_Ship",
+									"sid": 599132149405271,
+									"parameters": {
+										"x": "480 / 2",
+										"y": "640 - Player_Ship.Height"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Player_Ship",
+									"sid": 784724338206832,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.05",
+										"off-time": "0.05",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 247662837030958,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 894078379132828,
+									"parameters": {
+										"variable": "isDeathEnabled"
+									}
+								}
+							],
+							"sid": 772825858938146
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 131789426881223
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 828059639978013,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 590442709674703,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "BigText",
+									"sid": 284411436889368,
+									"parameters": {
+										"text": "\"Game Over\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "BigText",
+									"sid": 526021716296734,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 499417106606725,
+									"parameters": {
+										"seconds": "5"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 776456394010812
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 215903554852845
+								}
+							],
+							"sid": 540181374676323
+						}
+					]
+				}
+			],
+			"sid": 907822996256512
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Upgrades",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Upgrade",
+							"sid": 302560345371576,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "Upgrade.Width / 2"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Upgrade",
+							"sid": 819230563337195,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "470 - (Upgrade.Width / 2) "
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 816280245751147,
+							"parameters": {
+								"variable": "upgradeHorizontalSpeed",
+								"value": "upgradeHorizontalSpeed * -1"
+							}
+						}
+					],
+					"sid": 782775732757424,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 611108596221701
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Upgrade",
+							"sid": 902331566423476,
+							"parameters": {
+								"y": "Upgrade.Y + 3"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "Upgrade",
+							"sid": 208594556800339,
+							"parameters": {
+								"x": "Upgrade.X + upgradeHorizontalSpeed"
+							}
+						}
+					],
+					"sid": 380613939609075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Ship",
+							"sid": 864515630041041,
+							"parameters": {
+								"object": "Upgrade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Upgrade",
+							"sid": 762344300987340
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 131487621010292,
+							"parameters": {
+								"audio-file": "sfx_twoTone",
+								"loop": "not-looping",
+								"volume": "10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 629501948613958,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 955589749372773,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"comparison": 5,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 639792618279398,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 422878364019088
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 900389051360039
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 889048474401586,
+									"parameters": {
+										"variable": "LaserUpgradeLvl",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 868904944438218
+						}
+					]
+				}
+			],
+			"sid": 721065142334003
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Hazards",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Active Enemies",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Enemy A",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 718311996951411,
+											"parameters": {
+												"variable": "playerScore",
+												"comparison": 5,
+												"value": "1000"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 657726526199386
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 409265527870606,
+											"parameters": {
+												"object-to-create": "Enemy_A",
+												"layer": "2",
+												"x": "int(random(40, 440))",
+												"y": "-50",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 797140516777711
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "Enemy_A",
+											"sid": 413980352168311
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "Enemy_A",
+											"sid": 665318843775969,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetY",
+												"end-value": "180",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 828199776192962
+										},
+										{
+											"callFunction": "enemyBlast",
+											"sid": 145272549118032
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 220528572188866,
+											"parameters": {
+												"seconds": "2"
+											}
+										}
+									],
+									"sid": 782472714279544,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "Enemy_A",
+													"sid": 934720820973832,
+													"parameters": {
+														"comparison": 3,
+														"x-co-ordinate": "LayoutWidth / 2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 988917218931726,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetX",
+														"end-value": "Enemy_A.X + int(random(50, 100))",
+														"time": "0.2",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 157611332686881
+												},
+												{
+													"callFunction": "enemyBlast",
+													"sid": 596909740659631
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 260179372545958,
+													"parameters": {
+														"seconds": "2"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 154841748183689,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetY",
+														"end-value": "700",
+														"time": "1",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 437623459957996
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 537718388061188
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 583695629428930,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetX",
+														"end-value": "Enemy_A.X + int(random(-50, -100))",
+														"time": "0.2",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 639903918618355
+												},
+												{
+													"callFunction": "enemyBlast",
+													"sid": 718920111869122
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 365803673009826,
+													"parameters": {
+														"seconds": "2"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 538749756019641,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetY",
+														"end-value": "700",
+														"time": "1",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 260225527605867
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy_A",
+											"sid": 384891834773885,
+											"parameters": {
+												"instance-variable": "hitPointsA",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 943393457598116,
+											"parameters": {
+												"variable": "enemiesDestroyed",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "onDestroyed",
+											"sid": 101473404091458,
+											"parameters": [
+												"Enemy_A.UID",
+												"Enemy_A.points"
+											]
+										}
+									],
+									"sid": 305978502291665
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-destroyed",
+											"objectClass": "Enemy_A",
+											"sid": 616394314155452
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 388111837839547,
+											"parameters": {
+												"seconds": "5"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 382325486488432,
+											"parameters": {
+												"object-to-create": "Enemy_A",
+												"layer": "2",
+												"x": "int(random(40, 440))",
+												"y": "-50",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 133534898294843
+								}
+							],
+							"sid": 404234531741296
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "The Boss",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 502891302664913,
+											"parameters": {
+												"variable": "enemiesDestroyed",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 543894259944117
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 433067560456003,
+											"parameters": {
+												"group-name": "\"Enemy A\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 926962996222033,
+											"parameters": {
+												"group-name": "\"Asteroids\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Hazards",
+											"sid": 556344558606492
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 434810943964917,
+											"parameters": {
+												"seconds": "3"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 841961797555920,
+											"parameters": {
+												"object-to-create": "Enemy_Boss",
+												"layer": "2",
+												"x": "240",
+												"y": "-200",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Enemy_Boss",
+											"sid": 236877231611330,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Boss Entrance\"",
+												"property": "position",
+												"end-x": "240",
+												"end-y": "200",
+												"time": "3",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 948567112887852
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 743463615097519,
+											"parameters": {
+												"seconds": "1.0"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 167165153744342,
+											"parameters": {
+												"group-name": "\"Boss Mechanics\"",
+												"state": "activated"
+											}
+										}
+									],
+									"sid": 156861887837967
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "Boss Mechanics",
+									"description": "",
+									"isActiveOnStart": false,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Movement changes direction if the boss hits the edge of the screen."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "Enemy_Boss",
+													"sid": 152085360202694,
+													"parameters": {
+														"comparison": 3,
+														"x-co-ordinate": "Enemy_Boss.Width / 2"
+													}
+												},
+												{
+													"id": "compare-x",
+													"objectClass": "Enemy_Boss",
+													"sid": 755928592658669,
+													"parameters": {
+														"comparison": 5,
+														"x-co-ordinate": "470 - (Enemy_Boss.Width / 2) "
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 814714461074533,
+													"parameters": {
+														"variable": "bossSpeed",
+														"value": "bossSpeed * -1"
+													}
+												}
+											],
+											"sid": 741292209110599,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "comment",
+											"text": "Sideways movement"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 879278312470749
+												}
+											],
+											"actions": [
+												{
+													"id": "set-x",
+													"objectClass": "Enemy_Boss",
+													"sid": 583726767747844,
+													"parameters": {
+														"x": "Enemy_Boss.X + bossSpeed"
+													}
+												}
+											],
+											"sid": 776348992359998
+										},
+										{
+											"eventType": "comment",
+											"text": "Attack pattern"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 741044306964286,
+													"parameters": {
+														"interval-seconds": "4"
+													}
+												},
+												{
+													"id": "is-on-screen",
+													"objectClass": "Enemy_Boss",
+													"sid": 629893727268215
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "bossBlaster",
+													"sid": 258404706448892
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 564772260683372,
+													"parameters": {
+														"seconds": "0.25"
+													}
+												},
+												{
+													"callFunction": "bossBlaster",
+													"sid": 142829542308547
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 946777722696464,
+													"parameters": {
+														"seconds": "0.25"
+													}
+												},
+												{
+													"callFunction": "bossBlaster",
+													"sid": 578057806050516
+												}
+											],
+											"sid": 721471085703899
+										}
+									],
+									"sid": 784331096902390
+								},
+								{
+									"eventType": "comment",
+									"text": "When the boss dies..."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy_Boss",
+											"sid": 317429396572556,
+											"parameters": {
+												"instance-variable": "hitPointsA",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "onDestroyed",
+											"sid": 272488799447794,
+											"parameters": [
+												"Enemy_Boss.UID",
+												"Enemy_Boss.pointsA"
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 914091417841128,
+											"parameters": {
+												"seconds": "3"
+											}
+										},
+										{
+											"id": "typewriter-text",
+											"objectClass": "BigText",
+											"sid": 274554639976640,
+											"parameters": {
+												"text": "\"You Win!\"",
+												"duration": "1"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "BigText",
+											"sid": 673914731770757,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 146356037648158,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 416963381873673,
+													"parameters": {
+														"first-value": "playerScore",
+														"comparison": 4,
+														"second-value": "highScore"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 434217246663279,
+													"parameters": {
+														"key": "\"highScore\"",
+														"value": "playerScore"
+													}
+												}
+											],
+											"sid": 736308228496179
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 813582556251930,
+													"parameters": {
+														"seconds": "5"
+													}
+												},
+												{
+													"id": "reset-global-variables",
+													"objectClass": "System",
+													"sid": 293060746864553
+												},
+												{
+													"id": "restart-layout",
+													"objectClass": "System",
+													"sid": 982611282672755
+												}
+											],
+											"sid": 826225469141515
+										}
+									]
+								}
+							],
+							"sid": 353669742759365
+						}
+					],
+					"sid": 634833048084564
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Asteroids",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Asteroids",
+									"sid": 858302667535475,
+									"parameters": {
+										"comparison": 3,
+										"x-co-ordinate": "Asteroids.Width / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force",
+									"objectClass": "Asteroids",
+									"sid": 179721550129712,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force-x": "50",
+										"force-y": "0",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 876009472751408
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Asteroids",
+									"sid": 498350055882586,
+									"parameters": {
+										"comparison": 5,
+										"x-co-ordinate": "480 - Asteroids.Width / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force",
+									"objectClass": "Asteroids",
+									"sid": 792293448619315,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force-x": "-50",
+										"force-y": "0",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 166371538371417
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 376709640740805,
+									"parameters": {
+										"interval-seconds": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 498207093788316,
+									"parameters": {
+										"object-to-create": "Asteroids",
+										"layer": "2",
+										"x": "int(random(Asteroids.Width  / 2, 480 - Asteroids.Width / 2))",
+										"y": "-100",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "Asteroids",
+									"sid": 731312629836170,
+									"parameters": {
+										"degrees": "int(random(0,270))"
+									}
+								},
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "Asteroids",
+									"sid": 751186640920934,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "50",
+										"angle": "int(random(0,181))",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-angular-velocity",
+									"objectClass": "Asteroids",
+									"sid": 387047696744844,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-velocity": "10"
+									}
+								}
+							],
+							"sid": 141000280625720
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Asteroid_Big",
+									"sid": 272860835624661,
+									"parameters": {
+										"instance-variable": "hitPointsA",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 586523610083917,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "Asteroid_Big.pointsA"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 308867198191653,
+									"parameters": {
+										"variable": "upgradeSpawnChance",
+										"value": "int(random(1,11))"
+									}
+								}
+							],
+							"sid": 271376173050632,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 778308855614613,
+											"parameters": {
+												"variable": "upgradeSpawnChance",
+												"comparison": 5,
+												"value": "9"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid_Big",
+											"sid": 695164215087119,
+											"parameters": {
+												"object": "Upgrade",
+												"layer": "2",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Upgrade",
+											"sid": 813712343163936,
+											"parameters": {
+												"angle": "0"
+											}
+										}
+									],
+									"sid": 232572887377380
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 736894457939773,
+											"parameters": {
+												"count": "int(random(1,4))"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid_Big",
+											"sid": 628135283423068,
+											"parameters": {
+												"object": "Asteroid_Medium",
+												"layer": "2",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Asteroid_Medium",
+											"sid": 425496340788638,
+											"parameters": {
+												"instance-variable": "pointsA",
+												"value": "300"
+											}
+										},
+										{
+											"id": "rotate-clockwise",
+											"objectClass": "Asteroid_Medium",
+											"sid": 412905405354286,
+											"parameters": {
+												"degrees": "int(random(0,270))"
+											}
+										},
+										{
+											"id": "apply-force",
+											"objectClass": "Asteroid_Medium",
+											"sid": 582411556599308,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force-x": "int(random(1,20))",
+												"force-y": "int(random(1,20))",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 637773401006427
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid_Big",
+											"sid": 344212134145936,
+											"parameters": {
+												"object": "Points_PopUp",
+												"layer": "3",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Asteroid_Big",
+											"sid": 343046701440218
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Points_PopUp",
+											"sid": 999212187426377,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-font-color",
+											"objectClass": "Points_PopUp",
+											"sid": 453680301815831,
+											"parameters": {
+												"color": "rgbEx(0, 250, 0)"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "Points_PopUp",
+											"sid": 718061998065412,
+											"parameters": {
+												"text": "Asteroid_Big.pointsA"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "Points_PopUp",
+											"sid": 489405633804582,
+											"parameters": {
+												"y": "Points_PopUp.Y - 20"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "Points_PopUp",
+											"sid": 998499194928543,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.05",
+												"off-time": "0.05",
+												"duration": "1.0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 894456642811699,
+											"parameters": {
+												"seconds": "1"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Points_PopUp",
+											"sid": 979707553678839
+										}
+									],
+									"sid": 112676311040636
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Asteroid_Medium",
+									"sid": 890691651403824,
+									"parameters": {
+										"instance-variable": "hitPointsA",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 861919525560692,
+									"parameters": {
+										"variable": "upgradeSpawnChance",
+										"value": "int(random(1,11))"
+									}
+								}
+							],
+							"sid": 623522978092622,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 831575941937362,
+											"parameters": {
+												"variable": "upgradeSpawnChance",
+												"comparison": 5,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid_Medium",
+											"sid": 811920898430418,
+											"parameters": {
+												"object": "Upgrade",
+												"layer": "2",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Upgrade",
+											"sid": 172067650021944,
+											"parameters": {
+												"angle": "0"
+											}
+										}
+									],
+									"sid": 148091965649970
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 462312491967686,
+											"parameters": {
+												"count": "int(random(1,4))"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid_Medium",
+											"sid": 911249972102210,
+											"parameters": {
+												"object": "Asteroid_Small",
+												"layer": "2",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Asteroid_Small",
+											"sid": 268645352232551,
+											"parameters": {
+												"instance-variable": "pointsA",
+												"value": "100"
+											}
+										},
+										{
+											"id": "rotate-clockwise",
+											"objectClass": "Asteroid_Small",
+											"sid": 168959745299054,
+											"parameters": {
+												"degrees": "int(random(0,270))"
+											}
+										},
+										{
+											"id": "apply-force",
+											"objectClass": "Asteroid_Small",
+											"sid": 583114851129514,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force-x": "int(random(1,20))",
+												"force-y": "int(random(1,20))",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 870868687230119
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 773599100128029,
+											"parameters": {
+												"variable": "playerScore",
+												"value": "Asteroid_Medium.pointsA"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid_Medium",
+											"sid": 699108155544816,
+											"parameters": {
+												"object": "Points_PopUp",
+												"layer": "3",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Asteroid_Medium",
+											"sid": 740508219750770
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Points_PopUp",
+											"sid": 857601869714726,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-font-color",
+											"objectClass": "Points_PopUp",
+											"sid": 973048279683600,
+											"parameters": {
+												"color": "rgbEx(0, 250, 0)"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "Points_PopUp",
+											"sid": 545078953935876,
+											"parameters": {
+												"text": "Asteroid_Medium.pointsA"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "Points_PopUp",
+											"sid": 531031468641598,
+											"parameters": {
+												"y": "Points_PopUp.Y - 20"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "Points_PopUp",
+											"sid": 757602011038313,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.05",
+												"off-time": "0.05",
+												"duration": "1.0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 698934522772803,
+											"parameters": {
+												"seconds": "1"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Points_PopUp",
+											"sid": 848251580990263
+										}
+									],
+									"sid": 756545737096465
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Asteroid_Small",
+									"sid": 365931179410151,
+									"parameters": {
+										"instance-variable": "hitPointsA",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "onDestroyed",
+									"sid": 108210127923461,
+									"parameters": [
+										"Asteroid_Small.UID",
+										"Asteroid_Small.pointsA"
+									]
+								}
+							],
+							"sid": 128437203336250
+						}
+					],
+					"sid": 534218843109118
+				}
+			],
+			"sid": 203964963781893
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Common Hazard Events",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Hazards",
+							"sid": 112739006422027,
+							"parameters": {
+								"object": "Player_Ship"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 733249548954672,
+							"parameters": {
+								"variable": "isDeathEnabled"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Hazards",
+							"sid": 433865140143500
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player_Ship",
+							"sid": 458530915592779
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 248602802675092,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 506018262434865
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Destroyable",
+							"sid": 569813936865781,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "640"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Destroyable",
+							"sid": 643239363668413,
+							"parameters": {
+								"instance-variable": "pointsA",
+								"value": "(Destroyable.pointsA / 2) * (-1)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 368073051443031,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "Destroyable.pointsA"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Destroyable",
+							"sid": 782691195502131,
+							"parameters": {
+								"object": "Points_PopUp",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Destroyable",
+							"sid": 661192405696877
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Points_PopUp",
+							"sid": 827917328128974,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Points_PopUp",
+							"sid": 701968348367798,
+							"parameters": {
+								"color": "rgbEx(250, 0, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Points_PopUp",
+							"sid": 818985613365456,
+							"parameters": {
+								"text": "Destroyable.pointsA"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Points_PopUp",
+							"sid": 306676218974759,
+							"parameters": {
+								"y": "Points_PopUp.Y - 25"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Points_PopUp",
+							"sid": 208266832282491,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 845430185233392,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Points_PopUp",
+							"sid": 828336606276425
+						}
+					],
+					"sid": 933550441800029
+				}
+			],
+			"sid": 541249804308137
+		}
+	],
+	"sid": 627360855967724
+}

@@ -64,6 +64,212 @@
 				}
 			],
 			"sid": 344708548923427
+		},
+		{
+			"functionName": "onDestroyed",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "targetUID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 788996515258822
+				},
+				{
+					"name": "targetPoints",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 791272635142314
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 290408617387817,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Hazards",
+							"sid": 108089723399173,
+							"parameters": {
+								"unique-id": "targetUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 531610450570297,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "targetPoints"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Hazards",
+							"sid": 603503921322288,
+							"parameters": {
+								"object": "Points_PopUp",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Hazards",
+							"sid": 824525240805268
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Points_PopUp",
+							"sid": 883661967281891,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Points_PopUp",
+							"sid": 853916079181672,
+							"parameters": {
+								"color": "rgbEx(0, 250, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Points_PopUp",
+							"sid": 459985631388053,
+							"parameters": {
+								"text": "targetPoints"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Points_PopUp",
+							"sid": 406065416854960,
+							"parameters": {
+								"y": "Points_PopUp.Y - 20"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Points_PopUp",
+							"sid": 111705135155971,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 800975018873784,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Points_PopUp",
+							"sid": 276059593251165
+						}
+					],
+					"sid": 847930512872945
+				}
+			]
+		},
+		{
+			"functionName": "enemyBlast",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_A",
+					"sid": 177203790334429,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 152046966236541,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_A",
+					"sid": 607612687240868,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "rotate-counter-clockwise",
+					"objectClass": "Enemy_Blast",
+					"sid": 585322799350903,
+					"parameters": {
+						"degrees": "4"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 817056170774324,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_A",
+					"sid": 994372856875317,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "Enemy_Blast",
+					"sid": 648109515944011,
+					"parameters": {
+						"degrees": "4"
+					}
+				}
+			],
+			"sid": 857240038376737
 		}
 	],
 	"sid": 711144953597167

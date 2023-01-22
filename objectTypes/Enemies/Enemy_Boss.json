@@ -24,6 +24,11 @@
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 363550214509313
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 245027713969461
 		}
 	],
 	"effectTypes": [],
@@ -39,7 +44,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7773029,
+						"imageSpriteId": 5749979,
 						"collisionPoly": {
 							"points": [
 								0.20238095238095238,

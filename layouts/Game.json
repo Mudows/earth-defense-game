@@ -199,8 +199,8 @@
 					"world": {
 						"x": -78,
 						"y": 367,
-						"width": 99,
-						"height": 75,
+						"width": 66,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -224,8 +224,8 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"hitPoints": 1,
-						"points": 100
+						"hitPointsA": 1,
+						"pointsA": 100
 					},
 					"behaviors": {
 						"Physics": {
@@ -271,8 +271,8 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
-						"hitPoints": 3,
-						"points": 300
+						"hitPointsA": 3,
+						"pointsA": 300
 					},
 					"behaviors": {
 						"Physics": {
@@ -318,8 +318,8 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"hitPoints": 6,
-						"points": 600
+						"hitPointsA": 6,
+						"pointsA": 600
 					},
 					"behaviors": {
 						"Physics": {
@@ -442,6 +442,8 @@
 					},
 					"uid": 21,
 					"instanceVariables": {
+						"hitPointsA": 5,
+						"pointsA": 1000,
 						"hitPoints": 5,
 						"points": 1000
 					},
@@ -455,8 +457,8 @@
 					"world": {
 						"x": 11,
 						"y": -267,
-						"width": 84,
-						"height": 93,
+						"width": 60,
+						"height": 66,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -831,6 +833,8 @@
 					},
 					"uid": 19,
 					"instanceVariables": {
+						"hitPointsA": 50,
+						"pointsA": 10000,
 						"hitPoints": 20,
 						"points": 10000
 					},
@@ -838,6 +842,20 @@
 						"Tween": {
 							"properties": {
 								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 2,
+								"enabled": true,
+								"live-preview": false
 							}
 						}
 					},
@@ -897,5 +915,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Game"
+	"eventSheet": "Main"
 }
