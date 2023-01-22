@@ -2,250 +2,6 @@
 	"name": "Main",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Hazards",
-					"sid": 618010014407835,
-					"parameters": {
-						"object": "Player_Ship"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Hazards",
-					"sid": 578794807176254
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Player_Ship",
-					"sid": 528044910815310
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 266649240112997,
-					"parameters": {
-						"variable": "LaserUpgradeLvl",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 601414191258383,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 408200630497761,
-							"parameters": {
-								"variable": "playerLives",
-								"comparison": 4,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 100038783280150,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 820631029004460,
-							"parameters": {
-								"variable": "playerLives",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "LifeBar",
-							"sid": 202991050648619,
-							"parameters": {
-								"frame-number": "playerLives"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Asteroid_Big",
-							"sid": 255248560154359,
-							"parameters": {
-								"collisions": "disabled"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Asteroid_Medium",
-							"sid": 618046650877519,
-							"parameters": {
-								"collisions": "disabled"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Asteroid_Small",
-							"sid": 612568629676243,
-							"parameters": {
-								"collisions": "disabled"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 461782047538549,
-							"parameters": {
-								"seconds": "2"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 450445422242719,
-							"parameters": {
-								"object-to-create": "Player_Ship",
-								"layer": "2",
-								"x": "480 / 2",
-								"y": "640 - Player_Ship.Height",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "Player_Ship",
-							"sid": 366004255872058,
-							"parameters": {
-								"x": "480 / 2",
-								"y": "640 - Player_Ship.Height"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "Player_Ship",
-							"sid": 748295690541077,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.05",
-								"off-time": "0.05",
-								"duration": "3"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 356434430964910,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 103774154139403,
-							"parameters": {
-								"seconds": "3"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Hazards",
-							"sid": 545754443693319,
-							"parameters": {
-								"collisions": "enabled"
-							}
-						}
-					],
-					"sid": 580432555127280
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 159767990626158
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 442025970026633,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 895555380509563,
-							"parameters": {
-								"variable": "playerLives",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "LifeBar",
-							"sid": 139103783407687,
-							"parameters": {
-								"frame-number": "playerLives"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "BigText",
-							"sid": 112967720543650,
-							"parameters": {
-								"text": "\"Game Over\""
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "BigText",
-							"sid": 123560429354078,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 944964188765436,
-							"parameters": {
-								"seconds": "5"
-							}
-						},
-						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 813504184092371
-						},
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 147028527346989
-						}
-					],
-					"sid": 977372355364893
-				}
-			]
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game Start",
@@ -293,7 +49,7 @@
 						},
 						{
 							"id": "set-world-gravity",
-							"objectClass": "Obstacles",
+							"objectClass": "Asteroids",
 							"sid": 124277336567597,
 							"behaviorType": "Physics",
 							"parameters": {
@@ -1384,7 +1140,7 @@
 							"objectClass": "Player_Laser",
 							"sid": 549958354274737,
 							"parameters": {
-								"object": "Obstacles"
+								"object": "Asteroids"
 							}
 						}
 					],
@@ -1396,7 +1152,7 @@
 						},
 						{
 							"id": "subtract-from-instvar",
-							"objectClass": "Obstacles",
+							"objectClass": "Asteroids",
 							"sid": 496851140356902,
 							"parameters": {
 								"instance-variable": "hitPoints",
@@ -1933,224 +1689,6 @@
 										}
 									],
 									"sid": 133534898294843
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 164298840402573,
-											"parameters": {
-												"interval-seconds": "2"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 277032991042007,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-on-screen",
-													"objectClass": "Enemy_A",
-													"sid": 933847460412599
-												},
-												{
-													"id": "is-on-screen",
-													"objectClass": "Player_Ship",
-													"sid": 247272489574078
-												}
-											],
-											"actions": [
-												{
-													"id": "spawn-another-object",
-													"objectClass": "Enemy_A",
-													"sid": 792127724511062,
-													"parameters": {
-														"object": "Enemy_Blast",
-														"layer": "2",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "Enemy_Blast",
-													"sid": 550625405689408,
-													"parameters": {
-														"angle": "Enemy_A.Angle"
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 635388933170728,
-													"parameters": {
-														"audio-file": "sfx_laser2",
-														"loop": "not-looping",
-														"volume": "0",
-														"stereo-pan": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 967246569409492,
-											"disabled": true
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-y",
-											"objectClass": "Enemy_A",
-											"sid": 238351967113871,
-											"parameters": {
-												"comparison": 5,
-												"y-co-ordinate": "640"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy_A",
-											"sid": 742499259894723,
-											"parameters": {
-												"instance-variable": "points",
-												"value": "(Enemy_A.points / 2) * (-1)"
-											}
-										},
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 246356576905088,
-											"parameters": {
-												"variable": "playerScore",
-												"value": "Enemy_A.points"
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Enemy_A",
-											"sid": 472985581336522,
-											"parameters": {
-												"object": "Points_PopUp",
-												"layer": "3",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Enemy_A",
-											"sid": 717284418300202
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "Points_PopUp",
-											"sid": 465899341798108,
-											"disabled": true,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-font-color",
-											"objectClass": "Points_PopUp",
-											"sid": 725711808940640,
-											"disabled": true,
-											"parameters": {
-												"color": "rgbEx(250, 0, 0)"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "Points_PopUp",
-											"sid": 383982332637349,
-											"disabled": true,
-											"parameters": {
-												"text": "Enemy_A.points"
-											}
-										},
-										{
-											"id": "set-y",
-											"objectClass": "Points_PopUp",
-											"sid": 868576583193672,
-											"disabled": true,
-											"parameters": {
-												"y": "Points_PopUp.Y - 20"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "Points_PopUp",
-											"sid": 332295444202684,
-											"disabled": true,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.05",
-												"off-time": "0.05",
-												"duration": "1.0"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 249733068982328,
-											"disabled": true,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Points_PopUp",
-											"sid": 443562451374484,
-											"disabled": true
-										}
-									],
-									"sid": 509504874665208
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Enemy_A",
-											"sid": 437547694372242,
-											"parameters": {
-												"instance-variable": "hitPoints",
-												"comparison": 3,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 502425080000368,
-											"disabled": true,
-											"parameters": {
-												"variable": "enemiesDestroyed",
-												"value": "1"
-											}
-										},
-										{
-											"callFunction": "onDestroyed",
-											"sid": 868130228975986,
-											"parameters": [
-												"Enemy_A.UID",
-												"Enemy_A.points"
-											]
-										}
-									],
-									"sid": 614332632282257
 								}
 							],
 							"sid": 404234531741296
@@ -2593,9 +2131,9 @@
 									"objectClass": "System",
 									"sid": 498207093788316,
 									"parameters": {
-										"object-to-create": "Obstacles",
+										"object-to-create": "Asteroids",
 										"layer": "2",
-										"x": "int(random(Obstacles.Width  / 2, 480 - Obstacles.Width / 2))",
+										"x": "int(random(Asteroids.Width  / 2, 480 - Asteroids.Width / 2))",
 										"y": "-100",
 										"create-hierarchy": false,
 										"template-name": "\"\""
@@ -2603,7 +2141,7 @@
 								},
 								{
 									"id": "rotate-clockwise",
-									"objectClass": "Obstacles",
+									"objectClass": "Asteroids",
 									"sid": 731312629836170,
 									"parameters": {
 										"degrees": "int(random(0,270))"
@@ -2611,7 +2149,7 @@
 								},
 								{
 									"id": "apply-force-at-angle",
-									"objectClass": "Obstacles",
+									"objectClass": "Asteroids",
 									"sid": 751186640920934,
 									"behaviorType": "Physics",
 									"parameters": {
@@ -2622,7 +2160,7 @@
 								},
 								{
 									"id": "set-angular-velocity",
-									"objectClass": "Obstacles",
+									"objectClass": "Asteroids",
 									"sid": 387047696744844,
 									"behaviorType": "Physics",
 									"parameters": {
@@ -2631,84 +2169,6 @@
 								}
 							],
 							"sid": 141000280625720
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Obstacles",
-									"sid": 232431526704360,
-									"parameters": {
-										"comparison": 3,
-										"x-co-ordinate": "Obstacles.Width / 2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "apply-impulse",
-									"objectClass": "Obstacles",
-									"sid": 156287315539085,
-									"behaviorType": "Physics",
-									"parameters": {
-										"impulse-x": "1",
-										"implulse-y": "0",
-										"image-point": "0"
-									}
-								}
-							],
-							"sid": 569713952541089
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Obstacles",
-									"sid": 829673738971846,
-									"parameters": {
-										"comparison": 5,
-										"x-co-ordinate": "480 - Obstacles.Width / 2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "apply-impulse",
-									"objectClass": "Obstacles",
-									"sid": 680730681553103,
-									"behaviorType": "Physics",
-									"parameters": {
-										"impulse-x": "-1",
-										"implulse-y": "0",
-										"image-point": "0"
-									}
-								}
-							],
-							"sid": 290802793207525
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-y",
-									"objectClass": "Obstacles",
-									"sid": 782499288295294,
-									"parameters": {
-										"comparison": 4,
-										"y-co-ordinate": "700"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Obstacles",
-									"sid": 669337032860151
-								}
-							],
-							"sid": 333144933640149
 						},
 						{
 							"eventType": "block",
@@ -3153,119 +2613,579 @@
 								}
 							],
 							"sid": 128437203336250
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-y",
-									"objectClass": "Obstacles",
-									"sid": 807165067456084,
-									"parameters": {
-										"comparison": 5,
-										"y-co-ordinate": "640"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Obstacles",
-									"sid": 545626952459896,
-									"parameters": {
-										"instance-variable": "points",
-										"value": "(Obstacles.points / 2) * (-1)"
-									}
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 704992196690751,
-									"parameters": {
-										"variable": "playerScore",
-										"value": "Obstacles.points"
-									}
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Obstacles",
-									"sid": 755278259715768,
-									"parameters": {
-										"object": "Points_PopUp",
-										"layer": "3",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Obstacles",
-									"sid": 863934016770349
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "Points_PopUp",
-									"sid": 416702478723664,
-									"parameters": {
-										"angle": "0"
-									}
-								},
-								{
-									"id": "set-font-color",
-									"objectClass": "Points_PopUp",
-									"sid": 853517940896555,
-									"parameters": {
-										"color": "rgbEx(250, 0, 0)"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "Points_PopUp",
-									"sid": 682989191273904,
-									"parameters": {
-										"text": "Obstacles.points"
-									}
-								},
-								{
-									"id": "set-y",
-									"objectClass": "Points_PopUp",
-									"sid": 496148550275464,
-									"parameters": {
-										"y": "Points_PopUp.Y - 20"
-									}
-								},
-								{
-									"id": "flash",
-									"objectClass": "Points_PopUp",
-									"sid": 978088680585980,
-									"behaviorType": "Flash",
-									"parameters": {
-										"on-time": "0.05",
-										"off-time": "0.05",
-										"duration": "1.0"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 125334727794610,
-									"parameters": {
-										"seconds": "1"
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Points_PopUp",
-									"sid": 422387060176203
-								}
-							],
-							"sid": 336487625194322
 						}
 					],
 					"sid": 534218843109118
 				}
 			],
 			"sid": 203964963781893
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Common Hazard Events",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Asteroids",
+							"sid": 596807044324697,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "Asteroids.Width / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-impulse",
+							"objectClass": "Asteroids",
+							"sid": 623046188462883,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse-x": "1",
+								"implulse-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 701514997465405
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Asteroids",
+							"sid": 662346203012100,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "480 - Asteroids.Width / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-impulse",
+							"objectClass": "Asteroids",
+							"sid": 365479193655334,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse-x": "-1",
+								"implulse-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 709898750550557
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Asteroids",
+							"sid": 928121745847520,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "640"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Asteroids",
+							"sid": 224431449334921,
+							"parameters": {
+								"instance-variable": "points",
+								"value": "(Asteroids.points / 2) * (-1)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 371296567742982,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "Asteroids.points"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Asteroids",
+							"sid": 718582819776025,
+							"parameters": {
+								"object": "Points_PopUp",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Asteroids",
+							"sid": 862961991442366
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Points_PopUp",
+							"sid": 351358018208184,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Points_PopUp",
+							"sid": 835759557751933,
+							"parameters": {
+								"color": "rgbEx(250, 0, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Points_PopUp",
+							"sid": 531208983279516,
+							"parameters": {
+								"text": "Asteroids.points"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Points_PopUp",
+							"sid": 506893419849741,
+							"parameters": {
+								"y": "Points_PopUp.Y - 20"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Points_PopUp",
+							"sid": 911578725779212,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 499464785029454,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Points_PopUp",
+							"sid": 899153049841980
+						}
+					],
+					"sid": 163000998485705
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Hazards",
+							"sid": 956859786888165,
+							"parameters": {
+								"object": "Player_Ship"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Hazards",
+							"sid": 788705704205704
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player_Ship",
+							"sid": 542952988275023
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 685332552064488,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 567073602085574,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 263058481807770,
+									"parameters": {
+										"variable": "playerLives",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 271486039936990,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 497779532827976,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 228308407696403,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Asteroid_Big",
+									"sid": 743919213791602,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Asteroid_Medium",
+									"sid": 971069460974595,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Asteroid_Small",
+									"sid": 771704584470268,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 517548122355792,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 274621238153827,
+									"parameters": {
+										"object-to-create": "Player_Ship",
+										"layer": "2",
+										"x": "480 / 2",
+										"y": "640 - Player_Ship.Height",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Player_Ship",
+									"sid": 866117210994480,
+									"parameters": {
+										"x": "480 / 2",
+										"y": "640 - Player_Ship.Height"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Player_Ship",
+									"sid": 637760192306818,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.05",
+										"off-time": "0.05",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 886262776334455,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 721773942498653,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Hazards",
+									"sid": 416925229753319,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 492630813853367
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 476695054220438
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 107139437152195,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 950659923837910,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "LifeBar",
+									"sid": 559459938049680,
+									"parameters": {
+										"frame-number": "playerLives"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "BigText",
+									"sid": 704223234678365,
+									"parameters": {
+										"text": "\"Game Over\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "BigText",
+									"sid": 932813577006137,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 657444406812143,
+									"parameters": {
+										"seconds": "5"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 388145006091331
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 468719709061589
+								}
+							],
+							"sid": 881396157633061
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_A",
+							"sid": 755328029450130,
+							"parameters": {
+								"instance-variable": "hitPoints",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 401665681264936,
+							"disabled": true,
+							"parameters": {
+								"variable": "enemiesDestroyed",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "onDestroyed",
+							"sid": 597947824016286,
+							"parameters": [
+								"Enemy_A.UID",
+								"Enemy_A.points"
+							]
+						}
+					],
+					"sid": 739005949216414
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Enemy_A",
+							"sid": 496526081260487,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "640"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy_A",
+							"sid": 231287462748734,
+							"parameters": {
+								"instance-variable": "points",
+								"value": "(Enemy_A.points / 2) * (-1)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 947821167486826,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "Enemy_A.points"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_A",
+							"sid": 415980721111880,
+							"parameters": {
+								"object": "Points_PopUp",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Enemy_A",
+							"sid": 615408108130712
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Points_PopUp",
+							"sid": 479382389632775,
+							"disabled": true,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Points_PopUp",
+							"sid": 793768433055989,
+							"disabled": true,
+							"parameters": {
+								"color": "rgbEx(250, 0, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Points_PopUp",
+							"sid": 676288734186327,
+							"disabled": true,
+							"parameters": {
+								"text": "Enemy_A.points"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Points_PopUp",
+							"sid": 167241027361412,
+							"disabled": true,
+							"parameters": {
+								"y": "Points_PopUp.Y - 20"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Points_PopUp",
+							"sid": 131697330789181,
+							"disabled": true,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 882016375017502,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Points_PopUp",
+							"sid": 437070188095192,
+							"disabled": true
+						}
+					],
+					"sid": 766373226181087
+				}
+			],
+			"sid": 541249804308137
 		}
 	],
 	"sid": 627360855967724

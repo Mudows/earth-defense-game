@@ -208,7 +208,7 @@
 	"families": {
 		"items": [
 			"Stars",
-			"Obstacles",
+			"Asteroids",
 			"Hazards"
 		],
 		"subfolders": []
