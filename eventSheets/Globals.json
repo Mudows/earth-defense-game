@@ -100,6 +100,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 184732808035999
+		},
+		{
+			"eventType": "variable",
+			"name": "isDeathEnabled",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "Controls if the enemies can kill the player.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 807287785483777
 		}
 	],
 	"sid": 135992070768991
