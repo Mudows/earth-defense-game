@@ -10,6 +10,7 @@
 		"Asteroid_Big",
 		"Asteroid_Small",
 		"Enemy_A",
-		"Enemy_Blast"
+		"Enemy_Blast",
+		"Enemy_Boss"
 	]
 }

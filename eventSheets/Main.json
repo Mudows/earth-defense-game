@@ -302,12 +302,7 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "Enemy_Boss",
-							"sid": 233112393609062
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Obstacles",
+							"objectClass": "Hazards",
 							"sid": 798850080261457
 						},
 						{
@@ -1764,56 +1759,83 @@
 											}
 										},
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Enemy_A",
-											"sid": 177203790334429,
-											"parameters": {
-												"object": "Enemy_Blast",
-												"layer": "2",
-												"image-point": "1",
-												"create-hierarchy": false
-											}
+											"callFunction": "enemyBlast",
+											"sid": 145272549118032
 										},
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 152046966236541,
+											"sid": 220528572188866,
 											"parameters": {
-												"seconds": "0.2"
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Enemy_A",
-											"sid": 607612687240868,
-											"parameters": {
-												"object": "Enemy_Blast",
-												"layer": "2",
-												"image-point": "1",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 817056170774324,
-											"parameters": {
-												"seconds": "0.2"
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Enemy_A",
-											"sid": 994372856875317,
-											"parameters": {
-												"object": "Enemy_Blast",
-												"layer": "2",
-												"image-point": "1",
-												"create-hierarchy": false
+												"seconds": "2"
 											}
 										}
 									],
-									"sid": 782472714279544
+									"sid": 782472714279544,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "Enemy_A",
+													"sid": 934720820973832,
+													"parameters": {
+														"comparison": 3,
+														"x-co-ordinate": "LayoutWidth / 2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 762876983029280,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetX",
+														"end-value": "Enemy_A.X + int(random(50, 100))",
+														"time": "0.5",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 437623459957996
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 537718388061188
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 827054779674180,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetX",
+														"end-value": "Enemy_A.X + int(random(-50, -100))",
+														"time": "0.5",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												}
+											],
+											"sid": 260225527605867
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -2050,6 +2072,7 @@
 											"id": "add-to-eventvar",
 											"objectClass": "System",
 											"sid": 502425080000368,
+											"disabled": true,
 											"parameters": {
 												"variable": "enemiesDestroyed",
 												"value": "1"
