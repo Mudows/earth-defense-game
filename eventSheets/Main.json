@@ -1723,13 +1723,13 @@
 										{
 											"id": "tween-one-property",
 											"objectClass": "Enemy_A",
-											"sid": 268699855225797,
+											"sid": 665318843775969,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"\"",
 												"property": "offsetY",
 												"end-value": "180",
-												"time": "2",
+												"time": "1",
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
@@ -1790,13 +1790,43 @@
 												{
 													"id": "tween-one-property",
 													"objectClass": "Enemy_A",
-													"sid": 762876983029280,
+													"sid": 988917218931726,
 													"behaviorType": "Tween",
 													"parameters": {
 														"tags": "\"\"",
 														"property": "offsetX",
 														"end-value": "Enemy_A.X + int(random(50, 100))",
-														"time": "0.5",
+														"time": "0.2",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 157611332686881
+												},
+												{
+													"callFunction": "enemyBlast",
+													"sid": 596909740659631
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 234588690381385
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 154841748183689,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetY",
+														"end-value": "700",
+														"time": "1",
 														"ease": "default",
 														"destroy-on-complete": "no",
 														"loop": "no",
@@ -1819,13 +1849,46 @@
 												{
 													"id": "tween-one-property",
 													"objectClass": "Enemy_A",
-													"sid": 827054779674180,
+													"sid": 583695629428930,
 													"behaviorType": "Tween",
 													"parameters": {
 														"tags": "\"\"",
 														"property": "offsetX",
 														"end-value": "Enemy_A.X + int(random(-50, -100))",
-														"time": "0.5",
+														"time": "0.2",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 639903918618355
+												},
+												{
+													"callFunction": "enemyBlast",
+													"sid": 718920111869122
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 365803673009826,
+													"parameters": {
+														"seconds": "2"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Enemy_A",
+													"sid": 538749756019641,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetY",
+														"end-value": "700",
+														"time": "1",
 														"ease": "default",
 														"destroy-on-complete": "no",
 														"loop": "no",
