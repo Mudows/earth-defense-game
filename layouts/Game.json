@@ -199,8 +199,8 @@
 					"world": {
 						"x": -78,
 						"y": 367,
-						"width": 99,
-						"height": 75,
+						"width": 66,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -463,8 +463,8 @@
 					"world": {
 						"x": 11,
 						"y": -267,
-						"width": 84,
-						"height": 93,
+						"width": 60,
+						"height": 66,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -848,6 +848,20 @@
 						"Tween": {
 							"properties": {
 								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 2,
+								"enabled": true,
+								"live-preview": false
 							}
 						}
 					},

@@ -1613,7 +1613,7 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "Basic Enemy",
+							"title": "Enemy A",
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
@@ -1685,23 +1685,6 @@
 											"sid": 828199776192962
 										},
 										{
-											"id": "tween-one-property",
-											"objectClass": "Enemy_A",
-											"sid": 694337179249408,
-											"disabled": true,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetAngle",
-												"end-value": "Player_Ship.Y",
-												"time": "0.5",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no"
-											}
-										},
-										{
 											"callFunction": "enemyBlast",
 											"sid": 145272549118032
 										},
@@ -1756,9 +1739,12 @@
 													"sid": 596909740659631
 												},
 												{
-													"id": "wait-for-previous-actions",
+													"id": "wait",
 													"objectClass": "System",
-													"sid": 234588690381385
+													"sid": 260179372545958,
+													"parameters": {
+														"seconds": "2"
+													}
 												},
 												{
 													"id": "tween-one-property",
@@ -1910,9 +1896,9 @@
 										{
 											"id": "set-group-active",
 											"objectClass": "System",
-											"sid": 972120482451175,
+											"sid": 433067560456003,
 											"parameters": {
-												"group-name": "\"Basic Enemy\"",
+												"group-name": "\"Enemy A\"",
 												"state": "deactivated"
 											}
 										},
@@ -2128,6 +2114,7 @@
 											"id": "add-to-eventvar",
 											"objectClass": "System",
 											"sid": 208269944580689,
+											"disabled": true,
 											"parameters": {
 												"variable": "playerScore",
 												"value": "Enemy_Boss.points"
@@ -2137,6 +2124,7 @@
 											"id": "spawn-another-object",
 											"objectClass": "Enemy_Boss",
 											"sid": 888617436903853,
+											"disabled": true,
 											"parameters": {
 												"object": "Points_PopUp",
 												"layer": "3",
@@ -2147,12 +2135,14 @@
 										{
 											"id": "destroy",
 											"objectClass": "Enemy_Boss",
-											"sid": 651141631908467
+											"sid": 651141631908467,
+											"disabled": true
 										},
 										{
 											"id": "set-angle",
 											"objectClass": "Points_PopUp",
 											"sid": 560662289723778,
+											"disabled": true,
 											"parameters": {
 												"angle": "0"
 											}
@@ -2161,6 +2151,7 @@
 											"id": "set-font-color",
 											"objectClass": "Points_PopUp",
 											"sid": 182509961186525,
+											"disabled": true,
 											"parameters": {
 												"color": "rgbEx(0, 250, 0)"
 											}
@@ -2169,6 +2160,7 @@
 											"id": "set-text",
 											"objectClass": "Points_PopUp",
 											"sid": 204742542017203,
+											"disabled": true,
 											"parameters": {
 												"text": "Enemy_Boss.points"
 											}
@@ -2177,6 +2169,7 @@
 											"id": "set-y",
 											"objectClass": "Points_PopUp",
 											"sid": 632355580237141,
+											"disabled": true,
 											"parameters": {
 												"y": "Points_PopUp.Y"
 											}
@@ -2185,6 +2178,7 @@
 											"id": "flash",
 											"objectClass": "Points_PopUp",
 											"sid": 598190690707256,
+											"disabled": true,
 											"behaviorType": "Flash",
 											"parameters": {
 												"on-time": "0.05",
@@ -2196,6 +2190,7 @@
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 906112925578513,
+											"disabled": true,
 											"parameters": {
 												"seconds": "1"
 											}
@@ -2203,14 +2198,23 @@
 										{
 											"id": "destroy",
 											"objectClass": "Points_PopUp",
-											"sid": 336981549571329
+											"sid": 336981549571329,
+											"disabled": true
+										},
+										{
+											"callFunction": "onDestroyed",
+											"sid": 272488799447794,
+											"parameters": [
+												"Enemy_Boss.UID",
+												"Enemy_Boss.pointsA"
+											]
 										},
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 571570634835356,
+											"sid": 914091417841128,
 											"parameters": {
-												"seconds": "1"
+												"seconds": "3"
 											}
 										},
 										{
@@ -2874,6 +2878,49 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Hazards",
+							"sid": 112739006422027,
+							"parameters": {
+								"object": "Player_Ship"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 733249548954672,
+							"parameters": {
+								"variable": "isDeathEnabled"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Hazards",
+							"sid": 433865140143500
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player_Ship",
+							"sid": 458530915592779
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 248602802675092,
+							"parameters": {
+								"variable": "LaserUpgradeLvl",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 506018262434865
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-y",
 							"objectClass": "Destroyable",
 							"sid": 569813936865781,
@@ -2981,49 +3028,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Hazards",
-							"sid": 956859786888165,
-							"parameters": {
-								"object": "Player_Ship"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 540315139470435,
-							"parameters": {
-								"variable": "isDeathEnabled"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Hazards",
-							"sid": 788705704205704
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Player_Ship",
-							"sid": 542952988275023
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 685332552064488,
-							"parameters": {
-								"variable": "LaserUpgradeLvl",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 567073602085574
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-instance-variable",
 							"objectClass": "Enemy_A",
 							"sid": 755328029450130,
@@ -3039,7 +3043,6 @@
 							"id": "add-to-eventvar",
 							"objectClass": "System",
 							"sid": 401665681264936,
-							"disabled": true,
 							"parameters": {
 								"variable": "enemiesDestroyed",
 								"value": "1"
