@@ -1987,6 +1987,10 @@
 									"isActiveOnStart": false,
 									"children": [
 										{
+											"eventType": "comment",
+											"text": "Movement changes direction if the boss hits the edge of the screen."
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -2023,6 +2027,10 @@
 											"isOrBlock": true
 										},
 										{
+											"eventType": "comment",
+											"text": "Sideways movement"
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -2042,6 +2050,10 @@
 												}
 											],
 											"sid": 776348992359998
+										},
+										{
+											"eventType": "comment",
+											"text": "Attack pattern"
 										},
 										{
 											"eventType": "block",
@@ -2096,6 +2108,10 @@
 									"sid": 784331096902390
 								},
 								{
+									"eventType": "comment",
+									"text": "When the boss dies..."
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -2110,97 +2126,6 @@
 										}
 									],
 									"actions": [
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 208269944580689,
-											"disabled": true,
-											"parameters": {
-												"variable": "playerScore",
-												"value": "Enemy_Boss.points"
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Enemy_Boss",
-											"sid": 888617436903853,
-											"disabled": true,
-											"parameters": {
-												"object": "Points_PopUp",
-												"layer": "3",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Enemy_Boss",
-											"sid": 651141631908467,
-											"disabled": true
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "Points_PopUp",
-											"sid": 560662289723778,
-											"disabled": true,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-font-color",
-											"objectClass": "Points_PopUp",
-											"sid": 182509961186525,
-											"disabled": true,
-											"parameters": {
-												"color": "rgbEx(0, 250, 0)"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "Points_PopUp",
-											"sid": 204742542017203,
-											"disabled": true,
-											"parameters": {
-												"text": "Enemy_Boss.points"
-											}
-										},
-										{
-											"id": "set-y",
-											"objectClass": "Points_PopUp",
-											"sid": 632355580237141,
-											"disabled": true,
-											"parameters": {
-												"y": "Points_PopUp.Y"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "Points_PopUp",
-											"sid": 598190690707256,
-											"disabled": true,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.05",
-												"off-time": "0.05",
-												"duration": "1.0"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 906112925578513,
-											"disabled": true,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Points_PopUp",
-											"sid": 336981549571329,
-											"disabled": true
-										},
 										{
 											"callFunction": "onDestroyed",
 											"sid": 272488799447794,
