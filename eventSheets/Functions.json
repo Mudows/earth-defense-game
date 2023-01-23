@@ -2,185 +2,6 @@
 	"name": "Functions",
 	"events": [
 		{
-			"functionName": "bossBlaster",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_Boss",
-					"sid": 814026632969935,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Enemy_Blast",
-					"sid": 641880824554626,
-					"parameters": {
-						"angle": "Enemy_Boss.Angle + (int(random(-3,3)))"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_Boss",
-					"sid": 908801251276654,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "2",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Enemy_Blast",
-					"sid": 359262997876922,
-					"parameters": {
-						"angle": "Enemy_Boss.Angle + (int(random(-3,3)))"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 197626952460538,
-					"parameters": {
-						"audio-file": "sfx_laser2",
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				}
-			],
-			"sid": 344708548923427
-		},
-		{
-			"functionName": "enemyBlast",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_A",
-					"sid": 412384597013550,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 570689056998133,
-					"parameters": {
-						"seconds": "0.1"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 704552543226879,
-					"parameters": {
-						"audio-file": "sfx_laser2",
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_A",
-					"sid": 671097135036185,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "rotate-counter-clockwise",
-					"objectClass": "Enemy_Blast",
-					"sid": 799968937979350,
-					"parameters": {
-						"degrees": "4"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 495766512200056,
-					"parameters": {
-						"seconds": "0.1"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 447731518373256,
-					"parameters": {
-						"audio-file": "sfx_laser2",
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_A",
-					"sid": 894066980650980,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "rotate-clockwise",
-					"objectClass": "Enemy_Blast",
-					"sid": 652117418693501,
-					"parameters": {
-						"degrees": "4"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 414613520233178,
-					"parameters": {
-						"audio-file": "sfx_laser2",
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				}
-			],
-			"sid": 709962059447067
-		},
-		{
 			"functionName": "onDestroyed",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -306,6 +127,282 @@
 					"sid": 847930512872945
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "bossBlaster",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_Boss",
+							"sid": 597704922105787,
+							"parameters": {
+								"object": "Enemy_Blast",
+								"layer": "2",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Enemy_Blast",
+							"sid": 803681961458554,
+							"parameters": {
+								"angle": "Enemy_Boss.Angle + (int(random(-3,3)))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Enemy_Blast",
+							"sid": 628906466873117,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_Boss",
+							"sid": 603592389715715,
+							"parameters": {
+								"object": "Enemy_Blast",
+								"layer": "2",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Enemy_Blast",
+							"sid": 985385480999577,
+							"parameters": {
+								"angle": "Enemy_Boss.Angle + (int(random(-3,3)))"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Enemy_Blast",
+							"sid": 645618798893200,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 146605941235961,
+							"parameters": {
+								"audio-file": "sfx_laser2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 325274809142652
+				},
+				{
+					"functionName": "enemyBlast",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_A",
+							"sid": 814486159211319,
+							"parameters": {
+								"object": "Enemy_Blast",
+								"layer": "2",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 953966614927312,
+							"parameters": {
+								"audio-file": "sfx_laser2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 218442578679154,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_A",
+							"sid": 853891314895562,
+							"parameters": {
+								"object": "Enemy_Blast",
+								"layer": "2",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "rotate-counter-clockwise",
+							"objectClass": "Enemy_Blast",
+							"sid": 324209435234544,
+							"parameters": {
+								"degrees": "4"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 660824767163721,
+							"parameters": {
+								"audio-file": "sfx_laser2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 533085894494622,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_A",
+							"sid": 183150996443335,
+							"parameters": {
+								"object": "Enemy_Blast",
+								"layer": "2",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "Enemy_Blast",
+							"sid": 485551601465294,
+							"parameters": {
+								"degrees": "4"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 781327291946800,
+							"parameters": {
+								"audio-file": "sfx_laser2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 253493415068454
+				},
+				{
+					"functionName": "enemyAMovement",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "xAxisModifier",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 513110656561101
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Enemy_A",
+							"sid": 817440224084160,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetX",
+								"end-value": "Enemy_A.X + (int(random(50, 100)) * xAxisModifier)",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 595794270543652
+						},
+						{
+							"callFunction": "enemyBlast",
+							"sid": 470735434167749
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 954469714413782,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Enemy_A",
+							"sid": 188870239266908,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "700",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 713617962118260
+				}
+			],
+			"sid": 694311649013816
 		}
 	],
 	"sid": 711144953597167
