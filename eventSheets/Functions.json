@@ -111,6 +111,18 @@
 							"sid": 824525240805268
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 723293504543865,
+							"parameters": {
+								"audio-file": "explosionCrunch_000",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-angle",
 							"objectClass": "Points_PopUp",
 							"sid": 883661967281891,
