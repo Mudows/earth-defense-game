@@ -63,6 +63,49 @@
 							}
 						},
 						{
+							"id": "spawn-another-object",
+							"objectClass": "Hazards",
+							"sid": 477480964855467,
+							"parameters": {
+								"object": "Explosion",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-rate",
+							"objectClass": "Explosion",
+							"sid": 657134812318349,
+							"parameters": {
+								"rate": "Hazards.Width / 2"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Explosion",
+							"sid": 657371315491304,
+							"parameters": {
+								"speed": "Hazards.Width"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Explosion",
+							"sid": 850936744404365,
+							"parameters": {
+								"acceleration": "(Hazards.Width * 0.75) * (-1)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Explosion",
+							"sid": 274868812566818,
+							"parameters": {
+								"size": "Explosion.InitSpeed / 2"
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "Hazards",
 							"sid": 824525240805268

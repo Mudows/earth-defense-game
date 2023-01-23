@@ -32,14 +32,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Keyboard",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -48,8 +40,24 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "LocalStorage",
 			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -122,9 +130,7 @@
 	"uniqueId": "5bopcp2bxkb",
 	"objectTypes": {
 		"items": [
-			"Keyboard",
-			"Audio",
-			"LocalStorage"
+			"Explosion"
 		],
 		"subfolders": [
 			{
@@ -198,6 +204,15 @@
 				],
 				"subfolders": [],
 				"name": "Enemies"
+			},
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"LocalStorage"
+				],
+				"subfolders": [],
+				"name": "Plugins"
 			}
 		]
 	},
