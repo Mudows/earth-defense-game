@@ -1160,7 +1160,7 @@
 							"objectClass": "Destroyable",
 							"sid": 327107182931265,
 							"parameters": {
-								"instance-variable": "hitPointsA",
+								"instance-variable": "hitPoints",
 								"value": "1"
 							}
 						}
@@ -1777,7 +1777,7 @@
 											"objectClass": "Enemy_A",
 											"sid": 384891834773885,
 											"parameters": {
-												"instance-variable": "hitPointsA",
+												"instance-variable": "hitPoints",
 												"comparison": 3,
 												"value": "0"
 											}
@@ -1795,7 +1795,7 @@
 										},
 										{
 											"callFunction": "onDestroyed",
-											"sid": 101473404091458,
+											"sid": 963088479590098,
 											"parameters": [
 												"Enemy_A.UID",
 												"Enemy_A.points"
@@ -2094,7 +2094,7 @@
 											"objectClass": "Enemy_Boss",
 											"sid": 317429396572556,
 											"parameters": {
-												"instance-variable": "hitPointsA",
+												"instance-variable": "hitPoints",
 												"comparison": 3,
 												"value": "0"
 											}
@@ -2106,7 +2106,7 @@
 											"sid": 272488799447794,
 											"parameters": [
 												"Enemy_Boss.UID",
-												"Enemy_Boss.pointsA"
+												"Enemy_Boss.points"
 											]
 										},
 										{
@@ -2325,7 +2325,7 @@
 									"objectClass": "Asteroid_Big",
 									"sid": 272860835624661,
 									"parameters": {
-										"instance-variable": "hitPointsA",
+										"instance-variable": "hitPoints",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2338,7 +2338,7 @@
 									"sid": 586523610083917,
 									"parameters": {
 										"variable": "playerScore",
-										"value": "Asteroid_Big.pointsA"
+										"value": "Asteroid_Big.points"
 									}
 								},
 								{
@@ -2419,7 +2419,7 @@
 											"objectClass": "Asteroid_Medium",
 											"sid": 425496340788638,
 											"parameters": {
-												"instance-variable": "pointsA",
+												"instance-variable": "points",
 												"value": "300"
 											}
 										},
@@ -2486,7 +2486,7 @@
 											"objectClass": "Points_PopUp",
 											"sid": 718061998065412,
 											"parameters": {
-												"text": "Asteroid_Big.pointsA"
+												"text": "Asteroid_Big.points"
 											}
 										},
 										{
@@ -2534,7 +2534,7 @@
 									"objectClass": "Asteroid_Medium",
 									"sid": 890691651403824,
 									"parameters": {
-										"instance-variable": "hitPointsA",
+										"instance-variable": "hitPoints",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2619,7 +2619,7 @@
 											"objectClass": "Asteroid_Small",
 											"sid": 268645352232551,
 											"parameters": {
-												"instance-variable": "pointsA",
+												"instance-variable": "points",
 												"value": "100"
 											}
 										},
@@ -2655,7 +2655,7 @@
 											"sid": 773599100128029,
 											"parameters": {
 												"variable": "playerScore",
-												"value": "Asteroid_Medium.pointsA"
+												"value": "Asteroid_Medium.points"
 											}
 										},
 										{
@@ -2695,7 +2695,7 @@
 											"objectClass": "Points_PopUp",
 											"sid": 545078953935876,
 											"parameters": {
-												"text": "Asteroid_Medium.pointsA"
+												"text": "Asteroid_Medium.points"
 											}
 										},
 										{
@@ -2743,7 +2743,7 @@
 									"objectClass": "Asteroid_Small",
 									"sid": 365931179410151,
 									"parameters": {
-										"instance-variable": "hitPointsA",
+										"instance-variable": "hitPoints",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2755,7 +2755,7 @@
 									"sid": 108210127923461,
 									"parameters": [
 										"Asteroid_Small.UID",
-										"Asteroid_Small.pointsA"
+										"Asteroid_Small.points"
 									]
 								}
 							],
@@ -2836,8 +2836,8 @@
 							"objectClass": "Destroyable",
 							"sid": 643239363668413,
 							"parameters": {
-								"instance-variable": "pointsA",
-								"value": "(Destroyable.pointsA / 2) * (-1)"
+								"instance-variable": "points",
+								"value": "(Destroyable.points / 2) * (-1)"
 							}
 						},
 						{
@@ -2846,7 +2846,7 @@
 							"sid": 368073051443031,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "Destroyable.pointsA"
+								"value": "Destroyable.points"
 							}
 						},
 						{
@@ -2886,7 +2886,7 @@
 							"objectClass": "Points_PopUp",
 							"sid": 818985613365456,
 							"parameters": {
-								"text": "Destroyable.pointsA"
+								"text": "Destroyable.points"
 							}
 						},
 						{

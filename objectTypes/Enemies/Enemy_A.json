@@ -3,22 +3,7 @@
 	"plugin-id": "Sprite",
 	"sid": 224452114394788,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "hitPoints",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 449013285901867
-		},
-		{
-			"name": "points",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 371171212008999
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Tween",

@@ -66,6 +66,121 @@
 			"sid": 344708548923427
 		},
 		{
+			"functionName": "enemyBlast",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_A",
+					"sid": 412384597013550,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 570689056998133,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 704552543226879,
+					"parameters": {
+						"audio-file": "sfx_laser2",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_A",
+					"sid": 671097135036185,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "rotate-counter-clockwise",
+					"objectClass": "Enemy_Blast",
+					"sid": 799968937979350,
+					"parameters": {
+						"degrees": "4"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 495766512200056,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 447731518373256,
+					"parameters": {
+						"audio-file": "sfx_laser2",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy_A",
+					"sid": 894066980650980,
+					"parameters": {
+						"object": "Enemy_Blast",
+						"layer": "2",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "Enemy_Blast",
+					"sid": 652117418693501,
+					"parameters": {
+						"degrees": "4"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 414613520233178,
+					"parameters": {
+						"audio-file": "sfx_laser2",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 709962059447067
+		},
+		{
 			"functionName": "onDestroyed",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -191,85 +306,6 @@
 					"sid": 847930512872945
 				}
 			]
-		},
-		{
-			"functionName": "enemyBlast",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_A",
-					"sid": 177203790334429,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 152046966236541,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_A",
-					"sid": 607612687240868,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "rotate-counter-clockwise",
-					"objectClass": "Enemy_Blast",
-					"sid": 585322799350903,
-					"parameters": {
-						"degrees": "4"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 817056170774324,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Enemy_A",
-					"sid": 994372856875317,
-					"parameters": {
-						"object": "Enemy_Blast",
-						"layer": "2",
-						"image-point": "1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "rotate-clockwise",
-					"objectClass": "Enemy_Blast",
-					"sid": 648109515944011,
-					"parameters": {
-						"degrees": "4"
-					}
-				}
-			],
-			"sid": 857240038376737
 		}
 	],
 	"sid": 711144953597167
