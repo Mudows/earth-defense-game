@@ -130,6 +130,26 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-fade-out-finished",
+							"objectClass": "GameStart",
+							"sid": 253667049849169,
+							"behaviorType": "Fade"
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-fade",
+							"objectClass": "GameStart",
+							"sid": 578793012560631,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 378222586740863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 910745358503725,
@@ -139,6 +159,25 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "GameStart",
+							"sid": 859457371693662,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 964020739290422,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
 						{
 							"id": "set-position",
 							"objectClass": "Player_Ship",
