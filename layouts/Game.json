@@ -598,7 +598,7 @@
 						"bottom-margin": 16,
 						"edges": "stretch",
 						"fill": "stretch",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left",
 						"seams": "overlap"
 					},
@@ -641,7 +641,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left"
 					},
 					"uid": 10,
@@ -667,7 +667,7 @@
 				{
 					"type": "LifeBar",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 3,
 						"enable-collisions": true,
@@ -842,7 +842,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left"
 					},
 					"uid": 16,

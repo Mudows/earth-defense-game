@@ -113,11 +113,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 723293504543865,
+							"sid": 780606712589960,
 							"parameters": {
 								"audio-file": "explosionCrunch_000",
 								"loop": "not-looping",
-								"volume": "0",
+								"volume": "-10",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}

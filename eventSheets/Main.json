@@ -97,6 +97,39 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 725599684771962,
+							"parameters": {
+								"key": "\"highScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 484746445243270,
+							"parameters": {
+								"variable": "highScore",
+								"value": "int(LocalStorage.ItemValue)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 645622610423830,
+							"parameters": {
+								"text": "\"Score: \" & highScore"
+							}
+						}
+					],
+					"sid": 514723184237573
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 910745358503725,
@@ -182,21 +215,6 @@
 							"sid": 490911234236376
 						},
 						{
-							"id": "add-filter-effect",
-							"objectClass": "Audio",
-							"sid": 490874985469378,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"ready\"",
-								"type": "high-pass",
-								"frequency": "200",
-								"detune": "0",
-								"q": "1",
-								"gain": "0",
-								"mix": "100"
-							}
-						},
-						{
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 784325069267426,
@@ -216,42 +234,41 @@
 								"group-name": "\"Game Start\"",
 								"state": "deactivated"
 							}
-						}
-					],
-					"sid": 168423498020894
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "on-item-get",
-							"objectClass": "LocalStorage",
-							"sid": 807561127658548,
+							"id": "set-visible",
+							"objectClass": "UI_BG",
+							"sid": 266601436780084,
 							"parameters": {
-								"key": "\"highScore\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 773360341647678,
-							"parameters": {
-								"variable": "highScore",
-								"value": "int(LocalStorage.ItemValue)"
+								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 548128468704014,
+							"id": "set-visible",
+							"objectClass": "LifeBar",
+							"sid": 380476218346085,
 							"parameters": {
-								"text": "\"Score: \" & highScore"
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "GameTime",
+							"sid": 287035958131513,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Score",
+							"sid": 876133503973574,
+							"parameters": {
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 456332257564374
+					"sid": 168423498020894
 				}
 			],
 			"sid": 723785099134342
@@ -1292,11 +1309,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 692776669835994,
+							"sid": 735443066753246,
 							"parameters": {
 								"audio-file": "explosionCrunch_001",
 								"loop": "not-looping",
-								"volume": "0",
+								"volume": "-5",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
