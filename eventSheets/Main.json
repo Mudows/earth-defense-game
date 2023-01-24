@@ -169,6 +169,46 @@
 							"sid": 490911234236376
 						},
 						{
+							"id": "add-filter-effect",
+							"objectClass": "Audio",
+							"sid": 490874985469378,
+							"disabled": true,
+							"parameters": {
+								"tag": "\"ready\"",
+								"type": "high-pass",
+								"frequency": "200",
+								"detune": "0",
+								"q": "1",
+								"gain": "0",
+								"mix": "100"
+							}
+						},
+						{
+							"id": "add-flanger-effect",
+							"objectClass": "Audio",
+							"sid": 259617639557087,
+							"parameters": {
+								"tag": "\"voice\"",
+								"delay": "10",
+								"modulation": "25",
+								"frequency": "1",
+								"feedback": "50",
+								"mix": "100"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 784325069267426,
+							"parameters": {
+								"audio-file": "ready",
+								"loop": "not-looping",
+								"volume": "5",
+								"stereo-pan": "0",
+								"tag-optional": "\"voice\""
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 565056468982368,
@@ -1336,11 +1376,20 @@
 									}
 								},
 								{
-									"id": "set-text",
-									"objectClass": "BigText",
-									"sid": 284411436889368,
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 715975802637673,
 									"parameters": {
-										"text": "\"Game Over\""
+										"seconds": "1.5"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "BigText",
+									"sid": 313191749102583,
+									"parameters": {
+										"text": "\"Game Over\"",
+										"duration": "1"
 									}
 								},
 								{
@@ -1349,6 +1398,18 @@
 									"sid": 526021716296734,
 									"parameters": {
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 531725767548319,
+									"parameters": {
+										"audio-file": "game_over",
+										"loop": "not-looping",
+										"volume": "5",
+										"stereo-pan": "0",
+										"tag-optional": "\"voice\""
 									}
 								},
 								{
