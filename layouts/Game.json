@@ -720,9 +720,9 @@
 					"behaviors": {},
 					"world": {
 						"x": 240,
-						"y": 260,
+						"y": 236.5,
 						"width": 440,
-						"height": 83,
+						"height": 130,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -76,6 +76,19 @@
 							"parameters": {
 								"text": "\"Score: \" & highScore"
 							}
+						},
+						{
+							"id": "add-flanger-effect",
+							"objectClass": "Audio",
+							"sid": 854039385229463,
+							"parameters": {
+								"tag": "\"voice\"",
+								"delay": "10",
+								"modulation": "0",
+								"frequency": "1",
+								"feedback": "50",
+								"mix": "100"
+							}
 						}
 					],
 					"sid": 937774840520886
@@ -180,19 +193,6 @@
 								"detune": "0",
 								"q": "1",
 								"gain": "0",
-								"mix": "100"
-							}
-						},
-						{
-							"id": "add-flanger-effect",
-							"objectClass": "Audio",
-							"sid": 259617639557087,
-							"parameters": {
-								"tag": "\"voice\"",
-								"delay": "10",
-								"modulation": "25",
-								"frequency": "1",
-								"feedback": "50",
 								"mix": "100"
 							}
 						},
@@ -1245,7 +1245,63 @@
 							"sid": 613509775143269
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_Ship",
+							"sid": 121009409153414,
+							"parameters": {
+								"object": "Explosion",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-rate",
+							"objectClass": "Explosion",
+							"sid": 735032812546582,
+							"parameters": {
+								"rate": "Player_Ship.Width / 2"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Explosion",
+							"sid": 292095268817521,
+							"parameters": {
+								"speed": "Player_Ship.Width"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Explosion",
+							"sid": 883327165352068,
+							"parameters": {
+								"acceleration": "(Player_Ship.Width * 0.75) * (-1)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Explosion",
+							"sid": 313835070355909,
+							"parameters": {
+								"size": "Explosion.InitSpeed / 2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 692776669835994,
+							"parameters": {
+								"audio-file": "explosionCrunch_001",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
 					"sid": 697086609572081,
 					"children": [
 						{
@@ -1386,9 +1442,9 @@
 								{
 									"id": "typewriter-text",
 									"objectClass": "BigText",
-									"sid": 313191749102583,
+									"sid": 201909556681988,
 									"parameters": {
-										"text": "\"Game Over\"",
+										"text": "\"Mission Failed\"",
 										"duration": "1"
 									}
 								},
@@ -1403,9 +1459,9 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 531725767548319,
+									"sid": 312404823190287,
 									"parameters": {
-										"audio-file": "game_over",
+										"audio-file": "mission_failed",
 										"loop": "not-looping",
 										"volume": "5",
 										"stereo-pan": "0",
@@ -2097,9 +2153,9 @@
 										{
 											"id": "typewriter-text",
 											"objectClass": "BigText",
-											"sid": 274554639976640,
+											"sid": 369145876646593,
 											"parameters": {
-												"text": "\"You Win!\"",
+												"text": "\"Mission Completed\"",
 												"duration": "1"
 											}
 										},
@@ -2109,6 +2165,18 @@
 											"sid": 673914731770757,
 											"parameters": {
 												"visibility": "visible"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 614138876134749,
+											"parameters": {
+												"audio-file": "mission_completed",
+												"loop": "not-looping",
+												"volume": "5",
+												"stereo-pan": "0",
+												"tag-optional": "\"voice\""
 											}
 										}
 									],
