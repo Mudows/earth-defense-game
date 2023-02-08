@@ -156,9 +156,27 @@
 							"parameters": {
 								"key": 32
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 467631181213643,
+							"parameters": {
+								"variable": "isGameStarted"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 290694005626292,
+							"parameters": {
+								"variable": "isGameStarted",
+								"value": "true"
+							}
+						},
 						{
 							"id": "flash",
 							"objectClass": "GameStart",
@@ -307,7 +325,21 @@
 							}
 						}
 					],
-					"sid": 168423498020894
+					"sid": 168423498020894,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 713942765138165
+								}
+							],
+							"actions": [],
+							"sid": 365428019120895
+						}
+					]
 				}
 			],
 			"sid": 723785099134342
@@ -1789,7 +1821,8 @@
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -2015,7 +2048,8 @@
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
