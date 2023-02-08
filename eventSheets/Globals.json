@@ -110,6 +110,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 807287785483777
+		},
+		{
+			"eventType": "variable",
+			"name": "isGameStarted",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 489763515797810
 		}
 	],
 	"sid": 135992070768991

@@ -4,14 +4,14 @@
 	"sid": 632151357303119,
 	"instanceVariables": [
 		{
-			"name": "hitPointsA",
+			"name": "hitPoints",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 157841443802592
 		},
 		{
-			"name": "pointsA",
+			"name": "points",
 			"type": "number",
 			"desc": "",
 			"show": true,

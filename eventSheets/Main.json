@@ -76,9 +76,75 @@
 							"parameters": {
 								"text": "\"Score: \" & highScore"
 							}
+						},
+						{
+							"id": "add-flanger-effect",
+							"objectClass": "Audio",
+							"sid": 854039385229463,
+							"parameters": {
+								"tag": "\"voice\"",
+								"delay": "10",
+								"modulation": "0",
+								"frequency": "1",
+								"feedback": "50",
+								"mix": "100"
+							}
 						}
 					],
 					"sid": 937774840520886
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 725599684771962,
+							"parameters": {
+								"key": "\"highScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 484746445243270,
+							"parameters": {
+								"variable": "highScore",
+								"value": "int(LocalStorage.ItemValue)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 645622610423830,
+							"parameters": {
+								"text": "\"Score: \" & highScore"
+							}
+						}
+					],
+					"sid": 514723184237573
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fade-out-finished",
+							"objectClass": "GameStart",
+							"sid": 253667049849169,
+							"behaviorType": "Fade"
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-fade",
+							"objectClass": "GameStart",
+							"sid": 578793012560631,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 378222586740863
 				},
 				{
 					"eventType": "block",
@@ -90,9 +156,46 @@
 							"parameters": {
 								"key": 32
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 467631181213643,
+							"parameters": {
+								"variable": "isGameStarted"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 290694005626292,
+							"parameters": {
+								"variable": "isGameStarted",
+								"value": "true"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "GameStart",
+							"sid": 859457371693662,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 964020739290422,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
 						{
 							"id": "set-position",
 							"objectClass": "Player_Ship",
@@ -169,6 +272,18 @@
 							"sid": 490911234236376
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 784325069267426,
+							"parameters": {
+								"audio-file": "ready",
+								"loop": "not-looping",
+								"volume": "5",
+								"stereo-pan": "0",
+								"tag-optional": "\"voice\""
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 565056468982368,
@@ -176,42 +291,55 @@
 								"group-name": "\"Game Start\"",
 								"state": "deactivated"
 							}
-						}
-					],
-					"sid": 168423498020894
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "on-item-get",
-							"objectClass": "LocalStorage",
-							"sid": 807561127658548,
+							"id": "set-visible",
+							"objectClass": "UI_BG",
+							"sid": 266601436780084,
 							"parameters": {
-								"key": "\"highScore\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 773360341647678,
-							"parameters": {
-								"variable": "highScore",
-								"value": "int(LocalStorage.ItemValue)"
+								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 548128468704014,
+							"id": "set-visible",
+							"objectClass": "LifeBar",
+							"sid": 380476218346085,
 							"parameters": {
-								"text": "\"Score: \" & highScore"
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "GameTime",
+							"sid": 287035958131513,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Score",
+							"sid": 876133503973574,
+							"parameters": {
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 456332257564374
+					"sid": 168423498020894,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 713942765138165
+								}
+							],
+							"actions": [],
+							"sid": 365428019120895
+						}
+					]
 				}
 			],
 			"sid": 723785099134342
@@ -1160,7 +1288,7 @@
 							"objectClass": "Destroyable",
 							"sid": 327107182931265,
 							"parameters": {
-								"instance-variable": "hitPointsA",
+								"instance-variable": "hitPoints",
 								"value": "1"
 							}
 						}
@@ -1205,7 +1333,63 @@
 							"sid": 613509775143269
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_Ship",
+							"sid": 121009409153414,
+							"parameters": {
+								"object": "Explosion",
+								"layer": "2",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-rate",
+							"objectClass": "Explosion",
+							"sid": 735032812546582,
+							"parameters": {
+								"rate": "Player_Ship.Width / 2"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Explosion",
+							"sid": 292095268817521,
+							"parameters": {
+								"speed": "Player_Ship.Width"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Explosion",
+							"sid": 883327165352068,
+							"parameters": {
+								"acceleration": "(Player_Ship.Width * 0.75) * (-1)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Explosion",
+							"sid": 313835070355909,
+							"parameters": {
+								"size": "Explosion.InitSpeed / 2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 735443066753246,
+							"parameters": {
+								"audio-file": "explosionCrunch_001",
+								"loop": "not-looping",
+								"volume": "-5",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
 					"sid": 697086609572081,
 					"children": [
 						{
@@ -1336,11 +1520,20 @@
 									}
 								},
 								{
-									"id": "set-text",
-									"objectClass": "BigText",
-									"sid": 284411436889368,
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 715975802637673,
 									"parameters": {
-										"text": "\"Game Over\""
+										"seconds": "1.5"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "BigText",
+									"sid": 201909556681988,
+									"parameters": {
+										"text": "\"Mission Failed\"",
+										"duration": "1"
 									}
 								},
 								{
@@ -1349,6 +1542,18 @@
 									"sid": 526021716296734,
 									"parameters": {
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 312404823190287,
+									"parameters": {
+										"audio-file": "mission_failed",
+										"loop": "not-looping",
+										"volume": "5",
+										"stereo-pan": "0",
+										"tag-optional": "\"voice\""
 									}
 								},
 								{
@@ -1563,11 +1768,11 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 718311996951411,
+											"sid": 418845789533555,
 											"parameters": {
-												"variable": "playerScore",
+												"variable": "timerSeconds",
 												"comparison": 5,
-												"value": "1000"
+												"value": "5"
 											}
 										},
 										{
@@ -1616,7 +1821,8 @@
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -1654,53 +1860,11 @@
 											],
 											"actions": [
 												{
-													"id": "tween-one-property",
-													"objectClass": "Enemy_A",
-													"sid": 988917218931726,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetX",
-														"end-value": "Enemy_A.X + int(random(50, 100))",
-														"time": "0.2",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no"
-													}
-												},
-												{
-													"id": "wait-for-previous-actions",
-													"objectClass": "System",
-													"sid": 157611332686881
-												},
-												{
-													"callFunction": "enemyBlast",
-													"sid": 596909740659631
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 260179372545958,
-													"parameters": {
-														"seconds": "2"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "Enemy_A",
-													"sid": 154841748183689,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetY",
-														"end-value": "700",
-														"time": "1",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no"
-													}
+													"callFunction": "enemyAMovement",
+													"sid": 603106870440548,
+													"parameters": [
+														"1"
+													]
 												}
 											],
 											"sid": 437623459957996
@@ -1716,53 +1880,11 @@
 											],
 											"actions": [
 												{
-													"id": "tween-one-property",
-													"objectClass": "Enemy_A",
-													"sid": 583695629428930,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetX",
-														"end-value": "Enemy_A.X + int(random(-50, -100))",
-														"time": "0.2",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no"
-													}
-												},
-												{
-													"id": "wait-for-previous-actions",
-													"objectClass": "System",
-													"sid": 639903918618355
-												},
-												{
-													"callFunction": "enemyBlast",
-													"sid": 718920111869122
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 365803673009826,
-													"parameters": {
-														"seconds": "2"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "Enemy_A",
-													"sid": 538749756019641,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetY",
-														"end-value": "700",
-														"time": "1",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no"
-													}
+													"callFunction": "enemyAMovement",
+													"sid": 217771443137462,
+													"parameters": [
+														"-1"
+													]
 												}
 											],
 											"sid": 260225527605867
@@ -1777,7 +1899,7 @@
 											"objectClass": "Enemy_A",
 											"sid": 384891834773885,
 											"parameters": {
-												"instance-variable": "hitPointsA",
+												"instance-variable": "hitPoints",
 												"comparison": 3,
 												"value": "0"
 											}
@@ -1795,7 +1917,7 @@
 										},
 										{
 											"callFunction": "onDestroyed",
-											"sid": 101473404091458,
+											"sid": 963088479590098,
 											"parameters": [
 												"Enemy_A.UID",
 												"Enemy_A.points"
@@ -1926,7 +2048,8 @@
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -2094,7 +2217,7 @@
 											"objectClass": "Enemy_Boss",
 											"sid": 317429396572556,
 											"parameters": {
-												"instance-variable": "hitPointsA",
+												"instance-variable": "hitPoints",
 												"comparison": 3,
 												"value": "0"
 											}
@@ -2106,7 +2229,7 @@
 											"sid": 272488799447794,
 											"parameters": [
 												"Enemy_Boss.UID",
-												"Enemy_Boss.pointsA"
+												"Enemy_Boss.points"
 											]
 										},
 										{
@@ -2120,9 +2243,9 @@
 										{
 											"id": "typewriter-text",
 											"objectClass": "BigText",
-											"sid": 274554639976640,
+											"sid": 369145876646593,
 											"parameters": {
-												"text": "\"You Win!\"",
+												"text": "\"Mission Completed\"",
 												"duration": "1"
 											}
 										},
@@ -2132,6 +2255,18 @@
 											"sid": 673914731770757,
 											"parameters": {
 												"visibility": "visible"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 614138876134749,
+											"parameters": {
+												"audio-file": "mission_completed",
+												"loop": "not-looping",
+												"volume": "5",
+												"stereo-pan": "0",
+												"tag-optional": "\"voice\""
 											}
 										}
 									],
@@ -2325,22 +2460,13 @@
 									"objectClass": "Asteroid_Big",
 									"sid": 272860835624661,
 									"parameters": {
-										"instance-variable": "hitPointsA",
+										"instance-variable": "hitPoints",
 										"comparison": 3,
 										"value": "0"
 									}
 								}
 							],
 							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 586523610083917,
-									"parameters": {
-										"variable": "playerScore",
-										"value": "Asteroid_Big.pointsA"
-									}
-								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
@@ -2419,7 +2545,7 @@
 											"objectClass": "Asteroid_Medium",
 											"sid": 425496340788638,
 											"parameters": {
-												"instance-variable": "pointsA",
+												"instance-variable": "points",
 												"value": "300"
 											}
 										},
@@ -2450,76 +2576,12 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Asteroid_Big",
-											"sid": 344212134145936,
-											"parameters": {
-												"object": "Points_PopUp",
-												"layer": "3",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Asteroid_Big",
-											"sid": 343046701440218
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "Points_PopUp",
-											"sid": 999212187426377,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-font-color",
-											"objectClass": "Points_PopUp",
-											"sid": 453680301815831,
-											"parameters": {
-												"color": "rgbEx(0, 250, 0)"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "Points_PopUp",
-											"sid": 718061998065412,
-											"parameters": {
-												"text": "Asteroid_Big.pointsA"
-											}
-										},
-										{
-											"id": "set-y",
-											"objectClass": "Points_PopUp",
-											"sid": 489405633804582,
-											"parameters": {
-												"y": "Points_PopUp.Y - 20"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "Points_PopUp",
-											"sid": 998499194928543,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.05",
-												"off-time": "0.05",
-												"duration": "1.0"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 894456642811699,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Points_PopUp",
-											"sid": 979707553678839
+											"callFunction": "onDestroyed",
+											"sid": 373269027998663,
+											"parameters": [
+												"Asteroid_Big.UID",
+												"Asteroid_Big.points"
+											]
 										}
 									],
 									"sid": 112676311040636
@@ -2534,7 +2596,7 @@
 									"objectClass": "Asteroid_Medium",
 									"sid": 890691651403824,
 									"parameters": {
-										"instance-variable": "hitPointsA",
+										"instance-variable": "hitPoints",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2619,7 +2681,7 @@
 											"objectClass": "Asteroid_Small",
 											"sid": 268645352232551,
 											"parameters": {
-												"instance-variable": "pointsA",
+												"instance-variable": "points",
 												"value": "100"
 											}
 										},
@@ -2650,85 +2712,12 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 773599100128029,
-											"parameters": {
-												"variable": "playerScore",
-												"value": "Asteroid_Medium.pointsA"
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Asteroid_Medium",
-											"sid": 699108155544816,
-											"parameters": {
-												"object": "Points_PopUp",
-												"layer": "3",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Asteroid_Medium",
-											"sid": 740508219750770
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "Points_PopUp",
-											"sid": 857601869714726,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-font-color",
-											"objectClass": "Points_PopUp",
-											"sid": 973048279683600,
-											"parameters": {
-												"color": "rgbEx(0, 250, 0)"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "Points_PopUp",
-											"sid": 545078953935876,
-											"parameters": {
-												"text": "Asteroid_Medium.pointsA"
-											}
-										},
-										{
-											"id": "set-y",
-											"objectClass": "Points_PopUp",
-											"sid": 531031468641598,
-											"parameters": {
-												"y": "Points_PopUp.Y - 20"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "Points_PopUp",
-											"sid": 757602011038313,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.05",
-												"off-time": "0.05",
-												"duration": "1.0"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 698934522772803,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Points_PopUp",
-											"sid": 848251580990263
+											"callFunction": "onDestroyed",
+											"sid": 356404419561029,
+											"parameters": [
+												"Asteroid_Medium.UID",
+												"Asteroid_Medium.points"
+											]
 										}
 									],
 									"sid": 756545737096465
@@ -2743,7 +2732,7 @@
 									"objectClass": "Asteroid_Small",
 									"sid": 365931179410151,
 									"parameters": {
-										"instance-variable": "hitPointsA",
+										"instance-variable": "hitPoints",
 										"comparison": 3,
 										"value": "0"
 									}
@@ -2755,7 +2744,7 @@
 									"sid": 108210127923461,
 									"parameters": [
 										"Asteroid_Small.UID",
-										"Asteroid_Small.pointsA"
+										"Asteroid_Small.points"
 									]
 								}
 							],
@@ -2836,8 +2825,8 @@
 							"objectClass": "Destroyable",
 							"sid": 643239363668413,
 							"parameters": {
-								"instance-variable": "pointsA",
-								"value": "(Destroyable.pointsA / 2) * (-1)"
+								"instance-variable": "points",
+								"value": "(Destroyable.points / 2) * (-1)"
 							}
 						},
 						{
@@ -2846,7 +2835,7 @@
 							"sid": 368073051443031,
 							"parameters": {
 								"variable": "playerScore",
-								"value": "Destroyable.pointsA"
+								"value": "Destroyable.points"
 							}
 						},
 						{
@@ -2886,7 +2875,7 @@
 							"objectClass": "Points_PopUp",
 							"sid": 818985613365456,
 							"parameters": {
-								"text": "Destroyable.pointsA"
+								"text": "Destroyable.points"
 							}
 						},
 						{

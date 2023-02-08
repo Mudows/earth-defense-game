@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 31702,
+	"savedWithRelease": 32702,
 	"name": "Earth Defense",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -8,26 +8,9 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
+			"id": "Audio",
+			"name": "Audio",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "NinePatch",
-			"name": "9-patch",
-			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -35,15 +18,6 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Audio",
-			"name": "Audio",
-			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -51,39 +25,34 @@
 			"id": "LocalStorage",
 			"name": "Local storage",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "EightDir",
-			"name": "8 Direction",
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Flash",
-			"name": "Flash",
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "destroy",
-			"name": "Destroy outside layout",
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -91,23 +60,27 @@
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Tween",
-			"name": "Tween",
+			"id": "EightDir",
+			"name": "8 Direction",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Sin",
-			"name": "Sine",
+			"id": "Fade",
+			"name": "Fade",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -115,17 +88,40 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
 			"bundled": false
 		}
 	],
 	"uniqueId": "5bopcp2bxkb",
 	"objectTypes": {
-		"items": [
-			"Keyboard",
-			"Audio",
-			"LocalStorage"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -198,6 +194,22 @@
 				],
 				"subfolders": [],
 				"name": "Enemies"
+			},
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"LocalStorage"
+				],
+				"subfolders": [],
+				"name": "PLUGINS"
+			},
+			{
+				"items": [
+					"Explosion"
+				],
+				"subfolders": [],
+				"name": "Particles"
 			}
 		]
 	},
@@ -242,65 +254,133 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [
+			"items": [],
+			"subfolders": [
 				{
-					"name": "sfx_laser1.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 575053731841672,
-					"file-info": {
-						"purpose": "none"
-					}
+					"items": [
+						{
+							"name": "explosionCrunch_000.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 765530360582027,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "explosionCrunch_001.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 726519772546306,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_laser1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 575053731841672,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_laser2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 270639465094034,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_lose.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 258658359415889,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_shieldDown.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 540763055875750,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_shieldUp.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 677680881844794,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_twoTone.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 111851366106325,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sfx_zap.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 993474909133879,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "SFX"
 				},
 				{
-					"name": "sfx_laser2.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 270639465094034,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "sfx_lose.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 258658359415889,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "sfx_shieldDown.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 540763055875750,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "sfx_shieldUp.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 677680881844794,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "sfx_twoTone.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 111851366106325,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "sfx_zap.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 993474909133879,
-					"file-info": {
-						"purpose": "none"
-					}
+					"items": [
+						{
+							"name": "game_over.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 520626638236436,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "mission_completed.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 465008050831156,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "mission_failed.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 680518989967399,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "new_highscore.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 292388685923742,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "ready.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 975682848096583,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Voices"
 				}
-			],
-			"subfolders": []
+			]
 		},
 		"music": {
 			"items": [
@@ -460,6 +540,8 @@
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
