@@ -45,7 +45,7 @@
 			"eventType": "variable",
 			"name": "upgradeHorizontalSpeed",
 			"type": "number",
-			"initialValue": "8",
+			"initialValue": "6",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
